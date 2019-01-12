@@ -1,0 +1,25 @@
+* {
+	font-family: Tahoma;
+}
+
+.table td {
+	text-align: center;
+}
+
+.table tr {
+	line-height: 125px;
+	min-height: 125px;
+	height: 125px;
+}
+
+.table {
+	background-color: #1A8C40;
+}
+
+input {
+	text-align: center;
+}
+
+span {
+	color: yellow;
+}
