@@ -63,11 +63,20 @@
 			</table>
 		</div>
 		<div class="col-md-6">
-			<div id="total_rating">Total: 9</div>
-			<div> &nbsp;</div>
-			<div id="def">Defence: 3</div>
-			<div id="mid">Midfield: 3</div>
-			<div id="att">Attack: 3</div>
+			<div class="col-md-6 text-center">
+				<div id="total_rating">Total: 9</div>
+				<div> &nbsp;</div>
+				<div id="def">Defence: 3</div>
+				<div id="mid">Midfield: 3</div>
+				<div id="att">Attack: 3</div>
+			</div>
+			<div class="col-md-6 text-center">
+				<div id="ave_total">Average Total: 3</div>
+				<div> &nbsp;</div>
+				<div id="ave_def">Average Defence: 1</div>
+				<div id="ave_mid">Average Midfield: 1</div>
+				<div id="ave_att">Average Attack: 1</div>
+			</div>
 		</div>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -119,6 +128,12 @@
 			var att = (arr[4] + arr[5] + arr[6]);
 			$('#att').html('Attack: ' + att);
 			$('#total_rating').html('Total: ' + (def + mid + att));
+
+			// Average Rating
+			$('#ave_def').html('Average Defence: ' + Math.round(def / 3));
+			$('#ave_mid').html('Average Midfield: ' + Math.round(mid / 3));
+			$('#ave_att').html('Average Attack: ' + Math.round(att / 3));
+			$('#ave_total').html('Average Total: ' + Math.round((def / 3 + mid / 3 + att / 3) / 3));
 		}
 
 	</script>
