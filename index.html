@@ -10,24 +10,24 @@
 
 <body>
 	<div class="container">
-		<div class="col-md-6">
+		<div class="col-md-6 full-height">
 			<table class="table">
 				<tr>
 					<td>
 						<div class="form-group">
-							<label>Left Defence <span id="ld">1</span></label>
+							<label>Left Defence <span id="ld">[1]</span></label>
 							<input type="number" step="0.25" min="0" max="20" class="form-control" value="1" onchange="inputChange('LD', this.value)">
 						</div>
 					</td>
 					<td>
 						<div class="form-group">
-							<label>Central Defence <span id="cd">1</span></label>
+							<label>Central Defence <span id="cd">[1]</span></label>
 							<input type="number" step="0.25" min="0" max="20" class="form-control" value="1" onchange="inputChange('CD', this.value)">
 						</div>
 					</td>
 					<td>
 						<div class="form-group">
-							<label>Right Defence <span id="rd">1</span></label>
+							<label>Right Defence <span id="rd">[1]</span></label>
 							<input type="number" step="0.25" min="0" max="20" class="form-control" value="1" onchange="inputChange('RD', this.value)">
 						</div>
 					</td>
@@ -35,7 +35,7 @@
 				<tr>
 					<td colspan="3">
 						<div class="form-group text-center">
-							<label>Midfield <span id="m">1</span></label>
+							<label>Midfield <span id="m">[1]</span></label>
 							<input type="number" step="0.25" min="0" max="20" class="form-control" value="1" onchange="inputChange('M', this.value)">
 						</div>
 					</td>
@@ -43,39 +43,39 @@
 				<tr>
 					<td>
 						<div class="form-group">
-							<label>Left Attack <span id="la">1</span></label>
+							<label>Left Attack <span id="la">[1]</span></label>
 							<input type="number" step="0.25" min="0" max="20" class="form-control" value="1" onchange="inputChange('LA', this.value)">
 						</div>
 					</td>
 					<td>
 						<div class="form-group">
-							<label>Central Attack <span id="ca">1</span></label>
+							<label>Central Attack <span id="ca">[1]</span></label>
 							<input type="number" step="0.25" min="0" max="20" class="form-control" value="1" onchange="inputChange('CA', this.value)">
 						</div>
 					</td>
 					<td>
 						<div class="form-group">
-							<label>Right Attack <span id="ra">1</span></label>
+							<label>Right Attack <span id="ra">[1]</span></label>
 							<input type="number" step="0.25" min="0" max="20" class="form-control" value="1" onchange="inputChange('RA', this.value)">
 						</div>
 					</td>
 				</tr>
 			</table>
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-6 full-height">
 			<div class="col-md-6 text-center">
-				<div id="total_rating">Total: 9</div>
-				<div> &nbsp;</div>
-				<div id="def">Defence: 3</div>
-				<div id="mid">Midfield: 3</div>
-				<div id="att">Attack: 3</div>
+				<h3 id="total_rating">Total: 9</h3>
+				<h5> &nbsp;</h5>
+				<h5 id="def">Defence: 3</h5>
+				<h5 id="mid">Midfield: 3</h5>
+				<h5 id="att">Attack: 3</h5>
 			</div>
 			<div class="col-md-6 text-center">
-				<div id="ave_total">Average Total: 3</div>
-				<div> &nbsp;</div>
-				<div id="ave_def">Average Defence: 1</div>
-				<div id="ave_mid">Average Midfield: 1</div>
-				<div id="ave_att">Average Attack: 1</div>
+				<h3 id="ave_total">Ave Total: 3</h3>
+				<h5> &nbsp;</h5>
+				<h5 id="ave_def">Ave Defence: 1</h5>
+				<h5 id="ave_mid">Ave Midfield: 1</h5>
+				<h5 id="ave_att">Ave Attack: 1</h5>
 			</div>
 		</div>
 	</div>
@@ -112,13 +112,13 @@
 					arr[6] = intValue * 4 - 3 + diff;
 					break;
 			}
-			$('#ld').html(arr[0]);
-			$('#rd').html(arr[1]);
-			$('#cd').html(arr[2]);
-			$('#m').html(arr[3]);
-			$('#la').html(arr[4]);
-			$('#ca').html(arr[5]);
-			$('#ra').html(arr[6]);
+			$('#ld').html('[' + arr[0] + ']');
+			$('#rd').html('[' + arr[1] + ']');
+			$('#cd').html('[' + arr[2] + ']');
+			$('#m').html('[' + arr[3] + ']');
+			$('#la').html('[' + arr[4] + ']');
+			$('#ca').html('[' + arr[5] + ']');
+			$('#ra').html('[' + arr[6] + ']');
 
 			// Rating
 			var def = (arr[0] + arr[1] + arr[2]);
@@ -130,10 +130,10 @@
 			$('#total_rating').html('Total: ' + (def + mid + att));
 
 			// Average Rating
-			$('#ave_def').html('Average Defence: ' + Math.round(def / 3));
-			$('#ave_mid').html('Average Midfield: ' + Math.round(mid / 3));
-			$('#ave_att').html('Average Attack: ' + Math.round(att / 3));
-			$('#ave_total').html('Average Total: ' + Math.round((def / 3 + mid / 3 + att / 3) / 3));
+			$('#ave_def').html('Ave Defence: ' + Math.round(def / 3));
+			$('#ave_mid').html('Ave Midfield: ' + Math.round(mid / 3));
+			$('#ave_att').html('Ave Attack: ' + Math.round(att / 3));
+			$('#ave_total').html('Ave Total: ' + Math.round((def / 3 + mid / 3 + att / 3) / 3));
 		}
 
 	</script>
