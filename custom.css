@@ -37,3 +37,7 @@ input {
 span {
 	color: yellow;
 }
+
+select.form-control {
+	margin-top: 8px;
+}

@@ -16,19 +16,22 @@
 					<td>
 						<div class="form-group">
 							<label>Left Defence <span id="ld">[1]</span></label>
-							<input type="number" step="0.25" min="0" max="20" class="form-control" value="1" onchange="inputChange('LD', this.value)">
+							<input type="number" id="ldInput" step="0.25" min="0" max="20" class="form-control" value="1" onchange="inputChange('LD', this.value)">
+							<select class="form-control" id="ldSelect" onchange="inputChange('LD', this.options[this.selectedIndex].value)"></select>
 						</div>
 					</td>
 					<td>
 						<div class="form-group">
 							<label>Central Defence <span id="cd">[1]</span></label>
-							<input type="number" step="0.25" min="0" max="20" class="form-control" value="1" onchange="inputChange('CD', this.value)">
+							<input type="number" id="cdInput" step="0.25" min="0" max="20" class="form-control" value="1" onchange="inputChange('CD', this.value)">
+							<select class="form-control" id="cdSelect" onchange="inputChange('CD', this.options[this.selectedIndex].value)"></select>
 						</div>
 					</td>
 					<td>
 						<div class="form-group">
 							<label>Right Defence <span id="rd">[1]</span></label>
-							<input type="number" step="0.25" min="0" max="20" class="form-control" value="1" onchange="inputChange('RD', this.value)">
+							<input type="number" id="rdInput" step="0.25" min="0" max="20" class="form-control" value="1" onchange="inputChange('RD', this.value)">
+							<select class="form-control" id="rdSelect" onchange="inputChange('RD', this.options[this.selectedIndex].value)"></select>
 						</div>
 					</td>
 				</tr>
@@ -36,7 +39,8 @@
 					<td colspan="3">
 						<div class="form-group text-center">
 							<label>Midfield <span id="m">[1]</span></label>
-							<input type="number" step="0.25" min="0" max="20" class="form-control" value="1" onchange="inputChange('M', this.value)">
+							<input type="number" id="mInput" step="0.25" min="0" max="20" class="form-control" value="1" onchange="inputChange('M', this.value)">
+							<select class="form-control" id="mSelect" onchange="inputChange('M', this.options[this.selectedIndex].value)"></select>
 						</div>
 					</td>
 				</tr>
@@ -44,19 +48,22 @@
 					<td>
 						<div class="form-group">
 							<label>Left Attack <span id="la">[1]</span></label>
-							<input type="number" step="0.25" min="0" max="20" class="form-control" value="1" onchange="inputChange('LA', this.value)">
+							<input type="number" id="laInput" step="0.25" min="0" max="20" class="form-control" value="1" onchange="inputChange('LA', this.value)">
+							<select class="form-control" id="laSelect" onchange="inputChange('LA', this.options[this.selectedIndex].value)"></select>
 						</div>
 					</td>
 					<td>
 						<div class="form-group">
 							<label>Central Attack <span id="ca">[1]</span></label>
-							<input type="number" step="0.25" min="0" max="20" class="form-control" value="1" onchange="inputChange('CA', this.value)">
+							<input type="number" id="caInput" step="0.25" min="0" max="20" class="form-control" value="1" onchange="inputChange('CA', this.value)">
+							<select class="form-control" id="caSelect" onchange="inputChange('CA', this.options[this.selectedIndex].value)"></select>
 						</div>
 					</td>
 					<td>
 						<div class="form-group">
 							<label>Right Attack <span id="ra">[1]</span></label>
-							<input type="number" step="0.25" min="0" max="20" class="form-control" value="1" onchange="inputChange('RA', this.value)">
+							<input type="number" id="raInput" step="0.25" min="0" max="20" class="form-control" value="1" onchange="inputChange('RA', this.value)">
+							<select class="form-control" id="raSelect" onchange="inputChange('RA', this.options[this.selectedIndex].value)"></select>
 						</div>
 					</td>
 				</tr>
@@ -84,6 +91,22 @@
 	<script>
 		var arr = [1, 1, 1, 1, 1, 1, 1];
 
+		$(document).ready(function() {
+			for (var i = skillEng.length - 1; i >= 0; i--) {
+				$('#ldSelect').append('<option value=' + skillNumber[i] + '>' + skillEng[i] + '</option>');
+				$('#cdSelect').append('<option value=' + skillNumber[i] + '>' + skillEng[i] + '</option>');
+				$('#rdSelect').append('<option value=' + skillNumber[i] + '>' + skillEng[i] + '</option>');
+				$('#mSelect').append('<option value=' + skillNumber[i] + '>' + skillEng[i] + '</option>');
+				$('#laSelect').append('<option value=' + skillNumber[i] + '>' + skillEng[i] + '</option>');
+				$('#caSelect').append('<option value=' + skillNumber[i] + '>' + skillEng[i] + '</option>');
+				$('#raSelect').append('<option value=' + skillNumber[i] + '>' + skillEng[i] + '</option>');
+			}
+		});
+
+		function alert(value) {
+			console.log(value)
+		}
+
 		function inputChange(pos, value) {
 			if (value < 0 || value > 20) value = 0;
 			var intValue = Math.floor(value);
@@ -93,29 +116,36 @@
 			switch (pos) {
 				case 'LD':
 					arr[0] = intValue;
+					$('#ldInput').val(value);
 					break;
 				case 'CD':
 					arr[1] = intValue;
+					$('#cdInput').val(value);
 					break;
 				case 'RD':
 					arr[2] = intValue;
+					$('#rdInput').val(value);
 					break;
 				case 'M':
 					arr[3] = intValue;
+					$('#mInput').val(value);
 					break;
 				case 'LA':
 					arr[4] = intValue;
+					$('#laInput').val(value);
 					break;
 				case 'CA':
 					arr[5] = intValue;
+					$('#caInput').val(value);
 					break;
 				case 'RA':
 					arr[6] = intValue;
+					$('#raInput').val(value);
 					break;
 			}
 			$('#ld').html('[' + arr[0] + ']');
-			$('#rd').html('[' + arr[1] + ']');
-			$('#cd').html('[' + arr[2] + ']');
+			$('#cd').html('[' + arr[1] + ']');
+			$('#rd').html('[' + arr[2] + ']');
 			$('#m').html('[' + arr[3] + ']');
 			$('#la').html('[' + arr[4] + ']');
 			$('#ca').html('[' + arr[5] + ']');
@@ -136,6 +166,135 @@
 			$('#ave_att').html('Ave Attack: ' + Math.round(att / 3));
 			$('#ave_total').html('Ave Total: ' + Math.round((def / 3 + mid / 3 + att / 3) / 3));
 		}
+
+		var skillIran = [
+			'کهکشانی ',
+			'آرمانی ',
+			'جادویی ',
+			'افسانه ای ',
+			'خارق العاده ',
+			'استثنایی ',
+			'فوق العاده ',
+			'بین المللی ',
+			'باشکوه ',
+			'درخشان ',
+			'برجسته ',
+			'توانمند ',
+			'عالی ',
+			'خوب ',
+			'قابل قبول ',
+			'ناکافى ',
+			'ضعیف ',
+			'ناچیز ',
+			'اسفبار ',
+			'افتضاح ',
+			'بدون مهارت '
+		];
+		var skillEng = [
+			'divine very high',
+			'divine high',
+			'divine low',
+			'divine very low',
+			'utopian very high',
+			'utopian high',
+			'utopian low',
+			'utopian very low',
+			'magical very high',
+			'magical high',
+			'magical low',
+			'magical very low',
+			'mythical very high',
+			'mythical high',
+			'mythical low',
+			'mythical very low',
+			'extra-terrestrial very high',
+			'extra-terrestrial high',
+			'extra-terrestrial low',
+			'extra-terrestrial very low',
+			'titanic very high',
+			'titanic high',
+			'titanic low',
+			'titanic very low',
+			'supernatural very high',
+			'supernatural high',
+			'supernatural low',
+			'supernatural very low',
+			'worldclass very high',
+			'worldclass high',
+			'worldclass low',
+			'worldclass very low',
+			'magnificent very high',
+			'magnificent high',
+			'magnificent low',
+			'magnificent very low',
+			'brilliant very high',
+			'brilliant high',
+			'brilliant low',
+			'brilliant very low',
+			'outstanding very high',
+			'outstanding high',
+			'outstanding low',
+			'outstanding very low',
+			'formidable very high',
+			'formidable high',
+			'formidable low',
+			'formidable very low',
+			'excellent very high',
+			'excellent high',
+			'excellent low',
+			'excellent very low',
+			'solid very high',
+			'solid high',
+			'solid low',
+			'solid very low',
+			'passable very high',
+			'passable high',
+			'passable low',
+			'passable very low',
+			'inadequate very high',
+			'inadequate high',
+			'inadequate low',
+			'inadequate very low',
+			'weak very high',
+			'weak high',
+			'weak low',
+			'weak very low',
+			'poor very high',
+			'poor high',
+			'poor low',
+			'poor very low',
+			'wretched very high',
+			'wretched high',
+			'wretched low',
+			'wretched very low',
+			'disastrous very high',
+			'disastrous high',
+			'disastrous low',
+			'disastrous very low'
+		];
+		var skillNumber = [
+			20.75, 20.5, 20.25, 20,
+			19.75, 19.5, 19.25, 19,
+			18.75, 18.5, 18.25, 18,
+			17.75, 17.5, 17.25, 17,
+			16.75, 16.5, 16.25, 16,
+			15.75, 15.5, 15.25, 15,
+			14.75, 14.5, 14.25, 14,
+			13.75, 13.5, 13.25, 13,
+			12.75, 12.5, 12.25, 12,
+			11.75, 11.5, 11.25, 11,
+			10.75, 10.5, 10.25, 10,
+			9.75, 9.5, 9.25, 9,
+			8.75, 8.5, 8.25, 8,
+			7.75, 7.5, 7.25, 7,
+			6.75, 6.5, 6.25, 6,
+			5.75, 5.5, 5.25, 5,
+			4.75, 4.5, 4.25, 4,
+			3.75, 3.5, 3.25, 3,
+			2.75, 2.5, 2.25, 2,
+			1.75, 1.5, 1.25, 1
+
+		];
 
 	</script>
 </body>
