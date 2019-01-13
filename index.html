@@ -88,28 +88,29 @@
 			if (value < 0 || value > 20) value = 0;
 			var intValue = Math.floor(value);
 			var floatValue = value - intValue;
-			var diff = floatValue * 4;
+			floatValue = floatValue * 4;
+			intValue = intValue * 4 - 3 + diff
 			switch (pos) {
 				case 'LD':
-					arr[0] = intValue * 4 - 3 + diff;
+					arr[0] = intValue;
 					break;
 				case 'CD':
-					arr[1] = intValue * 4 - 3 + diff;
+					arr[1] = intValue;
 					break;
 				case 'RD':
-					arr[2] = intValue * 4 - 3 + diff;
+					arr[2] = intValue;
 					break;
 				case 'M':
-					arr[3] = intValue * 4 - 3 + diff;
+					arr[3] = intValue;
 					break;
 				case 'LA':
-					arr[4] = intValue * 4 - 3 + diff;
+					arr[4] = intValue;
 					break;
 				case 'CA':
-					arr[5] = intValue * 4 - 3 + diff;
+					arr[5] = intValue;
 					break;
 				case 'RA':
-					arr[6] = intValue * 4 - 3 + diff;
+					arr[6] = intValue;
 					break;
 			}
 			$('#ld').html('[' + arr[0] + ']');
