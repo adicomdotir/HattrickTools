@@ -12,21 +12,17 @@ body {
 	height: 100%;
 }
 
-.full-height {
-	height: 100%;
-}
-
 .table td {
 	text-align: center;
 }
 
-.table tr {
+.back tr {
 	line-height: 125px;
 	min-height: 125px;
 	height: 125px;
 }
 
-.table {
+.back {
 	background-color: #1A8C40;
 }
 
