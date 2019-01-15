@@ -110,11 +110,17 @@ window.calculateRating = function () {
     var def = (arr[0] + arr[1] + arr[2]);
     $('#def').html('Defence: ' + def);
     var mid = (arr[3] * 3);
+    var midDefualt = mid;
     mid = mid * filter[0] / 100;
     mid = mid * filter[1] / 100;
     mid = mid * filter[2] / 100;
     mid = Math.floor(mid);
-    $('#mid').html('Midfield: ' + mid);
+    midDefualt -= mid;
+    midDefualt *= -1;
+    var myClass = 'black';
+    if (midDefualt > 0) myClass = 'green';
+    if (midDefualt < 0) myClass = 'red';
+    $('#mid').html('Midfield: ' + mid + ' <b class="' + myClass +'">[' + midDefualt + ']</b>');
     var att = (arr[4] + arr[5] + arr[6]);
     $('#att').html('Attack: ' + att);
     $('#total_rating').html('Total: ' + (def + mid + att));
