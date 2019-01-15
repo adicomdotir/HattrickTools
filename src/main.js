@@ -13,7 +13,7 @@ $(document).ready(function() {
     }
 });
 
-function radioClick(type, value) {
+window.radioClick = function(type, value) {
     if (type == 1) {
         switch (value) {
             case 1:
@@ -51,7 +51,7 @@ function radioClick(type, value) {
     calculateRating();
 }
 
-function inputChange(pos, value) {
+window.inputChange = function (pos, value) {
     if (value < 0 || value > 20) value = 0;
     var intValue = Math.floor(value);
     var floatValue = value - intValue;
@@ -105,7 +105,7 @@ function inputChange(pos, value) {
     calculateRating();
 }
 
-function calculateRating() {
+window.calculateRating = function () {
     // Rating
     var def = (arr[0] + arr[1] + arr[2]);
     $('#def').html('Defence: ' + def);
