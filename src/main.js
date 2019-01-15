@@ -1,5 +1,12 @@
 var arr = [1, 1, 1, 1, 1, 1, 1];
 var filter = [100, 100, 100];
+var spiritItems = [
+    [100, 100, 72, 86, 93, 100, 107, 114, 121, 128, 135, 142], // normal
+    [100, 100, 81, 97, 105, 113, 122, 130, 138, 146, 154, 162], // mots
+    [100, 100, 63, 75, 81, 87, 92, 98, 104, 110, 116, 122] //
+];
+var teamSpirit = 0
+var negaresh = 1;
 
 $(document).ready(function() {
     for (var i = skillEng.length - 1; i >= 0; i--) {
@@ -11,19 +18,22 @@ $(document).ready(function() {
         $('#caSelect').append('<option value=' + skillNumber[i] + '>' + skillEng[i] + '</option>');
         $('#raSelect').append('<option value=' + skillNumber[i] + '>' + skillEng[i] + '</option>');
     }
+    for (var i = 0; i < teamSpirits.length; i++) {
+        $('#teamSpirit').append('<option value=' + i + '>' + teamSpirits[i] + '</option>');
+    }
 });
 
 window.radioClick = function(type, value) {
     if (type == 1) {
         switch (value) {
             case 1:
-                filter[0] = 100;
+                changeNegaresh(1);
                 break;
             case 2:
-                filter[0] = 111.49;
+                changeNegaresh(2);
                 break;
             case 3:
-                filter[0] = 83.945;
+                changeNegaresh(3);
                 break;
         }
     } else if (type == 2) {
@@ -49,6 +59,11 @@ window.radioClick = function(type, value) {
         }
     }
     calculateRating();
+}
+
+changeNegaresh = function(value) {
+    negaresh = value;
+    filter[0] = spiritItems[value - 1][teamSpirit];
 }
 
 window.inputChange = function (pos, value) {
@@ -130,6 +145,12 @@ window.calculateRating = function () {
     $('#ave_mid').html('Ave Midfield: ' + Math.round(mid / 3));
     $('#ave_att').html('Ave Attack: ' + Math.round(att / 3));
     $('#ave_total').html('Ave Total: ' + Math.round((def / 3 + mid / 3 + att / 3) / 3));
+}
+
+window.spiritChange = function(value) {
+    teamSpirit = value;
+    changeNegaresh(negaresh);
+    calculateRating();
 }
 
 var skillIran = [
@@ -261,4 +282,19 @@ var skillNumber = [
     2.75, 2.5, 2.25, 2,
     1.75, 1.5, 1.25, 1
 
+];
+
+var teamSpirits = [
+    'No Action',
+    'like the Cold War',
+    'murderous',
+    'furious',
+    'irritated',
+    'composed',
+    'calm',
+    'content',
+    'satisfied',
+    'delirious',
+    'walking on clouds',
+    'Paradise on Earth!'
 ];

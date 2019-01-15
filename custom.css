@@ -37,6 +37,11 @@ span {
 	color: yellow;
 }
 
+select {
+	text-align: center;
+  	text-align-last: center;
+}
+
 select.form-control {
 	margin-top: 8px;
 }
@@ -46,7 +51,7 @@ select.form-control {
 }
 
 .green {
-	color: #00FF00;
+	color: #55FF44;
 }
 
 .black {
