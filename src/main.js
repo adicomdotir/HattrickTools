@@ -140,6 +140,14 @@ window.calculateRating = function () {
     $('#att').html('Attack: ' + att);
     $('#total_rating').html('Total: ' + (def + mid + att));
 
+    var arr3 = Math.round(mid / 3);
+    // arr3 /= 4;
+    // var floatArr3 = arr3 - Math.floor(arr3);
+    // arr3 = Math.floor(arr3);
+    // floatArr3 /= 0.25;
+    // floatArr3 = Math.floor(floatArr3);
+    $('#m').html('[' + arr[3] + '] => [' + (arr3) + ']');
+
     // Average Rating
     $('#ave_def').html('Ave Defence: ' + Math.round(def / 3));
     $('#ave_mid').html('Ave Midfield: ' + Math.round(mid / 3));
