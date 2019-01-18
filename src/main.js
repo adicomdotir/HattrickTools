@@ -141,12 +141,14 @@ window.calculateRating = function () {
     $('#total_rating').html('Total: ' + (def + mid + att));
 
     var arr3 = Math.round(mid / 3);
-    // arr3 /= 4;
-    // var floatArr3 = arr3 - Math.floor(arr3);
-    // arr3 = Math.floor(arr3);
-    // floatArr3 /= 0.25;
-    // floatArr3 = Math.floor(floatArr3);
-    $('#m').html('[' + arr[3] + '] => [' + (arr3) + ']');
+    var newArr3 = Math.floor((arr3 + 3) / 4);
+    var floatArr3 = ((arr3 + 3) / 4) - newArr3;
+    $('#m').text('[' + arr[3] + '] => [' + (arr3) + ']');
+    var color = 'black';
+    if (arr[3] < arr3) color = 'green';
+    if (arr[3] > arr3) color = 'red';
+    $('#mDiff').val(newArr3 + floatArr3);
+    $('#mDiff').css('color', color);
 
     // Average Rating
     $('#ave_def').html('Ave Defence: ' + Math.round(def / 3));
