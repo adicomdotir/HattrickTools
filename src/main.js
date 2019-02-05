@@ -64,8 +64,8 @@ window.radioClick = function(type, value) {
 }
 
 changeNegaresh = function(value) {
-    negaresh = value;
-    let temp = spiritItems[value - 1][teamSpiritNew] - spiritItems[value - 1][teamSpirit];    
+    negaresh = value;    
+    let temp = spiritItems[value - 1][teamSpiritNew] - spiritItems[0][teamSpirit];    
     filter[0] = 100 + temp;
 }
 
