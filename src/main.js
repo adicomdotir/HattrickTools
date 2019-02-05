@@ -5,7 +5,8 @@ var spiritItems = [
     [100, 100, 81, 97, 105, 113, 122, 130, 138, 146, 154, 162], // mots
     [100, 100, 63, 75, 81, 87, 92, 98, 104, 110, 116, 122] //
 ];
-var teamSpirit = 0
+var teamSpirit = 2;
+var teamSpiritNew = 2;
 var negaresh = 1;
 
 $(document).ready(function() {
@@ -18,8 +19,9 @@ $(document).ready(function() {
         $('#caSelect').append('<option value=' + skillNumber[i] + '>' + skillEng[i] + '</option>');
         $('#raSelect').append('<option value=' + skillNumber[i] + '>' + skillEng[i] + '</option>');
     }
-    for (var i = 0; i < teamSpirits.length; i++) {
+    for (var i = 2; i < teamSpirits.length; i++) {
         $('#teamSpirit').append('<option value=' + i + '>' + teamSpirits[i] + '</option>');
+        $('#teamSpiritNew').append('<option value=' + i + '>' + teamSpirits[i] + '</option>');
     }
 });
 
@@ -63,7 +65,8 @@ window.radioClick = function(type, value) {
 
 changeNegaresh = function(value) {
     negaresh = value;
-    filter[0] = spiritItems[value - 1][teamSpirit];
+    let temp = spiritItems[value - 1][teamSpiritNew] - spiritItems[value - 1][teamSpirit];    
+    filter[0] = 100 + temp;
 }
 
 window.inputChange = function (pos, value) {
@@ -159,6 +162,12 @@ window.calculateRating = function () {
 
 window.spiritChange = function(value) {
     teamSpirit = value;
+    changeNegaresh(negaresh);
+    calculateRating();
+}
+
+window.spiritChangeNew = function(value) {
+    teamSpiritNew = value;
     changeNegaresh(negaresh);
     calculateRating();
 }

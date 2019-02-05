@@ -2,121 +2,146 @@
 <html>
 
 <head>
-	<title>Hattrick Tools</title>
-	<!--	<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">-->
-	<link rel="stylesheet" href="custom.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>Hattrick Tools</title>
+    <!--	<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">-->
+    <link rel="stylesheet" href="custom.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
 </head>
 
 <body>
-	<div class="container">
-		<div class="col-md-6">
-			<table class="table back">
-				<tr>
-					<td>
-						<div class="form-group">
-							<label>Right Defence <span id="rd">[1]</span></label>
-							<input type="number" id="rdInput" step="0.25" min="0" max="20" class="form-control" value="1" onchange="inputChange('RD', this.value)">
-							<select class="form-control" id="rdSelect" onchange="inputChange('RD', this.options[this.selectedIndex].value)"></select>
-						</div>
-					</td>
-					<td>
-						<div class="form-group">
-							<label>Central Defence <span id="cd">[1]</span></label>
-							<input type="number" id="cdInput" step="0.25" min="0" max="20" class="form-control" value="1" onchange="inputChange('CD', this.value)">
-							<select class="form-control" id="cdSelect" onchange="inputChange('CD', this.options[this.selectedIndex].value)"></select>
-						</div>
-					</td>
-					<td>
-						<div class="form-group">
-							<label>Left Defence <span id="ld">[1]</span></label>
-							<input type="number" id="ldInput" step="0.25" min="0" max="20" class="form-control" value="1" onchange="inputChange('LD', this.value)">
-							<select class="form-control" id="ldSelect" onchange="inputChange('LD', this.options[this.selectedIndex].value)"></select>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td colspan="3">
-						<div class="form-group text-center">
-							<label>Midfield <span id="m">[1]</span></label>
-							<div class='row'>
-								<div class='col-md-10'><input type="number" id="mInput" step="0.25" min="0" max="20" class="form-control" value="1" onchange="inputChange('M', this.value)"></div>
-								<div class='col-md-2'><input type="text" id="mDiff" class="form-control" value='1' disabled></div>
-							</div>
-							<select class="form-control" id="mSelect" onchange="inputChange('M', this.options[this.selectedIndex].value)"></select>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<div class="form-group">
-							<label>Right Attack <span id="ra">[1]</span></label>
-							<input type="number" id="raInput" step="0.25" min="0" max="20" class="form-control" value="1" onchange="inputChange('RA', this.value)">
-							<select class="form-control" id="raSelect" onchange="inputChange('RA', this.options[this.selectedIndex].value)"></select>
-						</div>
-					</td>
-					<td>
-						<div class="form-group">
-							<label>Central Attack <span id="ca">[1]</span></label>
-							<input type="number" id="caInput" step="0.25" min="0" max="20" class="form-control" value="1" onchange="inputChange('CA', this.value)">
-							<select class="form-control" id="caSelect" onchange="inputChange('CA', this.options[this.selectedIndex].value)"></select>
-						</div>
-					</td>
-					<td>
-						<div class="form-group">
-							<label>Left Attack <span id="la">[1]</span></label>
-							<input type="number" id="laInput" step="0.25" min="0" max="20" class="form-control" value="1" onchange="inputChange('LA', this.value)">
-							<select class="form-control" id="laSelect" onchange="inputChange('LA', this.options[this.selectedIndex].value)"></select>
-						</div>
-					</td>
-				</tr>
-			</table>
-		</div>
-		<div class="col-md-6">
-			<div class="col-md-12 text-center">
-				<h3>Team Spirit</h3>
-				<select class="form-control" id="teamSpirit" onchange="spiritChange(this.options[this.selectedIndex].value)"></select>
-				<h3>Filters</h3>
-				<div class="">
-					<label class="radio-inline"><input type="radio" onclick="radioClick(1, 1)" name="negaresh" checked>Normal</label>
-					<label class="radio-inline"><input type="radio" onclick="radioClick(1, 2)" name="negaresh">MOTS</label>
-					<label class="radio-inline"><input type="radio" onclick="radioClick(1, 3)" name="negaresh">PIC</label>
-				</div>
-				<div class="">
-					<label class="radio-inline"><input type="radio" onclick="radioClick(2, 1)" name="matchtype" checked>Away Match</label>
-					<label class="radio-inline"><input type="radio" onclick="radioClick(2, 2)" name="matchtype">Home Match</label>
-					<label class="radio-inline"><input type="radio" onclick="radioClick(2, 3)" name="matchtype">Derby</label>
-				</div>
-				<div class="">
-					<label class="radio-inline"><input type="radio" onclick="radioClick(3, 1)" name="tactic" checked>Other Tactic</label>
-					<label class="radio-inline"><input type="radio" onclick="radioClick(3, 2)" name="tactic">Counter Attack</label>
-				</div>
-			</div>
-			<div class="col-md-12 text-center">
-				<h3>Statistic</h3>
-				<table class="table table-sm">
-					<tr>
-						<td id="total_rating"><b>Total: 9</b></td>
-						<td id="ave_total"><b>Ave Total: 3</b></td>
-					</tr>
-					<tr>
-						<td id="def">Defence: 3</td>
-						<td id="ave_def">Ave Defence: 1</td>
-					</tr>
-					<tr>
-						<td id="mid">Midfield: 3</td>
-						<td id="ave_mid">Ave Midfield: 1</td>
-					</tr>
-					<tr>
-						<td id="att">Attack: 3</td>
-						<td id="ave_att">Ave Attack: 1</td>
-					</tr>
-				</table>
-		</div>
-	</div>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	<script src="dist/main.js"></script>
+    <div class="container">
+        <div class="col-md-6">
+            <table class="table back">
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label>Right Defence <span id="rd">[1]</span></label>
+                            <input type="number" id="rdInput" step="0.25" min="0" max="20" class="form-control" value="1"
+                                onchange="inputChange('RD', this.value)">
+                            <select class="form-control" id="rdSelect" onchange="inputChange('RD', this.options[this.selectedIndex].value)"></select>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label>Central Defence <span id="cd">[1]</span></label>
+                            <input type="number" id="cdInput" step="0.25" min="0" max="20" class="form-control" value="1"
+                                onchange="inputChange('CD', this.value)">
+                            <select class="form-control" id="cdSelect" onchange="inputChange('CD', this.options[this.selectedIndex].value)"></select>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label>Left Defence <span id="ld">[1]</span></label>
+                            <input type="number" id="ldInput" step="0.25" min="0" max="20" class="form-control" value="1"
+                                onchange="inputChange('LD', this.value)">
+                            <select class="form-control" id="ldSelect" onchange="inputChange('LD', this.options[this.selectedIndex].value)"></select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <div class="form-group text-center">
+                            <label>Midfield <span id="m">[1]</span></label>
+                            <div class='row'>
+                                <div class='col-md-10'><input type="number" id="mInput" step="0.25" min="0" max="20"
+                                        class="form-control" value="1" onchange="inputChange('M', this.value)"></div>
+                                <div class='col-md-2'><input type="text" id="mDiff" class="form-control" value='1'
+                                        disabled></div>
+                            </div>
+                            <select class="form-control" id="mSelect" onchange="inputChange('M', this.options[this.selectedIndex].value)"></select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label>Right Attack <span id="ra">[1]</span></label>
+                            <input type="number" id="raInput" step="0.25" min="0" max="20" class="form-control" value="1"
+                                onchange="inputChange('RA', this.value)">
+                            <select class="form-control" id="raSelect" onchange="inputChange('RA', this.options[this.selectedIndex].value)"></select>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label>Central Attack <span id="ca">[1]</span></label>
+                            <input type="number" id="caInput" step="0.25" min="0" max="20" class="form-control" value="1"
+                                onchange="inputChange('CA', this.value)">
+                            <select class="form-control" id="caSelect" onchange="inputChange('CA', this.options[this.selectedIndex].value)"></select>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label>Left Attack <span id="la">[1]</span></label>
+                            <input type="number" id="laInput" step="0.25" min="0" max="20" class="form-control" value="1"
+                                onchange="inputChange('LA', this.value)">
+                            <select class="form-control" id="laSelect" onchange="inputChange('LA', this.options[this.selectedIndex].value)"></select>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <div class="col-md-12 text-center">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Team Spirit</div>
+                    <div class="panel-body">
+                        <div class="col-md-6">
+                            <h5>Default</h5>
+                            <select class="form-control" id="teamSpirit" onchange="spiritChange(this.options[this.selectedIndex].value)"></select>
+                        </div>
+                        <div class="col-md-6">
+                            <h5>New</h5>
+                            <select class="form-control" id="teamSpiritNew" onchange="spiritChangeNew(this.options[this.selectedIndex].value)"></select>
+                        </div>
+                    </div>
+                </div>
+                <h3>Filters</h3>
+                <div class="">
+                    <label class="radio-inline"><input type="radio" onclick="radioClick(1, 1)" name="negaresh" checked>Normal</label>
+                    <label class="radio-inline"><input type="radio" onclick="radioClick(1, 2)" name="negaresh">MOTS</label>
+                    <label class="radio-inline"><input type="radio" onclick="radioClick(1, 3)" name="negaresh">PIC</label>
+                </div>
+                <div class="">
+                    <label class="radio-inline"><input type="radio" onclick="radioClick(2, 1)" name="matchtype" checked>Away
+                        Match</label>
+                    <label class="radio-inline"><input type="radio" onclick="radioClick(2, 2)" name="matchtype">Home
+                        Match</label>
+                    <label class="radio-inline"><input type="radio" onclick="radioClick(2, 3)" name="matchtype">Derby</label>
+                </div>
+                <div class="">
+                    <label class="radio-inline"><input type="radio" onclick="radioClick(3, 1)" name="tactic" checked>Other
+                        Tactic</label>
+                    <label class="radio-inline"><input type="radio" onclick="radioClick(3, 2)" name="tactic">Counter
+                        Attack</label>
+                </div>
+            </div>
+            <div class="col-md-12 text-center">
+                <h3>Statistic</h3>
+                <table class="table table-sm">
+                    <tr>
+                        <td id="total_rating"><b>Total: 9</b></td>
+                        <td id="ave_total"><b>Ave Total: 3</b></td>
+                    </tr>
+                    <tr>
+                        <td id="def">Defence: 3</td>
+                        <td id="ave_def">Ave Defence: 1</td>
+                    </tr>
+                    <tr>
+                        <td id="mid">Midfield: 3</td>
+                        <td id="ave_mid">Ave Midfield: 1</td>
+                    </tr>
+                    <tr>
+                        <td id="att">Attack: 3</td>
+                        <td id="ave_att">Ave Attack: 1</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+        <script src="dist/main.js"></script>
 </body>
 
 </html>
