@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { teamNames } from './config/localdata';
 import { Router } from '@angular/router';
 
 @Component({
