@@ -1,4 +1,4 @@
-export const SKILL_IsR = [
+export const SKILL_IR = [
     'کهکشانی ',
     'آرمانی ',
     'جادویی ',
@@ -105,7 +105,7 @@ export const SKILL_ENG = [
     'disastrous very low'
 ];
 
-export const SLILL_NUMBER = [
+export const SKILL_NUMBER = [
     20.75, 20.5, 20.25, 20,
     19.75, 19.5, 19.25, 19,
     18.75, 18.5, 18.25, 18,

@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { CustomRoutingModule } from './custom-routing.module';
 import { HomeComponent } from './home/home.component';
+import { ReversePipe } from 'src/app/shared/pipes/reverse.pipe';
 
 @NgModule({
     imports: [
@@ -12,7 +13,8 @@ import { HomeComponent } from './home/home.component';
         CustomRoutingModule
     ],
     declarations: [
-        HomeComponent
+        HomeComponent,
+        ReversePipe // TODO: move to shared module
     ]
 })
 export class CustomModule { }

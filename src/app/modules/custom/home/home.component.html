@@ -1,74 +1,88 @@
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-7">
         <table class="table back">
             <tr>
                 <td>
                     <div class="form-group">
-                        <label>Right Defence <span id="rd">[1]</span></label>
-                        <input type="number" id="rdInput" step="0.25" min="0" max="20" class="form-control" value="1"
-                            onchange="inputChange('RD', this.value)">
-                        <select class="form-control" id="rdSelect" onchange="inputChange('RD', this.options[this.selectedIndex].value)"></select>
+                        <label>Right Defence <span id="rd">[{{rateValues[2]}}]</span></label>
+                        <input type="number" id="rdInput" step="0.25" min="0" max="20" class="form-control" [(ngModel)]='defaultValues[2]'
+                            (change)="skillInputChange('RD', $event)">
+                         <select class="form-control" [(ngModel)]='defaultValues[2]'id="rdSelect" (change)="skillInputChange('RD', $event)">
+                            <option *ngFor='let item of skillEngStrings | reverse; let i = index' value="{{skillNumbers[skillEngStrings.length-i-1]}}">{{item}}</option>
+                        </select>
                     </div>
                 </td>
                 <td>
                     <div class="form-group">
-                        <label>Central Defence <span id="cd">[1]</span></label>
-                        <input type="number" id="cdInput" step="0.25" min="0" max="20" class="form-control" value="1"
-                            onchange="inputChange('CD', this.value)">
-                        <select class="form-control" id="cdSelect" onchange="inputChange('CD', this.options[this.selectedIndex].value)"></select>
+                        <label>Central Defence <span id="cd">[{{rateValues[1]}}]</span></label>
+                        <input type="number" id="cdInput" step="0.25" min="0" max="20" class="form-control" [(ngModel)]='defaultValues[1]'
+                            (change)="skillInputChange('CD', $event)">
+                         <select class="form-control" [(ngModel)]='defaultValues[1]'id="cdSelect" (change)="skillInputChange('CD', $event)">
+                            <option *ngFor='let item of skillEngStrings | reverse; let i = index' value="{{skillNumbers[skillEngStrings.length-i-1]}}">{{item}}</option>
+                        </select>
                     </div>
                 </td>
                 <td>
                     <div class="form-group">
-                        <label>Left Defence <span id="ld">[1]</span></label>
-                        <input type="number" id="ldInput" step="0.25" min="0" max="20" class="form-control" value="1"
-                            onchange="inputChange('LD', this.value)">
-                        <select class="form-control" id="ldSelect" onchange="inputChange('LD', this.options[this.selectedIndex].value)"></select>
+                        <label>Left Defence <span id="ld">[{{rateValues[0]}}]</span></label>
+                        <input type="number" id="ldInput" step="0.25" min="0" max="20" class="form-control"  [(ngModel)]='defaultValues[0]'
+                            (change)="skillInputChange('LD', $event)">
+                         <select class="form-control" [(ngModel)]='defaultValues[0]'id="ldSelect" (change)="skillInputChange('LD', $event)">
+                            <option *ngFor='let item of skillEngStrings | reverse; let i = index' value="{{skillNumbers[skillEngStrings.length-i-1]}}">{{item}}</option>
+                        </select>
                     </div>
                 </td>
             </tr>
             <tr>
                 <td colspan="3">
                     <div class="form-group text-center">
-                        <label>Midfield <span id="m">[1]</span></label>
+                        <label>Midfield <span id="m">[{{rateValues[3]}}]</span></label>
                         <div class='row'>
                             <div class='col-md-10'><input type="number" id="mInput" step="0.25" min="0" max="20" class="form-control"
-                                    value="1" onchange="inputChange('M', this.value)"></div>
+                                     [(ngModel)]='defaultValues[3]' (change)="skillInputChange('M', $event)"></div>
                             <div class='col-md-2'><input type="text" id="mDiff" class="form-control" value='1' disabled></div>
                         </div>
-                        <select class="form-control" id="mSelect" onchange="inputChange('M', this.options[this.selectedIndex].value)"></select>
+                         <select class="form-control" [(ngModel)]='defaultValues[3]'id="mSelect" (change)="skillInputChange('M', $event)">
+                            <option *ngFor='let item of skillEngStrings | reverse; let i = index' value="{{skillNumbers[skillEngStrings.length-i-1]}}">{{item}}</option>
+                        </select>
                     </div>
                 </td>
             </tr>
             <tr>
                 <td>
                     <div class="form-group">
-                        <label>Right Attack <span id="ra">[1]</span></label>
-                        <input type="number" id="raInput" step="0.25" min="0" max="20" class="form-control" value="1"
-                            onchange="inputChange('RA', this.value)">
-                        <select class="form-control" id="raSelect" onchange="inputChange('RA', this.options[this.selectedIndex].value)"></select>
+                        <label>Right Attack <span id="ra">[{{rateValues[6]}}]</span></label>
+                        <input type="number" id="raInput" step="0.25" min="0" max="20" class="form-control"  [(ngModel)]='defaultValues[6]'
+                            (change)="skillInputChange('RA', $event)">
+                         <select class="form-control" [(ngModel)]='defaultValues[6]'id="raSelect" (change)="skillInputChange('RA', $event)">
+                            <option *ngFor='let item of skillEngStrings | reverse; let i = index' value="{{skillNumbers[skillEngStrings.length-i-1]}}">{{item}}</option>
+                        </select>
                     </div>
                 </td>
                 <td>
                     <div class="form-group">
-                        <label>Central Attack <span id="ca">[1]</span></label>
-                        <input type="number" id="caInput" step="0.25" min="0" max="20" class="form-control" value="1"
-                            onchange="inputChange('CA', this.value)">
-                        <select class="form-control" id="caSelect" onchange="inputChange('CA', this.options[this.selectedIndex].value)"></select>
+                        <label>Central Attack <span id="ca">[{{rateValues[5]}}]</span></label>
+                        <input type="number" id="caInput" step="0.25" min="0" max="20" class="form-control"  [(ngModel)]='defaultValues[5]'
+                            (change)="skillInputChange('CA', $event)">
+                         <select class="form-control" [(ngModel)]='defaultValues[5]'id="caSelect" (change)="skillInputChange('CA', $event)">
+                            <option *ngFor='let item of skillEngStrings | reverse; let i = index' value="{{skillNumbers[skillEngStrings.length-i-1]}}">{{item}}</option>
+                        </select>
                     </div>
                 </td>
                 <td>
                     <div class="form-group">
-                        <label>Left Attack <span id="la">[1]</span></label>
-                        <input type="number" id="laInput" step="0.25" min="0" max="20" class="form-control" value="1"
-                            onchange="inputChange('LA', this.value)">
-                        <select class="form-control" id="laSelect" onchange="inputChange('LA', this.options[this.selectedIndex].value)"></select>
+                        <label>Left Attack <span id="la">[{{rateValues[4]}}]</span></label>
+                        <input type="number" id="laInput" step="0.25" min="0" max="20" class="form-control"  [(ngModel)]='defaultValues[4]'
+                            (change)="skillInputChange('LA', $event)">
+                         <select class="form-control" [(ngModel)]='defaultValues[4]'id="laSelect" (change)="skillInputChange('LA', $event)">
+                            <option *ngFor='let item of skillEngStrings | reverse; let i = index' value="{{skillNumbers[skillEngStrings.length-i-1]}}">{{item}}</option>
+                        </select>
                     </div>
                 </td>
             </tr>
         </table>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-5">
         <div class="col-md-12 text-center">
             <div class="card">
                 <div class="card-header">Team Spirit</div>
@@ -76,13 +90,13 @@
                     <div class="row">
                         <div class="col-md-6">
                             <h5>Default</h5>
-                            <select class="form-control" id="teamSpirit" onchange="spiritChange(this.options[this.selectedIndex].value)">
+                             <select class="form-control" [(ngModel)]='defaultValues[0]'id="teamSpirit" (change)="spiritChange($event)">
                                 <option *ngFor='let item of localTeamSpirits'>{{item}}</option>
                             </select>
                         </div>
                         <div class="col-md-6">
                             <h5>New</h5>
-                            <select class="form-control" id="teamSpiritNew" onchange="spiritChangeNew(this.options[this.selectedIndex].value)">
+                             <select class="form-control" [(ngModel)]='defaultValues[0]'id="teamSpiritNew" (change)="spiritChangeNew($event)">
                                 <option *ngFor='let item of localTeamSpirits'>{{item}}</option>
                             </select>
                         </div>
@@ -163,20 +177,20 @@
                 <div class="card-body">
                     <table class="table table-sm">
                         <tr>
-                            <td id="total_rating"><b>Total: 9</b></td>
-                            <td id="ave_total"><b>Ave Total: 3</b></td>
+                            <td id="total_rating"><b>Total: {{defRate + midRate + attRate}}</b></td>
+                            <td id="ave_total"><b>Ave Total: {{getAverage(getAverage(defRate) + getAverage(midRate) + getAverage(attRate))}}</b></td>
                         </tr>
                         <tr>
-                            <td id="def">Defence: 3</td>
-                            <td id="ave_def">Ave Defence: 1</td>
+                            <td id="def">Defence: {{defRate}}</td>
+                            <td id="ave_def">Ave Defence: {{getAverage(defRate)}}</td>
                         </tr>
                         <tr>
-                            <td id="mid">Midfield: 3</td>
-                            <td id="ave_mid">Ave Midfield: 1</td>
+                            <td id="mid">Midfield: {{midRate}} [{{midDefaultRate}}]</td>
+                            <td id="ave_mid">Ave Midfield: {{getAverage(midRate)}}</td>
                         </tr>
                         <tr>
-                            <td id="att">Attack: 3</td>
-                            <td id="ave_att">Ave Attack: 1</td>
+                            <td id="att">Attack: {{attRate}}</td>
+                            <td id="ave_att">Ave Attack: {{getAverage(attRate)}}</td>
                         </tr>
                     </table>
                 </div>
