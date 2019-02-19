@@ -47,8 +47,8 @@
                             <div class='col-md-10'><input type="number" id="mInput" step="0.25" min="0" max="20"
                                     class="form-control" [(ngModel)]='defaultValues[3]'
                                     (change)="skillInputChange('M', $event)"></div>
-                            <div class='col-md-2'><input type="text" id="mDiff" class="form-control"
-                                    disabled value="{{intNewMidRate + floatNewMidRate}}"></div>
+                            <div class='col-md-2'><input type="text" id="mDiff" class="form-control" disabled
+                                    value="{{intNewMidRate + floatNewMidRate}}"></div>
                         </div>
                         <select class="form-control" [(ngModel)]='defaultValues[3]' id="mSelect"
                             (change)="skillInputChange('M', $event)">
@@ -106,14 +106,14 @@
                     <div class="row">
                         <div class="col-md-6">
                             <h5>Default</h5>
-                            <select class="form-control" id="teamSpirit" (change)="spiritChange($event)">
-                                <option *ngFor='let item of localTeamSpirits'>{{item}}</option>
+                            <select class="form-control" id="teamSpirit" [(ngModel)]="oldSpirit" (change)='changeSpirit()'>
+                                <option *ngFor='let item of localTeamSpirits; let i = index' value="{{i}}">{{item}}</option>
                             </select>
                         </div>
                         <div class="col-md-6">
                             <h5>New</h5>
-                            <select class="form-control" id="teamSpiritNew" (change)="spiritChangeNew($event)">
-                                <option *ngFor='let item of localTeamSpirits'>{{item}}</option>
+                            <select class="form-control" id="teamSpiritNew" [(ngModel)]="newSpirit" (change)='changeSpirit()'>
+                                <option *ngFor='let item of localTeamSpirits; let i = index' value="{{i}}">{{item}}</option>
                             </select>
                         </div>
                     </div>
@@ -125,64 +125,52 @@
                     <div class="">
                         <div class="form-check-inline">
                             <label class="form-check-label" for="radio1">
-                                <input type="radio" class="form-check-input" name="negaresh" checked>Normal
+                                <input type="radio" class="form-check-input" name="negaresh" (click)="filterClick(1, 1)"
+                                    checked>Normal
                             </label>
                         </div>
                         <div class="form-check-inline">
                             <label class="form-check-label" for="radio2">
-                                <input type="radio" class="form-check-input" name="negaresh">MOTS
+                                <input type="radio" class="form-check-input" name="negaresh"
+                                    (click)="filterClick(1, 2)">MOTS
                             </label>
                         </div>
                         <div class="form-check-inline">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="negaresh">PIC
+                                <input type="radio" class="form-check-input" name="negaresh"
+                                    (click)="filterClick(1, 3)">PIC
                             </label>
                         </div>
-                        <!-- <label class="radio-inline"><input type="radio" onclick="radioClick(1, 1)" name="negaresh"
-                                checked></label>
-                        <label class="radio-inline"><input type="radio" onclick="radioClick(1, 2)" name="negaresh">MOTS</label>
-                        <label class="radio-inline"><input type="radio" onclick="radioClick(1, 3)" name="negaresh">PIC</label> -->
                     </div>
                     <div class="">
                         <div class="form-check-inline">
                             <label class="form-check-label" for="radio1">
-                                <input type="radio" class="form-check-input" name="matchtype" checked>Away Match
+                                <input type="radio" class="form-check-input" name="matchtype" (click)="filterClick(2, 1)" checked>Away Match
                             </label>
                         </div>
                         <div class="form-check-inline">
                             <label class="form-check-label" for="radio2">
-                                <input type="radio" class="form-check-input" name="matchtype">Home
+                                <input type="radio" class="form-check-input" name="matchtype" (click)="filterClick(2, 2)">Home
                                 Match
                             </label>
                         </div>
                         <div class="form-check-inline">
                             <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="matchtype">Derby
+                                <input type="radio" class="form-check-input" name="matchtype" (click)="filterClick(2, 3)">Derby
                             </label>
                         </div>
-                        <!-- <label class="radio-inline"><input type="radio" onclick="radioClick(2, 1)" name="matchtype"
-                                checked>Away
-                            Match</label>
-                        <label class="radio-inline"><input type="radio" onclick="radioClick(2, 2)" name="matchtype">Home
-                            Match</label>
-                        <label class="radio-inline"><input type="radio" onclick="radioClick(2, 3)" name="matchtype">Derby</label> -->
                     </div>
                     <div class="">
                         <div class="form-check-inline">
                             <label class="form-check-label" for="radio1">
-                                <input type="radio" class="form-check-input" name="tactic" checked>Other Tactic
+                                <input type="radio" class="form-check-input" name="tactic" (click)="filterClick(3, 1)" checked>Other Tactic
                             </label>
                         </div>
                         <div class="form-check-inline">
                             <label class="form-check-label" for="radio2">
-                                <input type="radio" class="form-check-input" name="tactic">Counter Attack
+                                <input type="radio" class="form-check-input" name="tactic" (click)="filterClick(3, 2)">Counter Attack
                             </label>
                         </div>
-                        <!-- <label class="radio-inline"><input type="radio" onclick="radioClick(3, 1)" name="tactic"
-                                checked>Other
-                            Tactic</label>
-                        <label class="radio-inline"><input type="radio" onclick="radioClick(3, 2)" name="tactic">Counter
-                            Attack</label> -->
                     </div>
                 </div>
             </div>
