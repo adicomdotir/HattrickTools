@@ -5,8 +5,8 @@
 html,
 body {
     height: 100%;
-    padding-top: 16px;
-	/* background-image: url("./assets/images/bg.png"); */
+    /* padding-top: 16px; */
+	background-image: url("./assets/images/bg.png");
 }
 
 .container {
@@ -14,12 +14,6 @@ body {
 	height: 100%;
 	background-color: #FFF;
 	padding-top: 32px;
-}
-
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
 }
 
 .table td {
@@ -33,7 +27,7 @@ footer {
 }
 
 .back {
-	/* background-color: #1A8C40; */
+	background-color: #1A8C40;
 }
 
 input {
@@ -46,7 +40,7 @@ span {
 
 select {
 	text-align: center;
-  	text-align-last: center;
+    text-align-last: center;
 }
 
 select.form-control {
@@ -63,13 +57,4 @@ select.form-control {
 
 .black {
 	color: #000;
-}
-
-.footer {
-    margin-top: 20px;
-    padding: 0.5rem 0;
-    color: rgb(56, 55, 55);
-    text-align: center;
-    background-color: #f9f9f9;
-    border-top: .05rem solid #e5e5e5;
 }

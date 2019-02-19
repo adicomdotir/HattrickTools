@@ -5,30 +5,36 @@
                 <td>
                     <div class="form-group">
                         <label>Right Defence <span id="rd">[{{rateValues[2]}}]</span></label>
-                        <input type="number" id="rdInput" step="0.25" min="0" max="20" class="form-control" [(ngModel)]='defaultValues[2]'
+                        <input type="number" id="rdInput" step="0.25" min="0" max="20" class="form-control"
+                            [(ngModel)]='defaultValues[2]' (change)="skillInputChange('RD', $event)">
+                        <select class="form-control" [(ngModel)]='defaultValues[2]' id="rdSelect"
                             (change)="skillInputChange('RD', $event)">
-                         <select class="form-control" [(ngModel)]='defaultValues[2]'id="rdSelect" (change)="skillInputChange('RD', $event)">
-                            <option *ngFor='let item of skillEngStrings | reverse; let i = index' value="{{skillNumbers[skillEngStrings.length-i-1]}}">{{item}}</option>
+                            <option *ngFor='let item of skillEngStrings | reverse; let i = index'
+                                value="{{skillNumbers[skillEngStrings.length-i-1]}}">{{item}}</option>
                         </select>
                     </div>
                 </td>
                 <td>
                     <div class="form-group">
                         <label>Central Defence <span id="cd">[{{rateValues[1]}}]</span></label>
-                        <input type="number" id="cdInput" step="0.25" min="0" max="20" class="form-control" [(ngModel)]='defaultValues[1]'
+                        <input type="number" id="cdInput" step="0.25" min="0" max="20" class="form-control"
+                            [(ngModel)]='defaultValues[1]' (change)="skillInputChange('CD', $event)">
+                        <select class="form-control" [(ngModel)]='defaultValues[1]' id="cdSelect"
                             (change)="skillInputChange('CD', $event)">
-                         <select class="form-control" [(ngModel)]='defaultValues[1]'id="cdSelect" (change)="skillInputChange('CD', $event)">
-                            <option *ngFor='let item of skillEngStrings | reverse; let i = index' value="{{skillNumbers[skillEngStrings.length-i-1]}}">{{item}}</option>
+                            <option *ngFor='let item of skillEngStrings | reverse; let i = index'
+                                value="{{skillNumbers[skillEngStrings.length-i-1]}}">{{item}}</option>
                         </select>
                     </div>
                 </td>
                 <td>
                     <div class="form-group">
                         <label>Left Defence <span id="ld">[{{rateValues[0]}}]</span></label>
-                        <input type="number" id="ldInput" step="0.25" min="0" max="20" class="form-control"  [(ngModel)]='defaultValues[0]'
+                        <input type="number" id="ldInput" step="0.25" min="0" max="20" class="form-control"
+                            [(ngModel)]='defaultValues[0]' (change)="skillInputChange('LD', $event)">
+                        <select class="form-control" [(ngModel)]='defaultValues[0]' id="ldSelect"
                             (change)="skillInputChange('LD', $event)">
-                         <select class="form-control" [(ngModel)]='defaultValues[0]'id="ldSelect" (change)="skillInputChange('LD', $event)">
-                            <option *ngFor='let item of skillEngStrings | reverse; let i = index' value="{{skillNumbers[skillEngStrings.length-i-1]}}">{{item}}</option>
+                            <option *ngFor='let item of skillEngStrings | reverse; let i = index'
+                                value="{{skillNumbers[skillEngStrings.length-i-1]}}">{{item}}</option>
                         </select>
                     </div>
                 </td>
@@ -36,14 +42,18 @@
             <tr>
                 <td colspan="3">
                     <div class="form-group text-center">
-                        <label>Midfield <span id="m">[{{rateValues[3]}}]</span></label>
+                        <label>Midfield <span id="m">[{{rateValues[3]}}] => [{{newMidRate}}]</span></label>
                         <div class='row'>
-                            <div class='col-md-10'><input type="number" id="mInput" step="0.25" min="0" max="20" class="form-control"
-                                     [(ngModel)]='defaultValues[3]' (change)="skillInputChange('M', $event)"></div>
-                            <div class='col-md-2'><input type="text" id="mDiff" class="form-control" value='1' disabled></div>
+                            <div class='col-md-10'><input type="number" id="mInput" step="0.25" min="0" max="20"
+                                    class="form-control" [(ngModel)]='defaultValues[3]'
+                                    (change)="skillInputChange('M', $event)"></div>
+                            <div class='col-md-2'><input type="text" id="mDiff" class="form-control"
+                                    disabled value="{{intNewMidRate + floatNewMidRate}}"></div>
                         </div>
-                         <select class="form-control" [(ngModel)]='defaultValues[3]'id="mSelect" (change)="skillInputChange('M', $event)">
-                            <option *ngFor='let item of skillEngStrings | reverse; let i = index' value="{{skillNumbers[skillEngStrings.length-i-1]}}">{{item}}</option>
+                        <select class="form-control" [(ngModel)]='defaultValues[3]' id="mSelect"
+                            (change)="skillInputChange('M', $event)">
+                            <option *ngFor='let item of skillEngStrings | reverse; let i = index'
+                                value="{{skillNumbers[skillEngStrings.length-i-1]}}">{{item}}</option>
                         </select>
                     </div>
                 </td>
@@ -52,30 +62,36 @@
                 <td>
                     <div class="form-group">
                         <label>Right Attack <span id="ra">[{{rateValues[6]}}]</span></label>
-                        <input type="number" id="raInput" step="0.25" min="0" max="20" class="form-control"  [(ngModel)]='defaultValues[6]'
+                        <input type="number" id="raInput" step="0.25" min="0" max="20" class="form-control"
+                            [(ngModel)]='defaultValues[6]' (change)="skillInputChange('RA', $event)">
+                        <select class="form-control" [(ngModel)]='defaultValues[6]' id="raSelect"
                             (change)="skillInputChange('RA', $event)">
-                         <select class="form-control" [(ngModel)]='defaultValues[6]'id="raSelect" (change)="skillInputChange('RA', $event)">
-                            <option *ngFor='let item of skillEngStrings | reverse; let i = index' value="{{skillNumbers[skillEngStrings.length-i-1]}}">{{item}}</option>
+                            <option *ngFor='let item of skillEngStrings | reverse; let i = index'
+                                value="{{skillNumbers[skillEngStrings.length-i-1]}}">{{item}}</option>
                         </select>
                     </div>
                 </td>
                 <td>
                     <div class="form-group">
                         <label>Central Attack <span id="ca">[{{rateValues[5]}}]</span></label>
-                        <input type="number" id="caInput" step="0.25" min="0" max="20" class="form-control"  [(ngModel)]='defaultValues[5]'
+                        <input type="number" id="caInput" step="0.25" min="0" max="20" class="form-control"
+                            [(ngModel)]='defaultValues[5]' (change)="skillInputChange('CA', $event)">
+                        <select class="form-control" [(ngModel)]='defaultValues[5]' id="caSelect"
                             (change)="skillInputChange('CA', $event)">
-                         <select class="form-control" [(ngModel)]='defaultValues[5]'id="caSelect" (change)="skillInputChange('CA', $event)">
-                            <option *ngFor='let item of skillEngStrings | reverse; let i = index' value="{{skillNumbers[skillEngStrings.length-i-1]}}">{{item}}</option>
+                            <option *ngFor='let item of skillEngStrings | reverse; let i = index'
+                                value="{{skillNumbers[skillEngStrings.length-i-1]}}">{{item}}</option>
                         </select>
                     </div>
                 </td>
                 <td>
                     <div class="form-group">
                         <label>Left Attack <span id="la">[{{rateValues[4]}}]</span></label>
-                        <input type="number" id="laInput" step="0.25" min="0" max="20" class="form-control"  [(ngModel)]='defaultValues[4]'
+                        <input type="number" id="laInput" step="0.25" min="0" max="20" class="form-control"
+                            [(ngModel)]='defaultValues[4]' (change)="skillInputChange('LA', $event)">
+                        <select class="form-control" [(ngModel)]='defaultValues[4]' id="laSelect"
                             (change)="skillInputChange('LA', $event)">
-                         <select class="form-control" [(ngModel)]='defaultValues[4]'id="laSelect" (change)="skillInputChange('LA', $event)">
-                            <option *ngFor='let item of skillEngStrings | reverse; let i = index' value="{{skillNumbers[skillEngStrings.length-i-1]}}">{{item}}</option>
+                            <option *ngFor='let item of skillEngStrings | reverse; let i = index'
+                                value="{{skillNumbers[skillEngStrings.length-i-1]}}">{{item}}</option>
                         </select>
                     </div>
                 </td>
@@ -83,27 +99,27 @@
         </table>
     </div>
     <div class="col-md-5">
-        <div class="col-md-12 text-center">
-            <div class="card">
+        <div class="col-md-12">
+            <div class="card text-center">
                 <div class="card-header">Team Spirit</div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
                             <h5>Default</h5>
-                             <select class="form-control" [(ngModel)]='defaultValues[0]'id="teamSpirit" (change)="spiritChange($event)">
+                            <select class="form-control" id="teamSpirit" (change)="spiritChange($event)">
                                 <option *ngFor='let item of localTeamSpirits'>{{item}}</option>
                             </select>
                         </div>
                         <div class="col-md-6">
                             <h5>New</h5>
-                             <select class="form-control" [(ngModel)]='defaultValues[0]'id="teamSpiritNew" (change)="spiritChangeNew($event)">
+                            <select class="form-control" id="teamSpiritNew" (change)="spiritChangeNew($event)">
                                 <option *ngFor='let item of localTeamSpirits'>{{item}}</option>
                             </select>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="card">
+            <div class="card text-center">
                 <div class="card-header">Filters</div>
                 <div class="card-body">
                     <div class="">
@@ -154,12 +170,12 @@
                     <div class="">
                         <div class="form-check-inline">
                             <label class="form-check-label" for="radio1">
-                                <input type="radio" class="form-check-input" name="matchtype" checked>Other Tactic
+                                <input type="radio" class="form-check-input" name="tactic" checked>Other Tactic
                             </label>
                         </div>
                         <div class="form-check-inline">
                             <label class="form-check-label" for="radio2">
-                                <input type="radio" class="form-check-input" name="matchtype">Counter Attack
+                                <input type="radio" class="form-check-input" name="tactic">Counter Attack
                             </label>
                         </div>
                         <!-- <label class="radio-inline"><input type="radio" onclick="radioClick(3, 1)" name="tactic"
@@ -170,15 +186,16 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-12 text-center">
-            <div class="card">
+            <div class="card text-center">
                 <div class="card-header">Statistic</div>
                 <div class="card-body">
                     <table class="table table-sm">
                         <tr>
                             <td id="total_rating"><b>Total: {{defRate + midRate + attRate}}</b></td>
-                            <td id="ave_total"><b>Ave Total: {{getAverage(getAverage(defRate) + getAverage(midRate) + getAverage(attRate))}}</b></td>
+                            <td id="ave_total">
+                                <b>Ave Total: {{getAverage(getAverage(defRate) + getAverage(midRate) +
+                                    getAverage(attRate))}}</b>
+                            </td>
                         </tr>
                         <tr>
                             <td id="def">Defence: {{defRate}}</td>

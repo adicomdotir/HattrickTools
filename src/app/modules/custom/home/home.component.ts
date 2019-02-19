@@ -18,6 +18,9 @@ export class HomeComponent implements OnInit {
     midRate = 3;
     midDefaultRate = 3;
     attRate = 3;
+    newMidRate = 1;
+    intNewMidRate = 1;
+    floatNewMidRate = 0;
 
     constructor(private router: Router) { }
 
@@ -63,7 +66,6 @@ export class HomeComponent implements OnInit {
     calculateRating() {
         // Rating
         this.defRate = (this.rateValues[0] + this.rateValues[1] + this.rateValues[2]);
-        // $('#def').html('Defence: ' + def);
         this.midRate = (this.rateValues[3] * 3);
         this.midDefaultRate = this.midRate;
         // mid = mid * filter[0] / 100;
@@ -75,19 +77,16 @@ export class HomeComponent implements OnInit {
         // var myClass = 'black';
         // if (midDefualt > 0) myClass = 'green';
         // if (midDefualt < 0) myClass = 'red';
-        // $('#mid').html('Midfield: ' + mid + ' <b class="' + myClass +'">[' + midDefualt + ']</b>');
         this.attRate = (this.rateValues[4] + this.rateValues[5] + this.rateValues[6]);
-        // $('#att').html('Attack: ' + att);
-        // $('#total_rating').html('Total: ' + (def + mid + att));
-    
-        // var arr3 = Math.round(mid / 3);
-        // var newArr3 = Math.floor((arr3 + 3) / 4);
-        // var floatArr3 = ((arr3 + 3) / 4) - newArr3;
-        // $('#m').text('[' + this.rateValues[3] + '] => [' + (arr3) + ']');
+
+        this.newMidRate = Math.round(this.midRate / 3);
+        this.intNewMidRate = Math.floor((this.newMidRate + 3) / 4);
+        this.floatNewMidRate = ((this.newMidRate + 3) / 4) - this.intNewMidRate;
+        
         // var color = 'black';
         // if (this.rateValues[3] < arr3) color = 'green';
         // if (this.rateValues[3] > arr3) color = 'red';
-        // $('#mDiff').val(newArr3 + floatArr3);
+        // $('#mDiff').val(intNewMidRate + floatNewMidRate);
         // $('#mDiff').css('color', color);
     
         // // Average Rating
