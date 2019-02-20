@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
     defaultValues = [1, 1, 1, 1, 1, 1, 1];
     defRate = 3;
     midRate = 3;
-    midDefaultRate = 3;
+    midDefaultRate = 0;
     attRate = 3;
     newMidRate = 1;
     intNewMidRate = 1;
@@ -85,9 +85,6 @@ export class HomeComponent implements OnInit {
         this.midRate = Math.floor(this.midRate);
         this.midDefaultRate -= this.midRate;
         this.midDefaultRate *= -1;
-        // var myClass = 'black';
-        // if (midDefualt > 0) myClass = 'green';
-        // if (midDefualt < 0) myClass = 'red';
         this.attRate = (this.rateValues[4] + this.rateValues[5] + this.rateValues[6]);
 
         this.newMidRate = Math.round(this.midRate / 3);

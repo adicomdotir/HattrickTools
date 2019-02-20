@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
 * {
-	font-family: Tahoma;
+    font-family: 'PT Sans', sans-serif;
 }
 
 html,
@@ -51,9 +53,13 @@ select.form-control {
 }
 
 .green {
-	color: #55FF44;
+	color: rgb(22, 179, 8);
 }
 
 .black {
 	color: #000;
+}
+
+.white {
+    color: #FFF;
 }
