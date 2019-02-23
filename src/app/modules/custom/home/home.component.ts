@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
     skillInputChange(pos, event) {
         let value = event.target.value;
 
-        if (value < 0 || value > 20) value = 0;
+        if (value < 0 || value >= 21) value = 0;
 
         let intValue = Math.floor(value);
         let floatValue = value - intValue;
