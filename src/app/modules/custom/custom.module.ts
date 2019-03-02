@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { ReversePipe } from 'src/app/shared/pipes/reverse.pipe';
 import { TrainingComponent } from './training/training.component';
 import { HealingComponent } from './healing/healing.component';
+import { StadiumComponent } from './stadium/stadium.component';
 
 @NgModule({
     imports: [
@@ -18,7 +19,8 @@ import { HealingComponent } from './healing/healing.component';
         HomeComponent,
         ReversePipe,
         TrainingComponent,
-        HealingComponent // TODO: move to shared module
+        HealingComponent,
+        StadiumComponent // TODO: move to shared module
     ]
 })
 export class CustomModule { }
