@@ -6,6 +6,7 @@ import { CustomRoutingModule } from './custom-routing.module';
 import { HomeComponent } from './home/home.component';
 import { ReversePipe } from 'src/app/shared/pipes/reverse.pipe';
 import { TrainingComponent } from './training/training.component';
+import { HealingComponent } from './healing/healing.component';
 
 @NgModule({
     imports: [
@@ -16,7 +17,8 @@ import { TrainingComponent } from './training/training.component';
     declarations: [
         HomeComponent,
         ReversePipe,
-        TrainingComponent // TODO: move to shared module
+        TrainingComponent,
+        HealingComponent // TODO: move to shared module
     ]
 })
 export class CustomModule { }
