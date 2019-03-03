@@ -1,49 +1,43 @@
-<div>
-
-    <div>
-
+<div class="row">
+    <div class="col-md-6">
         <form>
-
-            <div><b>mediclevel</b></div>
-            <div>
-                <div></div>
-                <input [(ngModel)]="mediclevel" name="mediclevel" type="number" min="0" max="5"/>
-            </div>
-            <div><b>age</b></div>
-            <div>
-                <div></div>
-                <input [(ngModel)]="age" name="age"  type="number" min="17" max="38"/>
+            <div class="form-group">
+                <label>Medic Level</label>
+                <input class="form-control" [(ngModel)]="mediclevel" name="mediclevel" type="number" min="0" max="5" />
             </div>
 
-            <div><b>injuryweeks</b></div>
-            <div>
-                <div></div>
-                <input [(ngModel)]="injuryweeks" name="injuryweeks" type="number" value="0" />
+            <div class="form-group">
+                <label>Age</label>
+                <input class="form-control" [(ngModel)]="age" name="age" type="number" min="17" max="38" />
             </div>
-            <button type="button" (click)='healingcalc()'>Submit</button>
+
+            <div class="form-group">
+                <label>Injury Weeks</label>
+                <input class="form-control" [(ngModel)]="injuryweeks" name="injuryweeks" type="number" value="0" />
+            </div>
+            <button class="btn btn-primary"  type="button" (click)='healingcalc()'>Submit</button>
         </form>
-
     </div>
 
-    <div>
-        <table>
+    <div class="col-md-6">
+        <table  class="table table-bordered">
             <thead>
                 <tr>
                     <th></th>
-                    <th>updates</th>
-                    <th>weeks</th>
-                    <th>days</th>
+                    <th>Health Updates</th>
+                    <th>Weeks</th>
+                    <th>Days</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><b>bruised</b></td>
+                    <td><b>Bruised</b></td>
                     <td>{{update_b}}</td>
                     <td>{{week_b}}</td>
                     <td>{{day_b}}</td>
                 </tr>
                 <tr>
-                    <td><b>healthy</b></td>
+                    <td><b>Healthy</b></td>
                     <td>{{update}}</td>
                     <td>{{week}}</td>
                     <td>{{day}}</td>
@@ -51,5 +45,4 @@
             </tbody>
         </table>
     </div>
-
 </div>
