@@ -4,9 +4,14 @@
         <a class="p-2 text-dark" [routerLink]="['/rating']">Rating</a>
         <a class="p-2 text-dark" [routerLink]="['/training']">Training</a>
         <a class="p-2 text-dark" [routerLink]="['/healing']">Healing</a>
+        <a class="p-2 text-dark" [routerLink]="['/stadium']">Stadium</a>
+        <select  (change)='changeLanguage($event)'>
+            <option value="en">English</option>
+            <option value="fa">ایران</option>
+        </select>
         <!-- <a class="p-2 text-dark" href="#">Support</a>
         <a class="p-2 text-dark" href="#">Pricing</a> -->
     </nav>
     <!-- <a class="btn btn-outline-primary" href="#">Sign up</a> -->
-    
+
 </div>

@@ -18,9 +18,9 @@ export class AppComponent {
         translate.onLangChange.subscribe((value) => {
            this.lang = value.lang;
            if (value.lang == 'en') {
-               this.dir = 'ltr';
+            //    this.dir = 'ltr';
            } else if (value.lang == 'fa') {
-               this.dir = 'rtl';
+            //    this.dir = 'rtl';
            }
         });
     }
