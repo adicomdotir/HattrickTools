@@ -1,0 +1,16 @@
+{
+    "SITE_TITLE": "HattrickTools",
+    "RATING": {
+        "TITLE": "Hello Angular with ngx-translate!",
+        "SELECT": "Change language"
+    },
+    "HEALING": {
+        "MEDIC_LEVEL": "Medic Level",
+        "AGE": "Age",
+        "INJURY_WEEKS": "Injury Weeks",
+        "SUBMIT": "Submit",
+        "HEALTH_UPDATES": "Health Updates",
+        "BRUISED": "Bruised",
+        "HEALTHY": "Healthy"
+    }
+}

@@ -8,12 +8,14 @@ import { ReversePipe } from 'src/app/shared/pipes/reverse.pipe';
 import { TrainingComponent } from './training/training.component';
 import { HealingComponent } from './healing/healing.component';
 import { StadiumComponent } from './stadium/stadium.component';
+import { TranslateModule } from '../../../../node_modules/@ngx-translate/core';
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
-        CustomRoutingModule
+        CustomRoutingModule,
+        TranslateModule
     ],
     declarations: [
         HomeComponent,

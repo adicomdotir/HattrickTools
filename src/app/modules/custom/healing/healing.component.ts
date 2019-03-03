@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '../../../../../node_modules/@ngx-translate/core';
 
 @Component({
     selector: 'app-healing',
@@ -18,7 +19,7 @@ export class HealingComponent implements OnInit {
     private age: number = 17;
     private injuryweeks: number = 1;
 
-    constructor() { }
+    constructor(public translate: TranslateService) { }
 
     ngOnInit() {
     }

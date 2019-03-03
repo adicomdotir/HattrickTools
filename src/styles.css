@@ -1,63 +1,74 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
 
-* {
+@font-face {
+    font-family: 'Vazir';
+    /*a name to be used later*/
+    src: url('./assets/fonts/vazir.ttf');
+    /*URL to font*/
+}
+
+:lang(en) {
     font-family: 'PT Sans', sans-serif;
+}
+
+:lang(fa) {
+    font-family: 'Vazir';
 }
 
 html,
 body {
     height: 100%;
-	/* background-image: url("./assets/images/bg.png"); */
+    /* background-image: url("./assets/images/bg.png"); */
 }
 
 .container {
-	/* min-height: 100%; */
-	/* height: 100%; */
-	background-color: rgb(255, 255, 255);
-	padding-top: 32px;
+    /* min-height: 100%; */
+    /* height: 100%; */
+    background-color: rgb(255, 255, 255);
+    padding-top: 32px;
 }
 
 .table td {
-	text-align: center;
+    text-align: center;
 }
 
 .back tr {
-	/* line-height: 125px;
+    /* line-height: 125px;
 	min-height: 125px;
 	height: 125px; */
 }
 
 .back {
-	background-color: #1A8C40;
+    background-color: #1A8C40;
 }
 
 input {
-	text-align: center;
+    text-align: center;
 }
 
 span {
-	color: yellow;
+    color: yellow;
 }
 
 select {
-	text-align: center;
+    text-align: center;
     text-align-last: center;
 }
 
 select.form-control {
-	margin-top: 8px;
+    margin-top: 8px;
 }
 
 .red {
-	color: #FF0000;
+    color: #FF0000;
 }
 
 .green {
-	color: rgb(22, 179, 8);
+    color: rgb(22, 179, 8);
 }
 
 .black {
-	color: #000;
+    color: #000;
 }
 
 .white {
