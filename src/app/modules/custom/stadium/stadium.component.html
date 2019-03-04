@@ -1,55 +1,55 @@
-<div id="tool">
+<div class="row">
 
-    <div>
+    <div class="col-6 col-md-6">
         <div>
             <h5>accordingtofan</h5>
 
             <br>
-            <form id="my-form-1">
-                <div><b>fansmood</b><span id="fansmood"></span></div>
+            <form>
+                <div><b>fansmood</b><span></span></div>
                 <div>
-                    <div id="slider-fansmood"></div><input type="text" id="fansmood-value" value="0" />
+                    <div></div><input type="number" value="0" />
                 </div>
 
                 <div>
-                    <input id="fans" type="text" value="{{param['fans']}}">
+                    <input type="number">
                     <label for="fans">fansmembers</label>
                 </div>
 
-                <button type="submit">Submit</button>
+                <button type="button" (click)='fancalc()'>Submit</button>
             </form>
         </div>
 
-        <form id="my-form-2">
+        <form>
             <h5>accordingtosize</h5>
             <div>
-                <input id="arenasize" type="text" value="{{param['arenasize']}}">
+                <input name="arenasize" type="number" [(ngModel)]="arenasize">
                 <label for="arenasize">arenasize</label>
             </div>
             <div>
-                <input id="terper" type="text" value="{{param['terper']}}">
+                <input name="terper" type="number" [(ngModel)]="terper" min="0" max="100">
                 <label for="terper">terraces (%)</label>
             </div>
             <div>
-                <input id="basper" type="text" value="{{param['basper']}}">
+                <input name="basper" type="number" [(ngModel)]="basper" min="0" max="100">
                 <label for="basper">basic (%)</label>
             </div>
             <div>
-                <input id="roofper" type="text" value="{{param['roofper']}}">
+                <input name="roofper" type="number" [(ngModel)]="roofper" min="0" max="100">
                 <label for="roofper">roof (%)</label>
             </div>
             <div>
-                <input id="vipper" type="text" value="{{param['vipper']}}">
+                <input name="vipper" type="number" [(ngModel)]="vipper" min="0" max="100">
                 <label for="vipper">vip (%)</label>
             </div>
             <br>
-            <button type="submit">Submit</button>
+            <button type="button" (click)='sizecalc()'>Submit</button>
         </form>
 
     </div>
 
-    <div>
-        <table id="resultstable">
+    <div class="col-6 col-md-6">
+        <table class="table table-bordered">
             <thead>
                 <tr>
                     <th>seats</th>
@@ -63,43 +63,43 @@
                     <td>terraces</td>
                     <td></td>
                     <td></td>
-                    <td></td>
+                    <td>{{terraces}}</td>
                 </tr>
                 <tr>
                     <td>basic</td>
                     <td></td>
                     <td></td>
-                    <td></td>
+                    <td>{{basic}}</td>
                 </tr>
                 <tr>
                     <td>roof</td>
                     <td></td>
                     <td></td>
-                    <td></td>
+                    <td>{{roof}}</td>
                 </tr>
                 <tr>
                     <td>vip</td>
                     <td></td>
                     <td></td>
-                    <td></td>
+                    <td>{{vip}}</td>
                 </tr>
                 <tr>
                     <td><b>totalcapacity</b></td>
                     <td></td>
                     <td></td>
-                    <td></td>
+                    <td>{{terraces+basic+roof+vip}}</td>
                 </tr>
                 <tr>
                     <td>income</td>
                     <td></td>
                     <td></td>
-                    <td></td>
+                    <td>{{income}}</td>
                 </tr>
                 <tr>
                     <td>weeklycost</td>
                     <td></td>
                     <td></td>
-                    <td></td>
+                    <td>{{weekly_cost}}</td>
                 </tr>
                 <tr>
                     <td>costofconstruction</td>
