@@ -1,16 +1,51 @@
 {
     "SITE_TITLE": "HattrickTools",
     "RATING": {
-        "TITLE": "Hello Angular with ngx-translate!",
-        "SELECT": "Change language"
+        "TITLE": "Rating",
+        "DEFAULT": "Default",
+        "NEW": "New",
+        "FILTERS": "Filters",
+        "NORMAL": "Normal",
+        "MOTS": "MOTS",
+        "PIC": "PIC",
+        "AWAY": "AwayMatch",
+        "HOME": "HomeMatch",
+        "DERBY": "Derby",
+        "OTHER": "OtherTactic",
+        "COUNTER": "CounterAttack",
+        "STATIS": "Statistic",
+        "TOTAL": "Total",
+        "AVE_TOTAL": "Ave Total",
+        "DEF": "Defence",
+        "AVE_DEF": "Ave Defence",
+        "ATTACK": "Attack",
+        "AVE_ATTACK": "Ave Attack",
+        "MID": "Midfield",
+        "AVE_MID": "Ave Midfield",
+        "RD": "Right Defence",
+        "CD": "Central Defence",
+        "LD": "Left Defence",
+        "RA": "Right Attack",
+        "CA": "Central Attack",
+        "LA": "Left Attack",
+        "TEAM_SPIRIT": "Team Spirit"
     },
     "HEALING": {
+        "TITLE": "Healing",
         "MEDIC_LEVEL": "Medic Level",
         "AGE": "Age",
         "INJURY_WEEKS": "Injury Weeks",
         "SUBMIT": "Submit",
         "HEALTH_UPDATES": "Health Updates",
+        "WEEKS": "Weeks",
+        "DAYS": "Days",
         "BRUISED": "Bruised",
         "HEALTHY": "Healthy"
+    },
+    "TRAINING": {
+        "TITLE": "Training"
+    },
+    "STADIUM": {
+        "TITLE": "Stadium"
     }
 }

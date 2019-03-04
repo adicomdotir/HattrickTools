@@ -7,6 +7,7 @@ import { TranslateService } from '../../../../../node_modules/@ngx-translate/cor
     styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+    y = 5;
 
     constructor(private translate: TranslateService) {}
 

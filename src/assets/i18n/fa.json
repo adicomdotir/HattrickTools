@@ -1,16 +1,51 @@
 {
-    "SITE_TITLE": "HattrickTools",
+    "SITE_TITLE": "ابزار هتریک",
     "RATING": {
-        "TITLE": "Hello Angular with ngx-translate!",
-        "SELECT": "Change language"
+        "TITLE": "ریت",
+        "DEFAULT": "پیشفرض",
+        "NEW": "جدید",
+        "FILTERS": "فیلترها",
+        "NORMAL": "عادی",
+        "MOTS": "موتس",
+        "PIC": "پیک",
+        "AWAY": "تیم میهمان",
+        "HOME": "تیم میزبان",
+        "DERBY": "دربی",
+        "OTHER": "دیگر تاکتیکها",
+        "COUNTER": "ضد حمله",
+        "STATIS": "آمار",
+        "TOTAL": "کل",
+        "AVE_TOTAL": "متوسط کل",
+        "DEF": "دفاع",
+        "AVE_DEF": "متوسط دفاع",
+        "ATTACK": "حمله",
+        "AVE_ATTACK": "متوسط حمله",
+        "MID": "هافبک",
+        "AVE_MID": "متوسط هافبک",
+        "RD": "دفاع راست",
+        "CD": "دفاع وسط",
+        "LD": "دفاع چپ",
+        "RA": "حمله راست",
+        "CA": "حمله وسط",
+        "LA": "حمله چپ",
+        "TEAM_SPIRIT": "روحیه تیم"
     },
     "HEALING": {
+        "TITLE": "مصدومیت",
         "MEDIC_LEVEL": "سطح دکتر",
-        "AGE": "Age",
-        "INJURY_WEEKS": "Injury Weeks",
-        "SUBMIT": "Submit",
-        "HEALTH_UPDATES": "Health Updates",
+        "AGE": "سن",
+        "INJURY_WEEKS": "تعداد هفته مصدومیت",
+        "SUBMIT": "تایید",
+        "HEALTH_UPDATES": "بروز شدن سلامتی",
+        "WEEKS": "هفته",
+        "DAYS": "روز",
         "BRUISED": "Bruised",
-        "HEALTHY": "Healthy"
+        "HEALTHY": "سلامتی"
+    },
+    "TRAINING": {
+        "TITLE": "تمرین"
+    },
+    "STADIUM": {
+        "TITLE": "ورزشگاه"
     }
 }

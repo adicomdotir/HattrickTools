@@ -7,15 +7,15 @@
             </div>
 
             <div class="form-group">
-                <label>Age</label>
+                <label>{{ 'HEALING.AGE' | translate }}</label>
                 <input class="form-control" [(ngModel)]="age" name="age" type="number" min="17" max="38" />
             </div>
 
             <div class="form-group">
-                <label>Injury Weeks</label>
+                <label>{{ 'HEALING.INJURY_WEEKS' | translate }}</label>
                 <input class="form-control" [(ngModel)]="injuryweeks" name="injuryweeks" type="number" value="0" />
             </div>
-            <button class="btn btn-primary"  type="button" (click)='healingcalc()'>Submit</button>
+            <button class="btn btn-primary"  type="button" (click)='healingcalc()'>{{ 'HEALING.SUBMIT' | translate }}</button>
         </form>
     </div>
 
@@ -24,20 +24,20 @@
             <thead>
                 <tr>
                     <th></th>
-                    <th>Health Updates</th>
-                    <th>Weeks</th>
-                    <th>Days</th>
+                    <th>{{ 'HEALING.HEALTH_UPDATES' | translate }}</th>
+                    <th>{{ 'HEALING.WEEKS' | translate }}</th>
+                    <th>{{ 'HEALING.DAYS' | translate }}</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><b>Bruised</b></td>
+                    <td><b>{{ 'HEALING.BRUISED' | translate }}</b></td>
                     <td>{{update_b}}</td>
                     <td>{{week_b}}</td>
                     <td>{{day_b}}</td>
                 </tr>
                 <tr>
-                    <td><b>Healthy</b></td>
+                    <td><b>{{ 'HEALING.HEALTHY' | translate }}</b></td>
                     <td>{{update}}</td>
                     <td>{{week}}</td>
                     <td>{{day}}</td>
