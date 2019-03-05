@@ -79,6 +79,7 @@
     },
     "STADIUM": {
         "TITLE": "ورزشگاه",
+        "SUBMIT": "تایید",
         "info": "Info", 
         "basic": "صندلی پایه", 
         "costofconstruction": "هزینه ساخت", 

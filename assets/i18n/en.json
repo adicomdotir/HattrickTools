@@ -80,6 +80,7 @@
     },
     "STADIUM": {
         "TITLE": "Stadium",
+        "SUBMIT": "Submit",
         "info": "Info",
         "basic": "Basic Seating",
         "costofconstruction": "Cost of Construction",
