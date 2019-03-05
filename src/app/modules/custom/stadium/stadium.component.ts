@@ -7,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StadiumComponent implements OnInit {
 
+    currentterraces = 0;
+    currentbasic = 0;
+    currentroof = 0;
+    currentvip = 0;
+
     terraces = 0;
     basic = 0;
     roof = 0;
     vip = 0;
+
     income = 0;
     weekly_cost = 0;
 
@@ -20,15 +26,18 @@ export class StadiumComponent implements OnInit {
     roofper = 0;
     vipper = 0;
 
+    fansmembers = 1000;
+    fansmood = 0;
+
     constructor() { }
 
     ngOnInit() {
     }
-    
+
     fancalc() {
 
-        let fans_number = 2200;
-        let fans_mood = 0;
+        let fans_number = this.fansmembers;
+        let fans_mood = this.fansmood;
         let coef = 0;
 
         if (fans_mood === 0) {
@@ -65,43 +74,11 @@ export class StadiumComponent implements OnInit {
 
         this.income = Math.ceil(7 * this.terraces + 10 * this.basic + 19 * this.roof + 35 * this.vip);
         this.weekly_cost = Math.ceil(0.5 * this.terraces + 0.7 * this.basic + this.roof + 2.5 * this.vip);
-
-        // let tableobj = document.getElementById('resultstable').getElementsByTagName('tbody')[0];
-        let realterraces = ''; //tableobj.rows[0].cells[1].innerHTML;
-        let realbasic = ''; //tableobj.rows[1].cells[1].innerHTML;
-        let realroof = ''; //tableobj.rows[2].cells[1].innerHTML;
-        let realvip = ''; //tableobj.rows[3].cells[1].innerHTML;
-        let realtotal = ''; //tableobj.rows[4].cells[1].innerHTML;
-
-        if (realterraces != "") {
-            // let newterrances = terraces - realterraces;
-            // let newbasic = basic - realbasic;
-            // let newroof = roof - realroof;
-            // let newvip = vip - realvip;
-
-            // tableobj.rows[0].cells[2].innerHTML = newterrances;
-            // tableobj.rows[1].cells[2].innerHTML = newbasic;
-            // tableobj.rows[2].cells[2].innerHTML = newroof;
-            // tableobj.rows[3].cells[2].innerHTML = newvip;
-            // tableobj.rows[4].cells[2].innerHTML = (terraces + basic + roof + vip) - realtotal;
-            // tableobj.rows[7].cells[2].innerHTML = constructioncost(newterrances, newbasic, newroof, newvip) + "€";
-        }
-
-        // tableobj.rows[0].cells[3].innerHTML = terraces;
-        // tableobj.rows[1].cells[3].innerHTML = basic;
-        // tableobj.rows[2].cells[3].innerHTML = roof;
-        // tableobj.rows[3].cells[3].innerHTML = vip;
-        // tableobj.rows[4].cells[3].innerHTML = terraces + basic + roof + vip;
-        // tableobj.rows[5].cells[3].innerHTML = income + "€";
-        // tableobj.rows[6].cells[3].innerHTML = weekly_cost + "€";
-
-
-
     };
 
 
     sizecalc() {
-        
+
         let totalsize = this.arenasize;
         let terper = this.terper;
         let basper = this.basper;
@@ -120,40 +97,16 @@ export class StadiumComponent implements OnInit {
 
         this.income = Math.ceil(7 * this.terraces + 10 * this.basic + 19 * this.roof + 35 * this.vip);
         this.weekly_cost = Math.ceil(0.5 * this.terraces + 0.7 * this.basic + this.roof + 2.5 * this.vip);
-
-        // let tableobj = document.getElementById('resultstable').getElementsByTagName('tbody')[0];
-        // realterraces = tableobj.rows[0].cells[1].innerHTML;
-        // realbasic = tableobj.rows[1].cells[1].innerHTML;
-        // realroof = tableobj.rows[2].cells[1].innerHTML;
-        // realvip = tableobj.rows[3].cells[1].innerHTML;
-        // realtotal = tableobj.rows[4].cells[1].innerHTML;
-
-        // if (realterraces != "") {
-        //     let newterrances = terraces - realterraces;
-        //     let newbasic = basic - realbasic;
-        //     let newroof = roof - realroof;
-        //     let newvip = vip - realvip;
-
-        //     tableobj.rows[0].cells[2].innerHTML = newterrances;
-        //     tableobj.rows[1].cells[2].innerHTML = newbasic;
-        //     tableobj.rows[2].cells[2].innerHTML = newroof;
-        //     tableobj.rows[3].cells[2].innerHTML = newvip;
-        //     tableobj.rows[4].cells[2].innerHTML = (terraces + basic + roof + vip) - realtotal;
-        //     tableobj.rows[7].cells[2].innerHTML = constructioncost(newterrances, newbasic, newroof, newvip) + "€";
-        // }
-
-        // tableobj.rows[0].cells[3].innerHTML = terraces;
-        // tableobj.rows[1].cells[3].innerHTML = basic;
-        // tableobj.rows[2].cells[3].innerHTML = roof;
-        // tableobj.rows[3].cells[3].innerHTML = vip;
-        // tableobj.rows[4].cells[3].innerHTML = terraces + basic + roof + vip;
-        // tableobj.rows[5].cells[3].innerHTML = income + "€";
-        // tableobj.rows[6].cells[3].innerHTML = weekly_cost + "€";
     }
 
 
-    constructioncost(terraces, basic, roof, vip) {
-        let sumi = 10000
+    constructioncost() {
+        let terraces = this.terraces - this.currentterraces;
+        let basic = this.basic - this.currentbasic;
+        let roof = this.roof - this.currentroof;
+        let vip = this.vip - this.currentvip;
+        let sumi = 0;
+        if (terraces  + basic + roof + vip > 0) sumi = 10000;
 
         if (terraces > 0) {
             sumi += Math.abs(terraces) * 45

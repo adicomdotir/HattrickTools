@@ -46,6 +46,25 @@
         "TITLE": "تمرین"
     },
     "STADIUM": {
-        "TITLE": "ورزشگاه"
+        "TITLE": "ورزشگاه",
+        "info": "Info", 
+        "basic": "صندلی پایه", 
+        "costofconstruction": "هزینه ساخت", 
+        "income": "درامد", 
+        "accordingtofan": "ظرفیت وابسته به تعداد هواداران", 
+        "seats": "کل صندلی ها", 
+        "accordingtosize": "ظرفیت وابسته به تعداد کل که میخواهید", 
+        "terraces": "معمولی", 
+        "Submit": "تایید", 
+        "seatstoadd": "تعداد افزایش", 
+        "vip": "صندلی ویژه",
+        "fansmembers": "تعداد هواداران", 
+        "roof": "قسمت سقف دار", 
+        "fansmood": "وضعیت هواداران", 
+        "arenasize": "ظرفیت ورزشگاه", 
+        "currentarena": "ورزشگاه فعلی", 
+        "weeklycost": "هزینه هفتگی", 
+        "totalcapacity": "کل ظرفیت",
+        "sign": "0000 ریال"
     }
 }

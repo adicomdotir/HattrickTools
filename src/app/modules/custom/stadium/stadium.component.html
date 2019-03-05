@@ -1,110 +1,112 @@
 <div class="row">
 
-    <div class="col-6 col-md-6">
-        <div>
-            <h5>accordingtofan</h5>
+    <div class="col-4 col-md-4">
 
-            <br>
-            <form>
-                <div><b>fansmood</b><span></span></div>
-                <div>
-                    <div></div><input type="number" value="0" />
+        <div class="card" style="margin-bottom: 8px;">
+            <div class="card-header">{{ 'STADIUM.accordingtofan' | translate }}</div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label>{{ 'STADIUM.fansmood' | translate }}</label>
+                    <input class="form-control" [(ngModel)]="fansmood" name="fansmood" type="number" min="0" max="11" />
                 </div>
 
-                <div>
-                    <input type="number">
-                    <label for="fans">fansmembers</label>
+                <div class="form-group">
+                    <label>{{ 'STADIUM.fansmembers' | translate }}</label>
+                    <input class="form-control" [(ngModel)]="fansmembers" name="fansmembers" type="number">
                 </div>
-
-                <button type="button" (click)='fancalc()'>Submit</button>
-            </form>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-primary" type="button" (click)='fancalc()'>{{ 'HEALING.SUBMIT' | translate }}</button>
+            </div>
         </div>
 
-        <form>
-            <h5>accordingtosize</h5>
-            <div>
-                <input name="arenasize" type="number" [(ngModel)]="arenasize">
-                <label for="arenasize">arenasize</label>
+        <div class="card">
+            <div class="card-header">{{ 'STADIUM.accordingtosize' | translate }}</div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="arenasize">{{ 'STADIUM.arenasize' | translate }}</label>
+                    <input class="form-control" name="arenasize" type="number" [(ngModel)]="arenasize">
+                </div>
+                <div class="form-group">
+                    <label for="terper">{{ 'STADIUM.terraces' | translate }} (%)</label>
+                    <input class="form-control" name="terper" type="number" [(ngModel)]="terper" min="0" max="100">
+                </div>
+                <div class="form-group">
+                    <label for="basper">{{ 'STADIUM.basic' | translate }} (%)</label>
+                    <input class="form-control" name="basper" type="number" [(ngModel)]="basper" min="0" max="100">
+                </div>
+                <div class="form-group">
+                    <label for="roofper">{{ 'STADIUM.roof' | translate }} (%)</label>
+                    <input class="form-control" name="roofper" type="number" [(ngModel)]="roofper" min="0" max="100">
+                </div>
+                <div class="form-group">
+                    <label for="vipper">{{ 'STADIUM.vip' | translate }} (%)</label>
+                    <input class="form-control" name="vipper" type="number" [(ngModel)]="vipper" min="0" max="100">
+                </div>
             </div>
-            <div>
-                <input name="terper" type="number" [(ngModel)]="terper" min="0" max="100">
-                <label for="terper">terraces (%)</label>
+            <div class="card-footer">
+                <button class="btn btn-primary" type="button" (click)='sizecalc()'>{{ 'HEALING.SUBMIT' | translate }}</button>
             </div>
-            <div>
-                <input name="basper" type="number" [(ngModel)]="basper" min="0" max="100">
-                <label for="basper">basic (%)</label>
-            </div>
-            <div>
-                <input name="roofper" type="number" [(ngModel)]="roofper" min="0" max="100">
-                <label for="roofper">roof (%)</label>
-            </div>
-            <div>
-                <input name="vipper" type="number" [(ngModel)]="vipper" min="0" max="100">
-                <label for="vipper">vip (%)</label>
-            </div>
-            <br>
-            <button type="button" (click)='sizecalc()'>Submit</button>
-        </form>
-
+        </div>
     </div>
 
-    <div class="col-6 col-md-6">
+    <div class="col-8 col-md-8">
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>seats</th>
-                    <th>currentarena</th>
-                    <th>seatstoadd</th>
-                    <th>arenasize</th>
+                    <th>{{ 'STADIUM.seats' | translate }}</th>
+                    <th>{{ 'STADIUM.currentarena' | translate }}</th>
+                    <th>{{ 'STADIUM.seatstoadd' | translate }}</th>
+                    <th>{{ 'STADIUM.arenasize' | translate }}</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>terraces</td>
-                    <td></td>
-                    <td></td>
+                    <td>{{ 'STADIUM.terraces' | translate }}</td>
+                    <td><input class="form-control" name="currentterraces" type="number" [(ngModel)]="currentterraces"></td>
+                    <td>{{terraces - currentterraces}}</td>
                     <td>{{terraces}}</td>
                 </tr>
                 <tr>
-                    <td>basic</td>
-                    <td></td>
-                    <td></td>
+                    <td>{{ 'STADIUM.basic' | translate }}</td>
+                    <td><input class="form-control" name="currentbasic" type="number" [(ngModel)]="currentbasic"></td>
+                    <td>{{basic - currentbasic}}</td>
                     <td>{{basic}}</td>
                 </tr>
                 <tr>
-                    <td>roof</td>
-                    <td></td>
-                    <td></td>
+                    <td>{{ 'STADIUM.roof' | translate }}</td>
+                    <td><input class="form-control" name="currentroof" type="number" [(ngModel)]="currentroof"></td>
+                    <td>{{roof - currentroof}}</td>
                     <td>{{roof}}</td>
                 </tr>
                 <tr>
-                    <td>vip</td>
-                    <td></td>
-                    <td></td>
+                    <td>{{ 'STADIUM.vip' | translate }}</td>
+                    <td><input class="form-control" name="currentvip" type="number" [(ngModel)]="currentvip"></td>
+                    <td>{{vip - currentvip}}</td>
                     <td>{{vip}}</td>
                 </tr>
                 <tr>
-                    <td><b>totalcapacity</b></td>
-                    <td></td>
-                    <td></td>
+                    <td><b>{{ 'STADIUM.totalcapacity' | translate }}</b></td>
+                    <td>{{currentterraces+currentbasic+currentroof+currentvip}}</td>
+                    <td>{{(terraces + basic + roof + vip) - (currentterraces+currentbasic+currentroof+currentvip)}}</td>
                     <td>{{terraces+basic+roof+vip}}</td>
                 </tr>
                 <tr>
-                    <td>income</td>
+                    <td>{{ 'STADIUM.income' | translate }}</td>
                     <td></td>
                     <td></td>
-                    <td>{{income}}</td>
+                    <td>{{income}}{{ 'STADIUM.sign' | translate }}</td>
                 </tr>
                 <tr>
-                    <td>weeklycost</td>
+                    <td>{{ 'STADIUM.weeklycost' | translate }}</td>
                     <td></td>
                     <td></td>
-                    <td>{{weekly_cost}}</td>
+                    <td>{{weekly_cost}}{{ 'STADIUM.sign' | translate }}</td>
                 </tr>
                 <tr>
-                    <td>costofconstruction</td>
+                    <td>{{ 'STADIUM.costofconstruction' | translate }}</td>
                     <td></td>
-                    <td></td>
+                    <td>{{constructioncost()}}{{ 'STADIUM.sign' | translate }}</td>
                     <td></td>
                 </tr>
             </tbody>
