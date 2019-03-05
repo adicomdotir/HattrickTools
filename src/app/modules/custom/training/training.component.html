@@ -1,95 +1,65 @@
-<div id="tool" class="col s12">
-    <div class="col l5 m6 s12">
+<div class="row">
+    <div class="col-6 col-md-6">
         <form id="my-form">
-            <div><b>skill</b></div>
-            <select class="browser-default" id="skill">
-                <option value="" disabled selected>option</option>
-                <option value="SP">SP</option>
-                <option value="SP 25%">SP 25%</option>
-                <option value="Def">Def</option>
-                <option value="Sco">Sco</option>
-                <option value="Cross">Cross</option>
-                <option value="Cross 50%">Cross 50%</option>
-                <option value="Shoot">Shoot</option>
-                <option value="Pass">Pass</option>
-                <option value="PM">PM</option>
-                <option value="PM 50%">PM 50%</option>
-                <option value="GK">GK</option>
-                <option value="ThPass">ThPass</option>
-                <option value="DefPos">DefPos</option>
-                <option value="WingAtt">WingAtt</option>
-
-            </select>
-
-            <div><b>years</b></div>
-            <div class="col l12 m12 s12 slidercls">
-                <div id="slider-years" class="slider-success"></div><input type="text" id="years-value" value="0" />
+            <div class="form-group">
+                <label>{{ 'TRAINING.skill' | translate }}</label>
+                <select class="form-control" (change)=trainingChange($event)>
+                    <option *ngFor='let item of skillNames; let i = index' value="{{skillvalues[i]}}">{{item}}</option>
+                </select>
             </div>
-            <div><b>days</b></div>
-            <div class="col l12 m12 s12 slidercls">
-                <div id="slider-days" class="slider-success"></div><input type="text" id="days-value" value="0" />
+            <div class="form-group">
+                <label>{{ 'TRAINING.years' | translate }}</label>
+                <input class="form-control" type="number" [(ngModel)]="years" name="years" value="0" />
             </div>
-
-            <div class="row slidercls"><b>skilllevel</b><span id="skilllevelval"></span></div>
-            <div class="col l12 m12 s12 slidercls">
-                <div id="slider-skilllevel" class="slider-success"></div><input type="text" id="skilllevel-value" value="0" />
+            <div class="form-group">
+                <label>{{ 'TRAINING.days' | translate }}</label>
+                <input class="form-control" type="number" [(ngModel)]="days" name="days" value="0" />
             </div>
-            <div><b>subskill</b></div>
-            <div class="col l12 m12 s12 slidercls">
-                <div id="slider-subskill" class="slider-success"></div><input type="text" id="subskill-value" value="0" />
+            <div class="form-group">
+                <label>{{ 'TRAINING.skilllevel' | translate }}</label>
+                <input class="form-control" type="number" [(ngModel)]="skilllevel" name="skilllevel" value="0" />
             </div>
-
-            <div class="row slidercls"><b>coachlevel</b><span id="coachlevelval"></span></div>
-            <div class="col l12 m12 s12 slidercls">
-                <div id="slider-coachlevel" class="slider-success"></div><input type="text" id="coachlevel-value" value="0" />
+            <div class="form-group">
+                <label>{{ 'TRAINING.subskill' | translate }}</label>
+                <input class="form-control" type="number" [(ngModel)]="subskill" name="subskill" value="0" />
             </div>
-            <div><b>assistantslevel</b></div>
-            <div class="col l12 m12 s12 slidercls">
-                <div id="slider-assistants" class="slider-success"></div><input type="text" id="assistantslevel-value"
-                    value="0" />
+            <div class="form-group">
+                <label>{{ 'TRAINING.coachlevel' | translate }}</label>
+                <input class="form-control" type="number" [(ngModel)]="coachlevel" name="coachlevel" value="0" />
             </div>
-            <div><b>trainingintensity</b></div>
-            <div class="col l12 m12 s12 slidercls">
-                <div id="slider-intensity" class="slider-success"></div><input type="text" id="trainingintensity-value"
-                    value="0" />
+            <div class="form-group">
+                <label>{{ 'TRAINING.assistants' | translate }}</label>
+                <input class="form-control" type="number" [(ngModel)]="assistants" name="assistants" value="0" />
             </div>
-            <div><b>staminashare</b></div>
-            <div class="col l12 m12 s12 slidercls">
-                <div id="slider-stamina" class="slider-success"></div><input type="text" id="staminashare-value" value="0" />
+            <div class="form-group">
+                <label>{{ 'TRAINING.intensity' | translate }}</label>
+                <input class="form-control" type="number" [(ngModel)]="intensity" name="intensity" value="0" />
             </div>
-
-            <button id="submit" type="button">Submit</button>
+            <div class="form-group">
+                <label>{{ 'TRAINING.stamina' | translate }}</label>
+                <input class="form-control" type="number" [(ngModel)]="stamina" name="stamina" value="0" />
+            </div>
+            <button class="btn btn-primary" type="button" (click)='trainingcalc()'>{{ 'TRAINING.SUBMIT' | translate }}</button>
         </form>
     </div>
-    <div class="col l7 m6 s12">
-        <table class="table bordered centered striped" id="resultstable">
+    <div class="col-6 col-md-6">
+        <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>skill</th>
-                    <th>weeks</th>
-                    <th>age</th>
+                    <th>{{ 'TRAINING.skill' | translate }}</th>
+                    <th>{{ 'TRAINING.weeks' | translate }}</th>
+                    <th>{{ 'TRAINING.age' | translate }}</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                <tr *ngFor='let item of results'>
+                    <td>{{item[0]}}</td>
+                    <td>{{item[1]}}</td>
+                    <td>{{item[2]}}</td>
                 </tr>
-
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
             </tbody>
         </table>
+
+        <p style="color: slategray">Formula by ht-tools.eu</p>
     </div>
 </div>
