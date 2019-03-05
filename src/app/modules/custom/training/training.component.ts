@@ -61,7 +61,7 @@ export class TrainingComponent implements OnInit {
         this.skill = event.target.value;
     }
 
-    trainingcalc(strtotalweeks, chooseaskill) {
+    trainingcalc() {
 
         //coefficients arrays
         var skillvalues = {

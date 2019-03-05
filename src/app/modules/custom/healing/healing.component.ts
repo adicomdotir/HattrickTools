@@ -8,16 +8,16 @@ import { TranslateService } from '../../../../../node_modules/@ngx-translate/cor
 })
 export class HealingComponent implements OnInit {
 
-    private update_b: number;
-    private week_b: number;
-    private day_b: number;
-    private update: number;
-    private week: number;
-    private day: number;
+     update_b: number;
+     week_b: number;
+     day_b: number;
+     update: number;
+     week: number;
+     day: number;
 
-    private mediclevel: number = 0;
-    private age: number = 17;
-    private injuryweeks: number = 1;
+     mediclevel: number = 0;
+     age: number = 17;
+     injuryweeks: number = 1;
 
     constructor(public translate: TranslateService) { }
 
