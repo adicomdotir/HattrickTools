@@ -26,6 +26,7 @@ body {
     /* height: 100%; */
     background-color: rgb(255, 255, 255);
     padding-top: 32px;
+    padding-bottom: 32px;
 }
 
 .table td {
@@ -73,4 +74,8 @@ select.form-control {
 
 .white {
     color: #FFF;
+}
+
+footer {
+    background-color: rgb(255, 255, 255);
 }
