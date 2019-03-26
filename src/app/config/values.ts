@@ -132,14 +132,14 @@ export const SKILL_NUMBER = [
 export const TEAM_SPIRITS = [
     // 'No Action',
     // 'like the Cold War',
-    'murderous',
-    'furious',
-    'irritated',
-    'composed',
-    'calm',
-    'content',
-    'satisfied',
-    'delirious',
-    'walking on clouds',
-    'Paradise on Earth!'
+    'murderous (1)',
+    'furious (2)',
+    'irritated (3)',
+    'composed (4)',
+    'calm (5)',
+    'content (6)',
+    'satisfied (7)',
+    'delirious (8)',
+    'walking on clouds (9)',
+    'Paradise on Earth! (10)'
 ];
