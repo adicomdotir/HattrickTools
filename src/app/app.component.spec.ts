@@ -24,4 +24,9 @@ describe('AppComponent', () => {
         const compiled = fixture.debugElement.nativeElement;
         expect(compiled.querySelector('h1').textContent).toContain('Welcome to soccermanagerangular!');
     }));
+	
+	it('should be equal', async(() => {
+        const fixture = TestBed.createComponent(AppComponent);
+        expect('6').toEqual('5');
+    }));
 });
