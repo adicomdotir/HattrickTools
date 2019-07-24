@@ -38,7 +38,9 @@ export class HomeComponent implements OnInit {
     skillInputChange(pos, event) {
         let value = event.target.value;
 
-        if (value < 0 || value >= 21) value = 0;
+        if (value < 0 || value >= 21) {
+            value = 0;
+        }
 
         let intValue = Math.floor(value);
         let floatValue = value - intValue;
@@ -102,7 +104,7 @@ export class HomeComponent implements OnInit {
     }
 
     filterClick(type, value) {
-        if (type == 1) {
+        if (type === 1) {
             switch (value) {
                 case 1:
                     this.changeNegaresh(1);
@@ -114,7 +116,7 @@ export class HomeComponent implements OnInit {
                     this.changeNegaresh(3);
                     break;
             }
-        } else if (type == 2) {
+        } else if (type === 2) {
             switch (value) {
                 case 1:
                     this.filter[1] = 100;
@@ -126,7 +128,7 @@ export class HomeComponent implements OnInit {
                     this.filter[1] = 111.493;
                     break;
             }
-        } else if (type == 3) {
+        } else if (type === 3) {
             switch (value) {
                 case 1:
                     this.filter[2] = 100;
@@ -141,7 +143,7 @@ export class HomeComponent implements OnInit {
 
     changeNegaresh(value) {
         this.negaresh = value;
-        let temp = this.spiritItems[value - 1][this.newSpirit] - this.spiritItems[0][this.oldSpirit];
+        const temp = this.spiritItems[value - 1][this.newSpirit] - this.spiritItems[0][this.oldSpirit];
         this.filter[0] = 100 + temp;
     }
 

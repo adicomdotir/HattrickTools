@@ -4,7 +4,8 @@
             <tr>
                 <td>
                     <div class="form-group">
-                        <label class="white">{{ 'RATING.RD' | translate }} <span id="rd">[{{rateValues[2]}}]</span></label>
+                        <label class="white">{{ 'RATING.RD' | translate }} <span
+                                id="rd">[{{rateValues[2]}}]</span></label>
                         <input type="number" id="rdInput" step="0.25" min="0" max="20.75" class="form-control"
                             [(ngModel)]='defaultValues[2]' (change)="skillInputChange('RD', $event)">
                         <select class="form-control" [(ngModel)]='defaultValues[2]' id="rdSelect"
@@ -16,7 +17,8 @@
                 </td>
                 <td>
                     <div class="form-group">
-                        <label class="white">{{ 'RATING.CD' | translate }} <span id="cd">[{{rateValues[1]}}]</span></label>
+                        <label class="white">{{ 'RATING.CD' | translate }} <span
+                                id="cd">[{{rateValues[1]}}]</span></label>
                         <input type="number" id="cdInput" step="0.25" min="0" max="20.75" class="form-control"
                             [(ngModel)]='defaultValues[1]' (change)="skillInputChange('CD', $event)">
                         <select class="form-control" [(ngModel)]='defaultValues[1]' id="cdSelect"
@@ -28,7 +30,8 @@
                 </td>
                 <td>
                     <div class="form-group">
-                        <label class="white">{{ 'RATING.LD' | translate }} <span id="ld">[{{rateValues[0]}}]</span></label>
+                        <label class="white">{{ 'RATING.LD' | translate }} <span
+                                id="ld">[{{rateValues[0]}}]</span></label>
                         <input type="number" id="ldInput" step="0.25" min="0" max="20.75" class="form-control"
                             [(ngModel)]='defaultValues[0]' (change)="skillInputChange('LD', $event)">
                         <select class="form-control" [(ngModel)]='defaultValues[0]' id="ldSelect"
@@ -42,7 +45,8 @@
             <tr>
                 <td colspan="3">
                     <div class="form-group text-center">
-                        <label class="white">{{ 'RATING.MID' | translate }} <span id="m">[{{rateValues[3]}}] => [{{newMidRate}}]</span></label>
+                        <label class="white">{{ 'RATING.MID' | translate }} <span id="m">[{{rateValues[3]}}] =>
+                                [{{newMidRate}}]</span></label>
                         <div class='row'>
                             <div class='col-8 col-md-8'><input type="number" id="mInput" step="0.25" min="0" max="20.75"
                                     class="form-control" [(ngModel)]='defaultValues[3]'
@@ -63,7 +67,8 @@
             <tr>
                 <td>
                     <div class="form-group">
-                        <label class="white">{{ 'RATING.RA' | translate }} <span id="ra">[{{rateValues[6]}}]</span></label>
+                        <label class="white">{{ 'RATING.RA' | translate }} <span
+                                id="ra">[{{rateValues[6]}}]</span></label>
                         <input type="number" id="raInput" step="0.25" min="0" max="20.75" class="form-control"
                             [(ngModel)]='defaultValues[6]' (change)="skillInputChange('RA', $event)">
                         <select class="form-control" [(ngModel)]='defaultValues[6]' id="raSelect"
@@ -75,7 +80,8 @@
                 </td>
                 <td>
                     <div class="form-group">
-                        <label class="white">{{ 'RATING.CA' | translate }} <span id="ca">[{{rateValues[5]}}]</span></label>
+                        <label class="white">{{ 'RATING.CA' | translate }} <span
+                                id="ca">[{{rateValues[5]}}]</span></label>
                         <input type="number" id="caInput" step="0.25" min="0" max="20.75" class="form-control"
                             [(ngModel)]='defaultValues[5]' (change)="skillInputChange('CA', $event)">
                         <select class="form-control" [(ngModel)]='defaultValues[5]' id="caSelect"
@@ -87,7 +93,8 @@
                 </td>
                 <td>
                     <div class="form-group">
-                        <label class="white">{{ 'RATING.LA' | translate }} <span id="la">[{{rateValues[4]}}]</span></label>
+                        <label class="white">{{ 'RATING.LA' | translate }} <span
+                                id="la">[{{rateValues[4]}}]</span></label>
                         <input type="number" id="laInput" step="0.25" min="0" max="20.75" class="form-control"
                             [(ngModel)]='defaultValues[4]' (change)="skillInputChange('LA', $event)">
                         <select class="form-control" [(ngModel)]='defaultValues[4]' id="laSelect"
@@ -189,7 +196,8 @@
                 <div class="card-body">
                     <table class="table table-sm">
                         <tr>
-                            <td colspan="2" id="total_rating"><b>{{ 'RATING.TOTAL' | translate }}: {{defRate + midRate + attRate}}</b></td>
+                            <td colspan="2" id="total_rating"><b>{{ 'RATING.TOTAL' | translate }}:
+                                    {{defRate + midRate + attRate}}</b></td>
                             <td id="ave_total">
                                 <b>{{ 'RATING.AVE_TOTAL' | translate }}: {{getAverage(getAverage(defRate) + getAverage(midRate) +
                                     getAverage(attRate))}}</b>
