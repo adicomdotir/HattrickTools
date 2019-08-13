@@ -8,21 +8,21 @@ import { ReversePipe } from 'src/app/shared/pipes/reverse.pipe';
 import { TrainingComponent } from './training/training.component';
 import { HealingComponent } from './healing/healing.component';
 import { StadiumComponent } from './stadium/stadium.component';
-import { TranslateModule } from '../../../../node_modules/@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        FormsModule,
-        CustomRoutingModule,
-        TranslateModule
-    ],
-    declarations: [
-        HomeComponent,
-        ReversePipe,
-        TrainingComponent,
-        HealingComponent,
-        StadiumComponent // TODO: move to shared module
-    ]
+	imports: [
+		CommonModule,
+		FormsModule,
+		CustomRoutingModule,
+		TranslateModule
+	],
+	declarations: [
+		HomeComponent,
+		ReversePipe,
+		TrainingComponent,
+		HealingComponent,
+		StadiumComponent // TODO: move to shared module
+	]
 })
 export class CustomModule { }
