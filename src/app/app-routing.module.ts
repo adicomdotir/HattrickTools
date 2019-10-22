@@ -5,11 +5,12 @@ const routes: Routes = [
     {
         path: '',
         loadChildren: './modules/custom/custom.module#CustomModule',
-    }
+    },
+    { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes, {useHash: true})],
+    imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]
 })
 export class AppRoutingModule { }

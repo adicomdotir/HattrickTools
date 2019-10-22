@@ -14,31 +14,34 @@
             </div>
             <div class="form-group row">
                 <div class="col-3 col-md-3">
-                     <label class="col-form-label">{{ 'TRAINING.years' | translate }}</label>
+                    <label class="col-form-label">{{ 'TRAINING.years' | translate }}</label>
                 </div>
                 <div class="col-9 col-md-9">
-                    <input class="form-control" type="number" [(ngModel)]="years" name="years" value="0" />
+                    <input class="form-control" type="number" [(ngModel)]="years" name="years" value="0" min="17"
+                        max="35" />
                 </div>
             </div>
             <div class="form-group row">
                 <div class="col-3 col-md-3">
-                     <label class="col-form-label">{{ 'TRAINING.days' | translate }}</label>
+                    <label class="col-form-label">{{ 'TRAINING.days' | translate }}</label>
                 </div>
                 <div class="col-9 col-md-9">
-                    <input class="form-control" type="number" [(ngModel)]="days" name="days" value="0" />
+                    <input class="form-control" type="number" [(ngModel)]="days" name="days" value="0" min="0"
+                        max="111" />
                 </div>
             </div>
             <div class="form-group row">
                 <div class="col-3 col-md-3">
-                     <label class="col-form-label">{{ 'TRAINING.skilllevel' | translate }}</label>
+                    <label class="col-form-label">{{ 'TRAINING.skilllevel' | translate }}</label>
                 </div>
                 <div class="col-9 col-md-9">
-                    <input class="form-control" type="number" [(ngModel)]="skilllevel" name="skilllevel" value="0" />
+                    <input class="form-control" type="number" [(ngModel)]="skilllevel" name="skilllevel" value="0"
+                        min="0" max="20" />
                 </div>
             </div>
             <div class="form-group row">
                 <div class="col-3 col-md-3">
-                     <label class="col-form-label">{{ 'TRAINING.subskill' | translate }}</label>
+                    <label class="col-form-label">{{ 'TRAINING.subskill' | translate }}</label>
                 </div>
                 <div class="col-9 col-md-9">
                     <input class="form-control" type="number" [(ngModel)]="subskill" name="subskill" value="0" />
@@ -46,23 +49,25 @@
             </div>
             <div class="form-group row">
                 <div class="col-3 col-md-3">
-                     <label class="col-form-label">{{ 'TRAINING.coachlevel' | translate }}</label>
+                    <label class="col-form-label">{{ 'TRAINING.coachlevel' | translate }}</label>
                 </div>
                 <div class="col-9 col-md-9">
-                    <input class="form-control" type="number" [(ngModel)]="coachlevel" name="coachlevel" value="0" />
+                    <input class="form-control" type="number" [(ngModel)]="coachlevel" name="coachlevel" value="0"
+                        min="0" max="20" />
                 </div>
             </div>
             <div class="form-group row">
                 <div class="col-3 col-md-3">
-                     <label class="col-form-label">{{ 'TRAINING.assistants' | translate }}</label>
+                    <label class="col-form-label">{{ 'TRAINING.assistants' | translate }}</label>
                 </div>
                 <div class="col-9 col-md-9">
-                    <input class="form-control" type="number" [(ngModel)]="assistants" name="assistants" value="0" />
+                    <input class="form-control" type="number" [(ngModel)]="assistants" name="assistants" value="0"
+                        min="0" max="20" />
                 </div>
             </div>
             <div class="form-group row">
                 <div class="col-4 col-md-4">
-                     <label class="col-form-label">{{ 'TRAINING.intensity' | translate }}</label>
+                    <label class="col-form-label">{{ 'TRAINING.intensity' | translate }}</label>
                 </div>
                 <div class="col-8 col-md-8">
                     <input class="form-control" type="number" [(ngModel)]="intensity" name="intensity" value="0" />
@@ -70,11 +75,12 @@
             </div>
             <div class="form-group row">
                 <div class="col-3 col-md-3">
-                     <label class="col-form-label">{{ 'TRAINING.stamina' | translate }}</label>
+                    <label class="col-form-label">{{ 'TRAINING.stamina' | translate }}</label>
 
                 </div>
                 <div class="col-9 col-md-9">
-                    <input class="form-control" type="number" [(ngModel)]="stamina" name="stamina" value="0" />
+                    <input class="form-control" type="number" [(ngModel)]="stamina" name="stamina" value="0" min="0"
+                        max="100" />
                 </div>
             </div>
             <button class="btn btn-primary" type="button"

@@ -25,3 +25,8 @@ export class AppComponent {
 		});
 	}
 }
+
+class Team {
+	id: number;
+	name: string;
+}

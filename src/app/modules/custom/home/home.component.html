@@ -11,7 +11,7 @@
                         <select class="form-control" [(ngModel)]='defaultValues[2]' id="rdSelect"
                             (change)="skillInputChange('RD', $event)">
                             <option *ngFor='let item of skillEngStrings | reverse; let i = index'
-                                value="{{skillNumbers[skillEngStrings.length-i-1]}}">{{item}}</option>
+                                value="{{skillNumbers[skillEngStrings.length-i-1]}}">{{item | translate}}</option>
                         </select>
                     </div>
                 </td>
@@ -24,7 +24,7 @@
                         <select class="form-control" [(ngModel)]='defaultValues[1]' id="cdSelect"
                             (change)="skillInputChange('CD', $event)">
                             <option *ngFor='let item of skillEngStrings | reverse; let i = index'
-                                value="{{skillNumbers[skillEngStrings.length-i-1]}}">{{item}}</option>
+                                value="{{skillNumbers[skillEngStrings.length-i-1]}}">{{item | translate}}</option>
                         </select>
                     </div>
                 </td>
@@ -37,7 +37,7 @@
                         <select class="form-control" [(ngModel)]='defaultValues[0]' id="ldSelect"
                             (change)="skillInputChange('LD', $event)">
                             <option *ngFor='let item of skillEngStrings | reverse; let i = index'
-                                value="{{skillNumbers[skillEngStrings.length-i-1]}}">{{item}}</option>
+                                value="{{skillNumbers[skillEngStrings.length-i-1]}}">{{item | translate}}</option>
                         </select>
                     </div>
                 </td>
@@ -59,7 +59,7 @@
                         <select class="form-control" [(ngModel)]='defaultValues[3]' id="mSelect"
                             (change)="skillInputChange('M', $event)">
                             <option *ngFor='let item of skillEngStrings | reverse; let i = index'
-                                value="{{skillNumbers[skillEngStrings.length-i-1]}}">{{item}}</option>
+                                value="{{skillNumbers[skillEngStrings.length-i-1]}}">{{item | translate}}</option>
                         </select>
                     </div>
                 </td>
@@ -74,7 +74,7 @@
                         <select class="form-control" [(ngModel)]='defaultValues[6]' id="raSelect"
                             (change)="skillInputChange('RA', $event)">
                             <option *ngFor='let item of skillEngStrings | reverse; let i = index'
-                                value="{{skillNumbers[skillEngStrings.length-i-1]}}">{{item}}</option>
+                                value="{{skillNumbers[skillEngStrings.length-i-1]}}">{{item | translate}}</option>
                         </select>
                     </div>
                 </td>
@@ -87,7 +87,7 @@
                         <select class="form-control" [(ngModel)]='defaultValues[5]' id="caSelect"
                             (change)="skillInputChange('CA', $event)">
                             <option *ngFor='let item of skillEngStrings | reverse; let i = index'
-                                value="{{skillNumbers[skillEngStrings.length-i-1]}}">{{item}}</option>
+                                value="{{skillNumbers[skillEngStrings.length-i-1]}}">{{item | translate}}</option>
                         </select>
                     </div>
                 </td>
@@ -100,7 +100,7 @@
                         <select class="form-control" [(ngModel)]='defaultValues[4]' id="laSelect"
                             (change)="skillInputChange('LA', $event)">
                             <option *ngFor='let item of skillEngStrings | reverse; let i = index'
-                                value="{{skillNumbers[skillEngStrings.length-i-1]}}">{{item}}</option>
+                                value="{{skillNumbers[skillEngStrings.length-i-1]}}">{{item | translate}}</option>
                         </select>
                     </div>
                 </td>
@@ -117,7 +117,7 @@
                             <h5>{{ 'RATING.DEFAULT' | translate }}</h5>
                             <select class="form-control" id="teamSpirit" [(ngModel)]="oldSpirit"
                                 (change)='changeSpirit()'>
-                                <option *ngFor='let item of localTeamSpirits; let i = index' value="{{i}}">{{item}}
+                                <option *ngFor='let item of localTeamSpirits; let i = index' value="{{i}}">{{item | translate}}
                                 </option>
                             </select>
                         </div>
@@ -125,7 +125,7 @@
                             <h5>{{ 'RATING.NEW' | translate }}</h5>
                             <select class="form-control" id="teamSpiritNew" [(ngModel)]="newSpirit"
                                 (change)='changeSpirit()'>
-                                <option *ngFor='let item of localTeamSpirits; let i = index' value="{{i}}">{{item}}
+                                <option *ngFor='let item of localTeamSpirits; let i = index' value="{{i}}">{{item | translate}}
                                 </option>
                             </select>
                         </div>
