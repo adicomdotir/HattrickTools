@@ -2,6 +2,7 @@
     "SITE_TITLE": "ابزار هتریک",
     "RATING": {
         "TITLE": "ریت",
+        "RESET": "ریست",
         "DEFAULT": "پیشفرض",
         "NEW": "جدید",
         "FILTERS": "فیلترها",

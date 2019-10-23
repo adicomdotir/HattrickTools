@@ -1,17 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 @font-face {
     font-family: 'Vazir';
     /*a name to be used later*/
-    src: url('./assets/fonts/vazir.ttf');
+    src: url('./assets/fonts/Samim-FD.ttf');
     /*URL to font*/
 }
 
 :lang(en) {
+    direction: ltr;
     font-family: 'PT Sans', sans-serif;
 }
 
 :lang(fa) {
+    direction: rtl;
     font-family: 'Vazir';
 }
 
@@ -20,6 +23,13 @@ body {
     height: 100%;
     background-image: url("./assets/images/bg.png");
 }
+
+body { 
+    direction: ltr;
+ }
+ 
+ [lang="fa"] body {
+ }
 
 .container {
     /* min-height: 100%;

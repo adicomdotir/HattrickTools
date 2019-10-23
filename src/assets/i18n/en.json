@@ -2,6 +2,7 @@
     "SITE_TITLE": "HattrickTools",
     "RATING": {
         "TITLE": "Rating",
+        "RESET": "Reset",
         "DEFAULT": "Default",
         "NEW": "New",
         "FILTERS": "Filters",

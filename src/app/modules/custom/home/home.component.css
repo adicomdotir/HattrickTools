@@ -1,0 +1,24 @@
+input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    padding: 4px;
+    /* background-color only for content */
+    background-clip: content-box;
+    border: 2px solid #bbbbbbbe;
+    background-color: #e7e6e7;
+    border-radius: 50%;
+}
+
+input[type="radio"]:checked {
+    background-color: #1A8C40;
+}
+
+/* optional styles, I'm using this for centering radiobuttons */
+.flex {
+    display: flex;
+    align-items: center;
+}

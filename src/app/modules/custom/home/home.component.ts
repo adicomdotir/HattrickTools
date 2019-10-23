@@ -33,7 +33,24 @@ export class HomeComponent implements OnInit {
 
     constructor(private router: Router) { }
 
-    ngOnInit() { }
+    ngOnInit() {
+        if (localStorage.getItem("RATE") != null) {
+            this.defaultValues = JSON.parse(localStorage.getItem("RATE"));
+            this.initForSaved();
+            this.calculateRating();
+        }
+    }
+
+    initForSaved() {
+        for (let i = 0; i < this.defaultValues.length; i++) {
+            const element = this.defaultValues[i];
+            let intValue = Math.floor(element);
+            let floatValue = element - intValue;
+            floatValue = floatValue * 4;
+            intValue = intValue * 4 - 3 + floatValue;
+            this.rateValues[i] = intValue;
+        }
+    }
 
     skillInputChange(pos, event) {
         let value = event.target.value;
@@ -50,24 +67,31 @@ export class HomeComponent implements OnInit {
         switch (pos) {
             case 'LD':
                 this.rateValues[0] = intValue;
+                this.defaultValues[0] = parseFloat(value);
                 break;
             case 'CD':
                 this.rateValues[1] = intValue;
+                this.defaultValues[1] = parseFloat(value);
                 break;
             case 'RD':
                 this.rateValues[2] = intValue;
+                this.defaultValues[2] = parseFloat(value);
                 break;
             case 'M':
                 this.rateValues[3] = intValue;
+                this.defaultValues[3] = parseFloat(value);
                 break;
             case 'LA':
                 this.rateValues[4] = intValue;
+                this.defaultValues[4] = parseFloat(value);
                 break;
             case 'CA':
                 this.rateValues[5] = intValue;
+                this.defaultValues[5] = parseFloat(value);
                 break;
             case 'RA':
                 this.rateValues[6] = intValue;
+                this.defaultValues[6] = parseFloat(value);
                 break;
         }
 
@@ -93,10 +117,11 @@ export class HomeComponent implements OnInit {
         this.intNewMidRate = Math.floor((this.newMidRate + 3) / 4);
         this.floatNewMidRate = ((this.newMidRate + 3) / 4) - this.intNewMidRate;
 
-        // var color = 'black';
-        // if (this.rateValues[3] < arr3) color = 'green';
-        // if (this.rateValues[3] > arr3) color = 'red';
-        // $('#mDiff').css('color', color);
+        this.writeToLocalStorage();
+    }
+
+    writeToLocalStorage() {
+        localStorage.setItem("RATE", JSON.stringify(this.defaultValues));
     }
 
     getAverage(value) {
@@ -149,6 +174,13 @@ export class HomeComponent implements OnInit {
 
     changeSpirit() {
         this.changeNegaresh(this.negaresh);
+        this.calculateRating();
+    }
+
+    resetRating() {
+        this.defaultValues = [1, 1, 1, 1, 1, 1, 1];
+        this.rateValues = [1, 1, 1, 1, 1, 1, 1];
+        this.writeToLocalStorage();
         this.calculateRating();
     }
 }
