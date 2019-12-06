@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 @font-face {
     font-family: 'Vazir';
     /*a name to be used later*/
-    src: url('./assets/fonts/Samim-FD.ttf');
+    src: url('./assets/fonts/vazir.ttf');
     /*URL to font*/
 }
 
@@ -75,7 +74,7 @@ select.form-control {
 }
 
 .green {
-    color: rgb(22, 179, 8);
+    color: #1A8C41;
 }
 
 .black {

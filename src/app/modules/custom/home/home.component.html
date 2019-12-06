@@ -107,7 +107,7 @@
             </tr>
         </table>
         <div>
-            <button class="btn" (click)="resetRating()">{{ 'RATING.RESET' | translate }}</button>
+            <button class="reset btn btn-outline-success" (click)="resetRating()">{{ 'RATING.RESET' | translate }}</button>
         </div>
     </div>
     <div class="col-md-5">
@@ -211,10 +211,10 @@
                             <td id="ave_def">{{ 'RATING.AVE_DEF' | translate }}: {{getAverage(defRate)}}</td>
                         </tr>
                         <tr>
-                            <td id="mid">{{ 'RATING.MID' | translate }}: {{midRate}}</td>
-                            <td
+                            <td colspan="2" id="mid">{{ 'RATING.MID' | translate }}: {{midRate}} # 
+                            <span
                                 [ngClass]="{ 'black': rateValues[3] == newMidRate,'green': rateValues[3] < newMidRate, 'red': rateValues[3] > newMidRate}">
-                                [{{midDefaultRate}}]</td>
+                                [{{midDefaultRate}}]</span></td>
                             <td id="ave_mid">{{ 'RATING.AVE_MID' | translate }}: {{getAverage(midRate)}}</td>
                         </tr>
                         <tr>

@@ -8,7 +8,7 @@ input[type="radio"] {
     padding: 4px;
     /* background-color only for content */
     background-clip: content-box;
-    border: 2px solid #bbbbbbbe;
+    border: 2px solid #1A8C40;
     background-color: #e7e6e7;
     border-radius: 50%;
 }
@@ -21,4 +21,34 @@ input[type="radio"]:checked {
 .flex {
     display: flex;
     align-items: center;
+}
+
+.card {
+    border: 1px #1A8C40 solid;
+}
+
+.card-header {
+    background-color: #1A8C40;
+    color: white;
+    border-bottom: 0px;
+    font-weight: bold;
+}
+
+.card-body {
+    /* color: #0A732E; */
+}
+
+select {
+    border: 1px solid #1A8C40;
+    color: #1A8C40;
+}
+
+.reset {
+    color: #1A8C40;
+    border-color: #1A8C40;
+}
+
+.reset:hover {
+    color: white;
+    background-color: #1A8C40;
 }
