@@ -4,6 +4,8 @@ import { HomeComponent } from './home/home.component';
 import { TrainingComponent } from './training/training.component';
 import { HealingComponent } from './healing/healing.component';
 import { StadiumComponent } from './stadium/stadium.component';
+import { CustomRatingComponent } from './custom-rating/custom-rating.component';
+import { PositionDetailComponent } from './position-detail/position-detail.component';
 
 const routes: Routes = [
     {
@@ -20,6 +22,12 @@ const routes: Routes = [
     },
     {
         path: 'stadium', component: StadiumComponent
+    },
+    {
+        path: 'custom-rating', component: CustomRatingComponent
+    },
+    {
+        path: 'detail/:id', component: PositionDetailComponent
     }
 ];
 

@@ -9,6 +9,8 @@ import { TrainingComponent } from './training/training.component';
 import { HealingComponent } from './healing/healing.component';
 import { StadiumComponent } from './stadium/stadium.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { CustomRatingComponent } from './custom-rating/custom-rating.component';
+import { PositionDetailComponent } from './position-detail/position-detail.component';
 
 @NgModule({
 	imports: [
@@ -22,7 +24,9 @@ import { TranslateModule } from '@ngx-translate/core';
 		ReversePipe,
 		TrainingComponent,
 		HealingComponent,
-		StadiumComponent // TODO: move to shared module
+		StadiumComponent,
+		CustomRatingComponent,
+		PositionDetailComponent // TODO: move to shared module
 	]
 })
 export class CustomModule { }
