@@ -4,4 +4,5 @@ export class Player {
     stamina: number;
     playMaking: number;
     loyalty: number;
+    coeMidfield: number;
 }

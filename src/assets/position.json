@@ -2,99 +2,113 @@
     {
         "id": 1,
         "form": 1,
-        "playMaking": 1,
+        "playMaking": 0,
         "stamina": 1,
-        "loyalty": 1
+        "loyalty": 1,
+        "coeMidfield": 0
     },
     {
         "id": 2,
         "form": 1,
-        "playMaking": 1,
+        "playMaking": 0,
         "stamina": 1,
-        "loyalty": 1
+        "loyalty": 1,
+        "coeMidfield": 0.023
     },
     {
         "id": 3,
         "form": 1,
-        "playMaking": 1,
+        "playMaking": 0,
         "stamina": 1,
-        "loyalty": 1
+        "loyalty": 1,
+        "coeMidfield": 0.035
     },
     {
         "id": 4,
         "form": 1,
-        "playMaking": 1,
+        "playMaking": 0,
         "stamina": 1,
-        "loyalty": 1
+        "loyalty": 1,
+        "coeMidfield": 0.035
     },
     {
         "id": 5,
         "form": 1,
-        "playMaking": 1,
+        "playMaking": 0,
         "stamina": 1,
-        "loyalty": 1
+        "loyalty": 1,
+        "coeMidfield": 0.035
     },
     {
         "id": 6,
         "form": 1,
-        "playMaking": 1,
+        "playMaking": 0,
         "stamina": 1,
-        "loyalty": 1
+        "loyalty": 1,
+        "coeMidfield": 0.023
     },
     {
         "id": 7,
         "form": 1,
-        "playMaking": 1,
+        "playMaking": 0,
         "stamina": 1,
-        "loyalty": 1
+        "loyalty": 1,
+        "coeMidfield": 0.065
     },
     {
         "id": 8,
         "form": 1,
-        "playMaking": 1,
+        "playMaking": 0,
         "stamina": 1,
-        "loyalty": 1
+        "loyalty": 1,
+        "coeMidfield": 0.139
     },
     {
         "id": 9,
         "form": 1,
-        "playMaking": 1,
+        "playMaking": 0,
         "stamina": 1,
-        "loyalty": 1
+        "loyalty": 1,
+        "coeMidfield": 0.139
     },
     {
         "id": 10,
         "form": 1,
-        "playMaking": 1,
+        "playMaking": 0,
         "stamina": 1,
-        "loyalty": 1
+        "loyalty": 1,
+        "coeMidfield": 0.139
     },
     {
         "id": 11,
         "form": 1,
-        "playMaking": 1,
+        "playMaking": 0,
         "stamina": 1,
-        "loyalty": 1
+        "loyalty": 1,
+        "coeMidfield": 0.065
     },
     {
         "id": 12,
         "form": 1,
-        "playMaking": 1,
+        "playMaking": 0,
         "stamina": 1,
-        "loyalty": 1
+        "loyalty": 1,
+        "coeMidfield": 0.041
     },
     {
         "id": 13,
         "form": 1,
-        "playMaking": 1,
+        "playMaking": 0,
         "stamina": 1,
-        "loyalty": 1
+        "loyalty": 1,
+        "coeMidfield": 0.041
     },
     {
         "id": 14,
         "form": 1,
-        "playMaking": 1,
+        "playMaking": 0,
         "stamina": 1,
-        "loyalty": 1
+        "loyalty": 1,
+        "coeMidfield": 0.041
     }
 ]
