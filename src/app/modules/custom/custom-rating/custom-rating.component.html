@@ -17,7 +17,9 @@
             </div>
             <div>
                 <div class="row">Loyalty</div>
-                <div class="row">{{players[0].loyalty}}</div>
+                <div class="row" [ngStyle]="{'color':players[0].motherClub === true ? 'red' : 'black' }"
+                    [ngStyle]="{'color':players[0].motherClub === true ? 'red' : 'black' }"
+                    [innerHTML]="getLoyaltyText(players[0])"></div>
             </div>
         </div>
         <div *ngIf="!players[0].visibility">
@@ -46,7 +48,8 @@
             </div>
             <div>
                 <div class="row">Loyalty</div>
-                <div class="row">{{players[1].loyalty}}</div>
+                <div class="row" [ngStyle]="{'color':players[1].motherClub === true ? 'red' : 'black' }"
+                    [innerHTML]="getLoyaltyText(players[1])"></div>
             </div>
         </div>
         <div *ngIf="!players[1].visibility">
@@ -69,7 +72,8 @@
             </div>
             <div>
                 <div class="row">Loyalty</div>
-                <div class="row">{{players[2].loyalty}}</div>
+                <div class="row" [ngStyle]="{'color':players[2].motherClub === true ? 'red' : 'black' }"
+                    [innerHTML]="getLoyaltyText(players[2])"></div>
             </div>
         </div>
         <div *ngIf="!players[2].visibility">
@@ -92,7 +96,8 @@
             </div>
             <div>
                 <div class="row">Loyalty</div>
-                <div class="row">{{players[3].loyalty}}</div>
+                <div class="row" [ngStyle]="{'color':players[3].motherClub === true ? 'red' : 'black' }"
+                    [innerHTML]="getLoyaltyText(players[3])"></div>
             </div>
         </div>
         <div *ngIf="!players[3].visibility">
@@ -115,7 +120,8 @@
             </div>
             <div>
                 <div class="row">Loyalty</div>
-                <div class="row">{{players[4].loyalty}}</div>
+                <div class="row" [ngStyle]="{'color':players[4].motherClub === true ? 'red' : 'black' }"
+                    [innerHTML]="getLoyaltyText(players[4])"></div>
             </div>
         </div>
         <div *ngIf="!players[4].visibility">
@@ -138,7 +144,8 @@
             </div>
             <div>
                 <div class="row">Loyalty</div>
-                <div class="row">{{players[5].loyalty}}</div>
+                <div class="row" [ngStyle]="{'color':players[5].motherClub === true ? 'red' : 'black' }"
+                    [innerHTML]="getLoyaltyText(players[5])"></div>
             </div>
         </div>
         <div *ngIf="!players[5].visibility">
@@ -163,7 +170,8 @@
             </div>
             <div>
                 <div class="row">Loyalty</div>
-                <div class="row">{{players[6].loyalty}}</div>
+                <div class="row" [ngStyle]="{'color':players[6].motherClub === true ? 'red' : 'black' }"
+                    [innerHTML]="getLoyaltyText(players[6])"></div>
             </div>
         </div>
         <div *ngIf="!players[6].visibility">
@@ -186,7 +194,8 @@
             </div>
             <div>
                 <div class="row">Loyalty</div>
-                <div class="row">{{players[7].loyalty}}</div>
+                <div class="row" [ngStyle]="{'color':players[7].motherClub === true ? 'red' : 'black' }"
+                    [innerHTML]="getLoyaltyText(players[7])"></div>
             </div>
         </div>
         <div *ngIf="!players[7].visibility">
@@ -209,7 +218,8 @@
             </div>
             <div>
                 <div class="row">Loyalty</div>
-                <div class="row">{{players[8].loyalty}}</div>
+                <div class="row" [ngStyle]="{'color':players[8].motherClub === true ? 'red' : 'black' }"
+                    [innerHTML]="getLoyaltyText(players[8])"></div>
             </div>
         </div>
         <div *ngIf="!players[8].visibility">
@@ -232,7 +242,8 @@
             </div>
             <div>
                 <div class="row">Loyalty</div>
-                <div class="row">{{players[9].loyalty}}</div>
+                <div class="row" [ngStyle]="{'color':players[9].motherClub === true ? 'red' : 'black' }"
+                    [innerHTML]="getLoyaltyText(players[9])"></div>
             </div>
         </div>
         <div *ngIf="!players[9].visibility">
@@ -255,7 +266,8 @@
             </div>
             <div>
                 <div class="row">Loyalty</div>
-                <div class="row">{{players[10].loyalty}}</div>
+                <div class="row" [ngStyle]="{'color':players[10].motherClub === true ? 'red' : 'black' }"
+                    [innerHTML]="getLoyaltyText(players[10])"></div>
             </div>
         </div>
         <div *ngIf="!players[10].visibility">
@@ -281,7 +293,8 @@
             </div>
             <div>
                 <div class="row">Loyalty</div>
-                <div class="row">{{players[11].loyalty}}</div>
+                <div class="row" [ngStyle]="{'color':players[11].motherClub === true ? 'red' : 'black' }"
+                    [innerHTML]="getLoyaltyText(players[11])"></div>
             </div>
         </div>
         <div *ngIf="!players[11].visibility">
@@ -304,7 +317,8 @@
             </div>
             <div>
                 <div class="row">Loyalty</div>
-                <div class="row">{{players[12].loyalty}}</div>
+                <div class="row" [ngStyle]="{'color':players[12].motherClub === true ? 'red' : 'black' }"
+                    [innerHTML]="getLoyaltyText(players[12])"></div>
             </div>
         </div>
         <div *ngIf="!players[12].visibility">
@@ -327,7 +341,8 @@
             </div>
             <div>
                 <div class="row">Loyalty</div>
-                <div class="row">{{players[13].loyalty}}</div>
+                <div class="row" [ngStyle]="{'color':players[13].motherClub === true ? 'red' : 'black' }"
+                    [innerHTML]="getLoyaltyText(players[13])"></div>
             </div>
         </div>
         <div *ngIf="!players[13].visibility">

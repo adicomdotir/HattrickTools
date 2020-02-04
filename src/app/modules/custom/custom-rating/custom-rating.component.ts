@@ -58,7 +58,7 @@ export class CustomRatingComponent implements OnInit {
         let player14 = this.getPlayerScore(this.players[13]);
         ceoMultiple = this.getMultipleCeo(this.players[11], this.players[12], this.players[13]);
         this.rating += (player12 * ceoMultiple) + (player13 * ceoMultiple) + (player14 * ceoMultiple);
-        this.rating = Math.round(this.rating * 4);
+        this.rating = Math.round(this.rating * 4) + 3;
         this.rating /= 4;
     }
 
@@ -119,6 +119,13 @@ export class CustomRatingComponent implements OnInit {
             return 0.935;
         }
         return 1;
+    }
+
+    getLoyaltyText(pl: Player) {
+        if (pl.motherClub) {
+            return '&#10084;';
+        }
+        return pl.loyalty;
     }
 
 }
