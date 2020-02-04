@@ -34,14 +34,45 @@ export class CustomRatingComponent implements OnInit {
     }
 
     calculateRating() {
-        this.players.forEach(x => {
-            this.rating += x.coeMidfield * (x.playMaking + this.getLoyaltyCeo(x.loyalty))
-        });
+        this.rating = 0;
+        let player1 = this.getPlayerScore(this.players[0]);
+        let player2 = this.getPlayerScore(this.players[1]);
+        this.rating = player1 + player2;
+        let player3 = this.getPlayerScore(this.players[2]);
+        let player4 = this.getPlayerScore(this.players[3]);
+        let player5 = this.getPlayerScore(this.players[4]);
+        let ceoMultiple = this.getMultipleCeo(this.players[2], this.players[3], this.players[4]);
+        this.rating += (player3 * ceoMultiple) + (player4 * ceoMultiple) + (player5 * ceoMultiple);
+        let player6 = this.getPlayerScore(this.players[5]);
+        let player7 = this.getPlayerScore(this.players[6]);
+        this.rating += player6 + player7;
+        let player8 = this.getPlayerScore(this.players[7]);
+        let player9 = this.getPlayerScore(this.players[8]);
+        let player10 = this.getPlayerScore(this.players[9]);
+        ceoMultiple = this.getMultipleCeo(this.players[7], this.players[8], this.players[9]);
+        this.rating += (player8 * ceoMultiple) + (player9 * ceoMultiple) + (player10 * ceoMultiple);
+        let player11 = this.getPlayerScore(this.players[10]);
+        this.rating += player11;
+        let player12 = this.getPlayerScore(this.players[11]);
+        let player13 = this.getPlayerScore(this.players[12]);
+        let player14 = this.getPlayerScore(this.players[13]);
+        ceoMultiple = this.getMultipleCeo(this.players[11], this.players[12], this.players[13]);
+        this.rating += (player12 * ceoMultiple) + (player13 * ceoMultiple) + (player14 * ceoMultiple);
         this.rating = Math.round(this.rating * 4);
         this.rating /= 4;
     }
 
-    getLoyaltyCeo(loyalty) {
+    getPlayerScore(pl: Player) {
+        if (pl.visibility) {
+            return pl.coeMidfield * (pl.playMaking + this.getLoyaltyCeo(pl.loyalty, pl.motherClub));
+        }
+        return 0;
+    }
+
+    getLoyaltyCeo(loyalty, motherClub) {
+        if (motherClub) {
+            return 1.5;
+        }
         const loyalties = [
             0.0000,
             0.0526,
@@ -69,6 +100,25 @@ export class CustomRatingComponent implements OnInit {
 
     selectPosition(position) {
         this.router.navigateByUrl(`detail/${position}`);
+    }
+
+    getMultipleCeo(playerX: Player, playerY: Player, playerZ: Player) {
+        let counter = 0;
+        if (playerX.visibility) {
+            counter++;
+        }
+        if (playerY.visibility) {
+            counter++;
+        }
+        if (playerZ.visibility) {
+            counter++;
+        }
+        if (counter === 3) {
+            return 0.825;
+        } else if (counter === 2) {
+            return 0.935;
+        }
+        return 1;
     }
 
 }

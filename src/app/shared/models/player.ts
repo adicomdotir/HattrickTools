@@ -5,4 +5,6 @@ export class Player {
     playMaking: number;
     loyalty: number;
     coeMidfield: number;
+    visibility: boolean;
+    motherClub: boolean;
 }
