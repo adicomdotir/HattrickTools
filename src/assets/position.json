@@ -5,8 +5,8 @@
         "playMaking": 1,
         "stamina": 1,
         "loyalty": 1,
-        "visibility": "false",
-        "motherClub": "false"
+        "visibility": false,
+        "motherClub": false
 
     },
     {
@@ -15,8 +15,8 @@
         "playMaking": 1,
         "stamina": 1,
         "loyalty": 1,
-        "visibility": "false",
-        "motherClub": "false"
+        "visibility": false,
+        "motherClub": false
     },
     {
         "id": 3,
@@ -24,8 +24,8 @@
         "playMaking": 1,
         "stamina": 1,
         "loyalty": 1,
-        "visibility": "false",
-        "motherClub": "false"
+        "visibility": false,
+        "motherClub": false
     },
     {
         "id": 4,
@@ -33,8 +33,8 @@
         "playMaking": 1,
         "stamina": 1,
         "loyalty": 1,
-        "visibility": "false",
-        "motherClub": "false"
+        "visibility": false,
+        "motherClub": false
     },
     {
         "id": 5,
@@ -42,8 +42,8 @@
         "playMaking": 1,
         "stamina": 1,
         "loyalty": 1,
-        "visibility": "false",
-        "motherClub": "false"
+        "visibility": false,
+        "motherClub": false
     },
     {
         "id": 6,
@@ -51,8 +51,8 @@
         "playMaking": 1,
         "stamina": 1,
         "loyalty": 1,
-        "visibility": "false",
-        "motherClub": "false"
+        "visibility": false,
+        "motherClub": false
     },
     {
         "id": 7,
@@ -60,8 +60,8 @@
         "playMaking": 1,
         "stamina": 1,
         "loyalty": 1,
-        "visibility": "false",
-        "motherClub": "false"
+        "visibility": false,
+        "motherClub": false
     },
     {
         "id": 8,
@@ -69,8 +69,8 @@
         "playMaking": 1,
         "stamina": 1,
         "loyalty": 1,
-        "visibility": "false",
-        "motherClub": "false"
+        "visibility": false,
+        "motherClub": false
     },
     {
         "id": 9,
@@ -78,8 +78,8 @@
         "playMaking": 1,
         "stamina": 1,
         "loyalty": 1,
-        "visibility": "false",
-        "motherClub": "false"
+        "visibility": false,
+        "motherClub": false
     },
     {
         "id": 10,
@@ -87,8 +87,8 @@
         "playMaking": 1,
         "stamina": 1,
         "loyalty": 1,
-        "visibility": "false",
-        "motherClub": "false"
+        "visibility": false,
+        "motherClub": false
     },
     {
         "id": 11,
@@ -96,8 +96,8 @@
         "playMaking": 1,
         "stamina": 1,
         "loyalty": 1,
-        "visibility": "false",
-        "motherClub": "false"
+        "visibility": false,
+        "motherClub": false
     },
     {
         "id": 12,
@@ -105,8 +105,8 @@
         "playMaking": 1,
         "stamina": 1,
         "loyalty": 1,
-        "visibility": "false",
-        "motherClub": "false"
+        "visibility": false,
+        "motherClub": false
     },
     {
         "id": 13,
@@ -114,8 +114,8 @@
         "playMaking": 1,
         "stamina": 1,
         "loyalty": 1,
-        "visibility": "false",
-        "motherClub": "false"
+        "visibility": false,
+        "motherClub": false
     },
     {
         "id": 14,
@@ -123,7 +123,7 @@
         "playMaking": 1,
         "stamina": 1,
         "loyalty": 1,
-        "visibility": "false",
-        "motherClub": "false"
+        "visibility": false,
+        "motherClub": false
     }
 ]

@@ -22,12 +22,17 @@ export class PositionDetailComponent implements OnInit {
     ngOnInit() {
         this.players = JSON.parse(localStorage.getItem('POSITION'));
         this.player = this.players[this.index];
+        console.log(this.player)
     }
 
     savePlayer() {
         console.log(this.player)
         this.players[this.index] = this.player;
         localStorage.setItem('POSITION', JSON.stringify(this.players));
+        this.location.back();
+    }
+
+    cancelBtn() {
         this.location.back();
     }
 }
