@@ -25,6 +25,7 @@ export class PositionDetailComponent implements OnInit {
     }
 
     savePlayer() {
+        console.log(this.player)
         this.players[this.index] = this.player;
         localStorage.setItem('POSITION', JSON.stringify(this.players));
         this.location.back();

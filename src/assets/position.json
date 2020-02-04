@@ -4,97 +4,126 @@
         "form": 1,
         "playMaking": 1,
         "stamina": 1,
-        "loyalty": 1
+        "loyalty": 1,
+        "visibility": "false",
+        "motherClub": "false"
+
     },
     {
         "id": 2,
         "form": 1,
         "playMaking": 1,
         "stamina": 1,
-        "loyalty": 1
+        "loyalty": 1,
+        "visibility": "false",
+        "motherClub": "false"
     },
     {
         "id": 3,
         "form": 1,
         "playMaking": 1,
         "stamina": 1,
-        "loyalty": 1
+        "loyalty": 1,
+        "visibility": "false",
+        "motherClub": "false"
     },
     {
         "id": 4,
         "form": 1,
         "playMaking": 1,
         "stamina": 1,
-        "loyalty": 1
+        "loyalty": 1,
+        "visibility": "false",
+        "motherClub": "false"
     },
     {
         "id": 5,
         "form": 1,
         "playMaking": 1,
         "stamina": 1,
-        "loyalty": 1
+        "loyalty": 1,
+        "visibility": "false",
+        "motherClub": "false"
     },
     {
         "id": 6,
         "form": 1,
         "playMaking": 1,
         "stamina": 1,
-        "loyalty": 1
+        "loyalty": 1,
+        "visibility": "false",
+        "motherClub": "false"
     },
     {
         "id": 7,
         "form": 1,
         "playMaking": 1,
         "stamina": 1,
-        "loyalty": 1
+        "loyalty": 1,
+        "visibility": "false",
+        "motherClub": "false"
     },
     {
         "id": 8,
         "form": 1,
         "playMaking": 1,
         "stamina": 1,
-        "loyalty": 1
+        "loyalty": 1,
+        "visibility": "false",
+        "motherClub": "false"
     },
     {
         "id": 9,
         "form": 1,
         "playMaking": 1,
         "stamina": 1,
-        "loyalty": 1
+        "loyalty": 1,
+        "visibility": "false",
+        "motherClub": "false"
     },
     {
         "id": 10,
         "form": 1,
         "playMaking": 1,
         "stamina": 1,
-        "loyalty": 1
+        "loyalty": 1,
+        "visibility": "false",
+        "motherClub": "false"
     },
     {
         "id": 11,
         "form": 1,
         "playMaking": 1,
         "stamina": 1,
-        "loyalty": 1
+        "loyalty": 1,
+        "visibility": "false",
+        "motherClub": "false"
     },
     {
         "id": 12,
         "form": 1,
         "playMaking": 1,
         "stamina": 1,
-        "loyalty": 1
+        "loyalty": 1,
+        "visibility": "false",
+        "motherClub": "false"
     },
     {
         "id": 13,
         "form": 1,
         "playMaking": 1,
         "stamina": 1,
-        "loyalty": 1
+        "loyalty": 1,
+        "visibility": "false",
+        "motherClub": "false"
     },
     {
         "id": 14,
         "form": 1,
         "playMaking": 1,
         "stamina": 1,
-        "loyalty": 1
+        "loyalty": 1,
+        "visibility": "false",
+        "motherClub": "false"
     }
 ]
