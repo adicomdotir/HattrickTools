@@ -1,5 +1,13 @@
 <div class="flex-container">
-    <div class="cell-box">&nbsp;</div>
+    <div class="cell-box">
+        <div style="margin: auto; text-align: center;">
+            <h5>{{ 'RATING.TEAM_SPIRIT' | translate }}</h5>
+            <select class="form-control" id="teamSpirit" [(ngModel)]="teamSpirit" (change)='changeSpirit()'>
+                <option *ngFor='let item of localTeamSpirits; let i = index' value="{{i}}">{{item | translate}}
+                </option>
+            </select>
+        </div>
+    </div>
     <div class="cell-box">&nbsp;</div>
     <div class="cell cell-box" (click)="selectPosition(1)">
         <div *ngIf="players[0].visibility">

@@ -22,3 +22,8 @@
     width: 50%;
     display: inline-block;
 }
+
+select {
+    border: 1px solid #1A8C40;
+    color: #1A8C40;
+}

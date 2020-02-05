@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Player } from 'src/app/shared/models/player';
+import { TEAM_SPIRITS } from 'src/app/config/values';
 
 @Component({
     selector: 'app-custom-rating',
@@ -12,6 +13,9 @@ export class CustomRatingComponent implements OnInit {
 
     players: Player[] = [];
     rating = 0;
+    localTeamSpirits = TEAM_SPIRITS;
+    teamSpirit = 0;
+    spiritItems = [0.79, 0.86, 0.93, 1.00, 1.07, 1.14, 1.21, 1.28, 1.35, 1.42];
 
     constructor(private router: Router, private httpClient: HttpClient) { }
 
@@ -58,7 +62,7 @@ export class CustomRatingComponent implements OnInit {
         let player14 = this.getPlayerScore(this.players[13]);
         ceoMultiple = this.getMultipleCeo(this.players[11], this.players[12], this.players[13]);
         this.rating += (player12 * ceoMultiple) + (player13 * ceoMultiple) + (player14 * ceoMultiple);
-        this.rating = Math.round(this.rating * 4) + 3;
+        this.rating = Math.round(this.rating * 4 * this.spiritItems[this.teamSpirit]) + 3;
         this.rating /= 4;
     }
 
@@ -126,6 +130,10 @@ export class CustomRatingComponent implements OnInit {
             return '&#10084;';
         }
         return pl.loyalty;
+    }
+
+    changeSpirit() {
+        this.calculateRating();
     }
 
 }
