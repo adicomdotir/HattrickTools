@@ -2,29 +2,7 @@
     <div class="cell-box">&nbsp;</div>
     <div class="cell-box">&nbsp;</div>
     <div class="cell cell-box" (click)="selectPosition(1)">
-        <div *ngIf="players[0].visibility">
-            <div>
-                <div class="row">Form</div>
-                <div class="row">{{players[0].form}}</div>
-            </div>
-            <div>
-                <div class="row">Stamina</div>
-                <div class="row">{{players[0].stamina}}</div>
-            </div>
-            <div>
-                <div class="row">PlayMaking</div>
-                <div class="row">{{players[0].playMaking}}</div>
-            </div>
-            <div>
-                <div class="row">Loyalty</div>
-                <div class="row" [ngStyle]="{'color':players[0].motherClub === true ? 'red' : 'black' }"
-                    [ngStyle]="{'color':players[0].motherClub === true ? 'red' : 'black' }"
-                    [innerHTML]="getLoyaltyText(players[0])"></div>
-            </div>
-        </div>
-        <div *ngIf="!players[0].visibility">
-            EMPTY
-        </div>
+        <app-player-box [player]="players[0]"></app-player-box>
     </div>
     <div class="cell-box">&nbsp;</div>
     <div class="cell-box" style="margin: auto; text-align: center;">
