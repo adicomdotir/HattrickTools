@@ -14,326 +14,69 @@
     </div>
     <div class="cell-box">&nbsp;</div>
     <div class="cell-box" style="margin: auto; text-align: center;">
-        <b>{{rating}}</b>
+        <table style="width: 100%;">
+            <tr>
+                <td>{{rdRating}}</td>
+                <td>{{cdRating}}</td>
+                <td>{{ldRating}}</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>{{midfieldRating}}</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>{{raRating}}</td>
+                <td>{{caRating}}</td>
+                <td>{{laRating}}</td>
+            </tr>
+        </table>
     </div>
 </div>
 <div class="flex-container">
     <div class="cell cell-box" (click)="selectPosition(2)">
-        <div *ngIf="players[1].visibility">
-            <div>
-                <div class="row">Form</div>
-                <div class="row">{{players[1].form}}</div>
-            </div>
-            <div>
-                <div class="row">Stamina</div>
-                <div class="row">{{players[1].stamina}}</div>
-            </div>
-            <div>
-                <div class="row">PlayMaking</div>
-                <div class="row">{{players[1].playMaking}}</div>
-            </div>
-            <div>
-                <div class="row">Loyalty</div>
-                <div class="row" [ngStyle]="{'color':players[1].motherClub === true ? 'red' : 'black' }"
-                    [innerHTML]="getLoyaltyText(players[1])"></div>
-            </div>
-        </div>
-        <div *ngIf="!players[1].visibility">
-            EMPTY
-        </div>
+        <app-player-box [player]="players[1]"></app-player-box>
     </div>
     <div class="cell cell-box" (click)="selectPosition(3)">
-        <div *ngIf="players[2].visibility">
-            <div>
-                <div class="row">Form</div>
-                <div class="row">{{players[2].form}}</div>
-            </div>
-            <div>
-                <div class="row">Stamina</div>
-                <div class="row">{{players[2].stamina}}</div>
-            </div>
-            <div>
-                <div class="row">PlayMaking</div>
-                <div class="row">{{players[2].playMaking}}</div>
-            </div>
-            <div>
-                <div class="row">Loyalty</div>
-                <div class="row" [ngStyle]="{'color':players[2].motherClub === true ? 'red' : 'black' }"
-                    [innerHTML]="getLoyaltyText(players[2])"></div>
-            </div>
-        </div>
-        <div *ngIf="!players[2].visibility">
-            EMPTY
-        </div>
+        <app-player-box [player]="players[2]"></app-player-box>
     </div>
     <div class="cell cell-box" (click)="selectPosition(4)">
-        <div *ngIf="players[3].visibility">
-            <div>
-                <div class="row">Form</div>
-                <div class="row">{{players[3].form}}</div>
-            </div>
-            <div>
-                <div class="row">Stamina</div>
-                <div class="row">{{players[3].stamina}}</div>
-            </div>
-            <div>
-                <div class="row">PlayMaking</div>
-                <div class="row">{{players[3].playMaking}}</div>
-            </div>
-            <div>
-                <div class="row">Loyalty</div>
-                <div class="row" [ngStyle]="{'color':players[3].motherClub === true ? 'red' : 'black' }"
-                    [innerHTML]="getLoyaltyText(players[3])"></div>
-            </div>
-        </div>
-        <div *ngIf="!players[3].visibility">
-            EMPTY
-        </div>
+        <app-player-box [player]="players[3]"></app-player-box>
     </div>
     <div class="cell cell-box" (click)="selectPosition(5)">
-        <div *ngIf="players[4].visibility">
-            <div>
-                <div class="row">Form</div>
-                <div class="row">{{players[4].form}}</div>
-            </div>
-            <div>
-                <div class="row">Stamina</div>
-                <div class="row">{{players[4].stamina}}</div>
-            </div>
-            <div>
-                <div class="row">PlayMaking</div>
-                <div class="row">{{players[4].playMaking}}</div>
-            </div>
-            <div>
-                <div class="row">Loyalty</div>
-                <div class="row" [ngStyle]="{'color':players[4].motherClub === true ? 'red' : 'black' }"
-                    [innerHTML]="getLoyaltyText(players[4])"></div>
-            </div>
-        </div>
-        <div *ngIf="!players[4].visibility">
-            EMPTY
-        </div>
+        <app-player-box [player]="players[4]"></app-player-box>
     </div>
     <div class="cell cell-box" (click)="selectPosition(6)">
-        <div *ngIf="players[5].visibility">
-            <div>
-                <div class="row">Form</div>
-                <div class="row">{{players[5].form}}</div>
-            </div>
-            <div>
-                <div class="row">Stamina</div>
-                <div class="row">{{players[5].stamina}}</div>
-            </div>
-            <div>
-                <div class="row">PlayMaking</div>
-                <div class="row">{{players[5].playMaking}}</div>
-            </div>
-            <div>
-                <div class="row">Loyalty</div>
-                <div class="row" [ngStyle]="{'color':players[5].motherClub === true ? 'red' : 'black' }"
-                    [innerHTML]="getLoyaltyText(players[5])"></div>
-            </div>
-        </div>
-        <div *ngIf="!players[5].visibility">
-            EMPTY
-        </div>
+        <app-player-box [player]="players[5]"></app-player-box>
     </div>
 </div>
 <div class="flex-container">
     <div class="cell cell-box" (click)="selectPosition(7)">
-        <div *ngIf="players[6].visibility">
-            <div>
-                <div class="row">Form</div>
-                <div class="row">{{players[6].form}}</div>
-            </div>
-            <div>
-                <div class="row">Stamina</div>
-                <div class="row">{{players[6].stamina}}</div>
-            </div>
-            <div>
-                <div class="row">PlayMaking</div>
-                <div class="row">{{players[6].playMaking}}</div>
-            </div>
-            <div>
-                <div class="row">Loyalty</div>
-                <div class="row" [ngStyle]="{'color':players[6].motherClub === true ? 'red' : 'black' }"
-                    [innerHTML]="getLoyaltyText(players[6])"></div>
-            </div>
-        </div>
-        <div *ngIf="!players[6].visibility">
-            EMPTY
-        </div>
+        <app-player-box [player]="players[6]"></app-player-box>
     </div>
     <div class="cell cell-box" (click)="selectPosition(8)">
-        <div *ngIf="players[7].visibility">
-            <div>
-                <div class="row">Form</div>
-                <div class="row">{{players[7].form}}</div>
-            </div>
-            <div>
-                <div class="row">Stamina</div>
-                <div class="row">{{players[7].stamina}}</div>
-            </div>
-            <div>
-                <div class="row">PlayMaking</div>
-                <div class="row">{{players[7].playMaking}}</div>
-            </div>
-            <div>
-                <div class="row">Loyalty</div>
-                <div class="row" [ngStyle]="{'color':players[7].motherClub === true ? 'red' : 'black' }"
-                    [innerHTML]="getLoyaltyText(players[7])"></div>
-            </div>
-        </div>
-        <div *ngIf="!players[7].visibility">
-            EMPTY
-        </div>
+        <app-player-box [player]="players[7]"></app-player-box>
     </div>
     <div class="cell cell-box" (click)="selectPosition(9)">
-        <div *ngIf="players[8].visibility">
-            <div>
-                <div class="row">Form</div>
-                <div class="row">{{players[8].form}}</div>
-            </div>
-            <div>
-                <div class="row">Stamina</div>
-                <div class="row">{{players[8].stamina}}</div>
-            </div>
-            <div>
-                <div class="row">PlayMaking</div>
-                <div class="row">{{players[8].playMaking}}</div>
-            </div>
-            <div>
-                <div class="row">Loyalty</div>
-                <div class="row" [ngStyle]="{'color':players[8].motherClub === true ? 'red' : 'black' }"
-                    [innerHTML]="getLoyaltyText(players[8])"></div>
-            </div>
-        </div>
-        <div *ngIf="!players[8].visibility">
-            EMPTY
-        </div>
+        <app-player-box [player]="players[8]"></app-player-box>
     </div>
     <div class="cell cell-box" (click)="selectPosition(10)">
-        <div *ngIf="players[9].visibility">
-            <div>
-                <div class="row">Form</div>
-                <div class="row">{{players[9].form}}</div>
-            </div>
-            <div>
-                <div class="row">Stamina</div>
-                <div class="row">{{players[9].stamina}}</div>
-            </div>
-            <div>
-                <div class="row">PlayMaking</div>
-                <div class="row">{{players[9].playMaking}}</div>
-            </div>
-            <div>
-                <div class="row">Loyalty</div>
-                <div class="row" [ngStyle]="{'color':players[9].motherClub === true ? 'red' : 'black' }"
-                    [innerHTML]="getLoyaltyText(players[9])"></div>
-            </div>
-        </div>
-        <div *ngIf="!players[9].visibility">
-            EMPTY
-        </div>
+        <app-player-box [player]="players[9]"></app-player-box>
     </div>
     <div class="cell cell-box" (click)="selectPosition(11)">
-        <div *ngIf="players[10].visibility">
-            <div>
-                <div class="row">Form</div>
-                <div class="row">{{players[10].form}}</div>
-            </div>
-            <div>
-                <div class="row">Stamina</div>
-                <div class="row">{{players[10].stamina}}</div>
-            </div>
-            <div>
-                <div class="row">PlayMaking</div>
-                <div class="row">{{players[10].playMaking}}</div>
-            </div>
-            <div>
-                <div class="row">Loyalty</div>
-                <div class="row" [ngStyle]="{'color':players[10].motherClub === true ? 'red' : 'black' }"
-                    [innerHTML]="getLoyaltyText(players[10])"></div>
-            </div>
-        </div>
-        <div *ngIf="!players[10].visibility">
-            EMPTY
-        </div>
+        <app-player-box [player]="players[10]"></app-player-box>
     </div>
 </div>
 <div class="flex-container">
     <div class="cell-box">&nbsp;</div>
     <div class="cell cell-box" (click)="selectPosition(12)">
-        <div *ngIf="players[11].visibility">
-            <div>
-                <div class="row">Form</div>
-                <div class="row">{{players[11].form}}</div>
-            </div>
-            <div>
-                <div class="row">Stamina</div>
-                <div class="row">{{players[11].stamina}}</div>
-            </div>
-            <div>
-                <div class="row">PlayMaking</div>
-                <div class="row">{{players[11].playMaking}}</div>
-            </div>
-            <div>
-                <div class="row">Loyalty</div>
-                <div class="row" [ngStyle]="{'color':players[11].motherClub === true ? 'red' : 'black' }"
-                    [innerHTML]="getLoyaltyText(players[11])"></div>
-            </div>
-        </div>
-        <div *ngIf="!players[11].visibility">
-            EMPTY
-        </div>
+        <app-player-box [player]="players[11]"></app-player-box>
     </div>
     <div class="cell cell-box" (click)="selectPosition(13)">
-        <div *ngIf="players[12].visibility">
-            <div>
-                <div class="row">Form</div>
-                <div class="row">{{players[12].form}}</div>
-            </div>
-            <div>
-                <div class="row">Stamina</div>
-                <div class="row">{{players[12].stamina}}</div>
-            </div>
-            <div>
-                <div class="row">PlayMaking</div>
-                <div class="row">{{players[12].playMaking}}</div>
-            </div>
-            <div>
-                <div class="row">Loyalty</div>
-                <div class="row" [ngStyle]="{'color':players[12].motherClub === true ? 'red' : 'black' }"
-                    [innerHTML]="getLoyaltyText(players[12])"></div>
-            </div>
-        </div>
-        <div *ngIf="!players[12].visibility">
-            EMPTY
-        </div>
+        <app-player-box [player]="players[12]"></app-player-box>
     </div>
     <div class="cell cell-box" (click)="selectPosition(14)">
-        <div *ngIf="players[13].visibility">
-            <div>
-                <div class="row">Form</div>
-                <div class="row">{{players[13].form}}</div>
-            </div>
-            <div>
-                <div class="row">Stamina</div>
-                <div class="row">{{players[13].stamina}}</div>
-            </div>
-            <div>
-                <div class="row">PlayMaking</div>
-                <div class="row">{{players[13].playMaking}}</div>
-            </div>
-            <div>
-                <div class="row">Loyalty</div>
-                <div class="row" [ngStyle]="{'color':players[13].motherClub === true ? 'red' : 'black' }"
-                    [innerHTML]="getLoyaltyText(players[13])"></div>
-            </div>
-        </div>
-        <div *ngIf="!players[13].visibility">
-            EMPTY
-        </div>
+        <app-player-box [player]="players[13]"></app-player-box>
     </div>
     <div class="cell-box">&nbsp;</div>
 </div>

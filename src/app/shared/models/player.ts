@@ -7,4 +7,7 @@ export class Player {
     coeMidfield: number;
     visibility: boolean;
     motherClub: boolean;
+    defending: number;
+    ceoCentralDefence: number;
+    ceoSideDefence: number;
 }

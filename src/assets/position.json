@@ -9,8 +9,8 @@
         "visibility": false,
         "motherClub": false,
         "defending": 0,
-        "ceoCentralDefence": 0,
-        "ceoSideDefence": 0
+        "ceoCentralDefence": 0.079,
+        "ceoSideDefence": 0.082
     },
     {
         "id": 2,
@@ -22,8 +22,8 @@
         "visibility": false,
         "motherClub": false,
         "defending": 0,
-        "ceoCentralDefence": 0,
-        "ceoSideDefence": 0
+        "ceoCentralDefence": 0.083,
+        "ceoSideDefence": 0.268
     },
     {
         "id": 3,
@@ -35,8 +35,8 @@
         "visibility": false,
         "motherClub": false,
         "defending": 0,
-        "ceoCentralDefence": 0,
-        "ceoSideDefence": 0
+        "ceoCentralDefence": 0.186,
+        "ceoSideDefence": 0.077
     },
     {
         "id": 4,
@@ -48,8 +48,8 @@
         "visibility": false,
         "motherClub": false,
         "defending": 0,
-        "ceoCentralDefence": 0,
-        "ceoSideDefence": 0
+        "ceoCentralDefence": 0.186,
+        "ceoSideDefence": 0.077
     },
     {
         "id": 5,
@@ -61,8 +61,8 @@
         "visibility": false,
         "motherClub": false,
         "defending": 0,
-        "ceoCentralDefence": 0,
-        "ceoSideDefence": 0
+        "ceoCentralDefence": 0.186,
+        "ceoSideDefence": 0.077
     },
     {
         "id": 6,
@@ -74,8 +74,8 @@
         "visibility": false,
         "motherClub": false,
         "defending": 0,
-        "ceoCentralDefence": 0,
-        "ceoSideDefence": 0
+        "ceoCentralDefence": 0.083,
+        "ceoSideDefence": 0.268
     },
     {
         "id": 7,
@@ -87,8 +87,8 @@
         "visibility": false,
         "motherClub": false,
         "defending": 0,
-        "ceoCentralDefence": 0,
-        "ceoSideDefence": 0
+        "ceoCentralDefence": 0.037,
+        "ceoSideDefence": 0.104
     },
     {
         "id": 8,
@@ -100,8 +100,8 @@
         "visibility": false,
         "motherClub": false,
         "defending": 0,
-        "ceoCentralDefence": 0,
-        "ceoSideDefence": 0
+        "ceoCentralDefence": 0.070,
+        "ceoSideDefence": 0.028
     },
     {
         "id": 9,
@@ -113,8 +113,8 @@
         "visibility": false,
         "motherClub": false,
         "defending": 0,
-        "ceoCentralDefence": 0,
-        "ceoSideDefence": 0
+        "ceoCentralDefence": 0.070,
+        "ceoSideDefence": 0.028
     },
     {
         "id": 10,
@@ -126,8 +126,8 @@
         "visibility": false,
         "motherClub": false,
         "defending": 0,
-        "ceoCentralDefence": 0,
-        "ceoSideDefence": 0
+        "ceoCentralDefence": 0.070,
+        "ceoSideDefence": 0.028
     },
     {
         "id": 11,
@@ -139,8 +139,8 @@
         "visibility": false,
         "motherClub": false,
         "defending": 0,
-        "ceoCentralDefence": 0,
-        "ceoSideDefence": 0
+        "ceoCentralDefence": 0.037,
+        "ceoSideDefence": 0.104
     },
     {
         "id": 12,
