@@ -80,7 +80,12 @@ export class CustomRatingComponent implements OnInit {
         this.ldRating = 0;
         let player1 = this.getCentralDefencePlayerScore(this.players[0]);
         this.cdRating += player1;
+        player1 = this.getCentralGkPlayerScore(this.players[0]);
+        this.cdRating += player1;
         player1 = this.getSideDefencePlayerScore(this.players[0]);
+        this.rdRating += player1;
+        this.ldRating += player1;
+        player1 = this.getSideGkPlayerScore(this.players[0]);
         this.rdRating += player1;
         this.ldRating += player1;
         let player2 = this.getCentralDefencePlayerScore(this.players[1]);
@@ -118,12 +123,7 @@ export class CustomRatingComponent implements OnInit {
         let player11 = this.getCentralDefencePlayerScore(this.players[10]);
         this.cdRating += player11;
         player11 = this.getSideDefencePlayerScore(this.players[10]);
-        this.ldRating += player11;
-
-        console.log(this.cdRating);
-        console.log(this.rdRating);
-        console.log(this.ldRating);
-        
+        this.ldRating += player11;        
 
         this.cdRating = Math.round(this.cdRating * 4 * this.spiritItems[this.teamSpirit]) + 3;
         this.cdRating /= 4;
@@ -143,6 +143,20 @@ export class CustomRatingComponent implements OnInit {
     getSideDefencePlayerScore(pl: Player) {
         if (pl.visibility) {
             return pl.ceoSideDefence * (pl.defending + this.getLoyaltyCeo(pl.loyalty, pl.motherClub));
+        }
+        return 0;
+    }
+
+    getCentralGkPlayerScore(pl: Player) {
+        if (pl.visibility) {
+            return pl.ceoCentralGk * (pl.goalkeeping + this.getLoyaltyCeo(pl.loyalty, pl.motherClub));
+        }
+        return 0;
+    }
+
+    getSideGkPlayerScore(pl: Player) {
+        if (pl.visibility) {
+            return pl.ceoSideGk * (pl.goalkeeping + this.getLoyaltyCeo(pl.loyalty, pl.motherClub));
         }
         return 0;
     }

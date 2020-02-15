@@ -10,4 +10,7 @@ export class Player {
     defending: number;
     ceoCentralDefence: number;
     ceoSideDefence: number;
+    goalkeeping = 0;
+    ceoCentralGk = 0;
+    ceoSideGk = 0;
 }
