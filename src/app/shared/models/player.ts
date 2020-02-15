@@ -13,4 +13,7 @@ export class Player {
     goalkeeping = 0;
     ceoCentralGk = 0;
     ceoSideGk = 0;
+    scoring = 0;
+    ceoCentralScoring = 0;
+    ceoSideScoring = 0;
 }

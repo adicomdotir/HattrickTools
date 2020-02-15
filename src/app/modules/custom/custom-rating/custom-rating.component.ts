@@ -26,27 +26,33 @@ export class CustomRatingComponent implements OnInit {
     constructor(private router: Router, private httpClient: HttpClient) { }
 
     ngOnInit() {
-        if (localStorage.getItem('POSITION')) {
-            this.players = JSON.parse(localStorage.getItem('POSITION'));
-            this.calculateMidfieldRating();
-            this.calculateDefenceRating();
-        } else {
-            this.httpClient.get<Player[]>("./assets/position.json").subscribe({
-                next: (next) => {
-                    console.log('ok');
-                    console.log(next);
-                    
-                    
-                    localStorage.setItem('POSITION', JSON.stringify(next));
-                    this.players = next;
+        this.httpClient.get<Player[]>("./assets/position.json").subscribe({
+            next: (next) => {                
+                if (localStorage.getItem('POSITION') && localStorage.getItem('VERSION')) {
+                    if (localStorage.getItem('VERSION') == next['version']) {
+                        this.players = JSON.parse(localStorage.getItem('POSITION'));
+                        this.calculateMidfieldRating();
+                        this.calculateDefenceRating();
+                    } else {
+                        localStorage.setItem('POSITION', JSON.stringify(next['positions']));
+                        localStorage.setItem('VERSION', JSON.stringify(next['version']));
+                        this.players = next['positions'];
+                        this.calculateMidfieldRating();
+                        this.calculateDefenceRating();
+                    }
+                } else {
+                    localStorage.setItem('POSITION', JSON.stringify(next['positions']));
+                    localStorage.setItem('VERSION', JSON.stringify(next['version']));
+                    this.players = next['positions'];
                     this.calculateMidfieldRating();
                     this.calculateDefenceRating();
-                },
-                error: (err) => {
-                    console.log(err);
                 }
-            });
-        }
+            },
+            error: (err) => {
+                console.log(err);
+            }
+        });
+
     }
 
     calculateMidfieldRating() {
@@ -127,7 +133,7 @@ export class CustomRatingComponent implements OnInit {
         let player11 = this.getCentralDefencePlayerScore(this.players[10]);
         this.cdRating += player11;
         player11 = this.getSideDefencePlayerScore(this.players[10]);
-        this.ldRating += player11;        
+        this.ldRating += player11;
 
         this.cdRating = Math.round(this.cdRating * 4) + 3;
         this.cdRating /= 4;
