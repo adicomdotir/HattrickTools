@@ -33,6 +33,10 @@ export class CustomRatingComponent implements OnInit {
         } else {
             this.httpClient.get<Player[]>("./assets/position.json").subscribe({
                 next: (next) => {
+                    console.log('ok');
+                    console.log(next);
+                    
+                    
                     localStorage.setItem('POSITION', JSON.stringify(next));
                     this.players = next;
                     this.calculateMidfieldRating();
@@ -125,11 +129,11 @@ export class CustomRatingComponent implements OnInit {
         player11 = this.getSideDefencePlayerScore(this.players[10]);
         this.ldRating += player11;        
 
-        this.cdRating = Math.round(this.cdRating * 4 * this.spiritItems[this.teamSpirit]) + 3;
+        this.cdRating = Math.round(this.cdRating * 4) + 3;
         this.cdRating /= 4;
-        this.rdRating = Math.round(this.rdRating * 4 * this.spiritItems[this.teamSpirit]) + 3;
+        this.rdRating = Math.round(this.rdRating * 4) + 3;
         this.rdRating /= 4;
-        this.ldRating = Math.round(this.ldRating * 4 * this.spiritItems[this.teamSpirit]) + 3;
+        this.ldRating = Math.round(this.ldRating * 4) + 3;
         this.ldRating /= 4;
     }
 

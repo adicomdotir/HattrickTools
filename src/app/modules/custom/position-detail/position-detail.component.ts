@@ -25,9 +25,21 @@ export class PositionDetailComponent implements OnInit {
     }
 
     savePlayer() {
+        this.checkMaxAndMin(this.player);
         this.players[this.index] = this.player;
         localStorage.setItem('POSITION', JSON.stringify(this.players));
         this.location.back();
+    }
+
+    checkMaxAndMin(player: Player) {
+        if (player.defending > 20) player.defending = 20;
+        if (player.goalkeeping > 20) player.goalkeeping = 20;
+        if (player.playMaking > 20) player.playMaking = 20;
+        if (player.loyalty > 20) player.loyalty = 20;
+        if (player.defending < 0) player.playMaking = 0;
+        if (player.goalkeeping < 0) player.goalkeeping = 0;
+        if (player.playMaking < 0) player.playMaking = 0;
+        if (player.loyalty < 0) player.loyalty = 0;
     }
 
     cancelBtn() {
