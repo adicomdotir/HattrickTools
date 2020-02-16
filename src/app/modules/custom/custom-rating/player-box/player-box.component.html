@@ -11,13 +11,17 @@
         <div class="row">GoalKeeping</div>
         <div class="row">{{player?.goalkeeping}}</div>
     </div>
-    <div style="height: 15px;">
+    <div *ngIf="checkDefendPlayer()" style="height: 15px;">
         <div class="row">Defending</div>
         <div class="row">{{player?.defending}}</div>
     </div>
     <div *ngIf="player?.id != 1" style="height: 15px;">
         <div class="row">PlayMaking</div>
         <div class="row">{{player?.playMaking}}</div>
+    </div>
+    <div *ngIf="checkAttackPlayer()" style="height: 15px;">
+        <div class="row">Scoring</div>
+        <div class="row">{{player?.scoring}}</div>
     </div>
     <div style="height: 15px;">
         <div class="row">Loyalty</div>

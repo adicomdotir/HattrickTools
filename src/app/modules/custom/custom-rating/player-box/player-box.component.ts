@@ -21,4 +21,16 @@ export class PlayerBoxComponent implements OnInit {
         return pl.loyalty;
     }
 
+    checkAttackPlayer() {
+        if (this.player.id == 1 || this.player.id == 2 || this.player.id == 3
+            || this.player.id == 4 || this.player.id == 5 || this.player.id == 6
+            || this.player.id == 7 || this.player.id == 11) return false;
+        return true;
+    }
+
+    checkDefendPlayer() {
+        if (this.player.id == 12 || this.player.id == 13 || this.player.id == 14) return false;
+        return true;
+    }
+
 }
