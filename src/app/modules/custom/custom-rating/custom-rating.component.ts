@@ -33,12 +33,14 @@ export class CustomRatingComponent implements OnInit {
                         this.players = JSON.parse(localStorage.getItem('POSITION'));
                         this.calculateMidfieldRating();
                         this.calculateDefenceRating();
+                        this.calculateAttackRating();
                     } else {
                         localStorage.setItem('POSITION', JSON.stringify(next['positions']));
                         localStorage.setItem('VERSION', JSON.stringify(next['version']));
                         this.players = next['positions'];
                         this.calculateMidfieldRating();
                         this.calculateDefenceRating();
+                        this.calculateAttackRating();
                     }
                 } else {
                     localStorage.setItem('POSITION', JSON.stringify(next['positions']));
@@ -46,6 +48,7 @@ export class CustomRatingComponent implements OnInit {
                     this.players = next['positions'];
                     this.calculateMidfieldRating();
                     this.calculateDefenceRating();
+                    this.calculateAttackRating();
                 }
             },
             error: (err) => {
@@ -143,6 +146,49 @@ export class CustomRatingComponent implements OnInit {
         this.ldRating /= 4;
     }
 
+    calculateAttackRating() {
+        this.raRating = 0;
+        this.caRating = 0;
+        this.laRating = 0;
+        let player8 = this.getCentralAttackPlayerScore(this.players[7]);
+        let player9 = this.getCentralAttackPlayerScore(this.players[8]);
+        let player10 = this.getCentralAttackPlayerScore(this.players[9]);
+        let ceoMultiple = this.getMultipleCeo(this.players[7], this.players[8], this.players[9]);        
+        this.caRating += (player8 * ceoMultiple) + (player9 * ceoMultiple) + (player10 * ceoMultiple);
+        let player12 = this.getCentralAttackPlayerScore(this.players[11]);
+        let player13 = this.getCentralAttackPlayerScore(this.players[12]);
+        let player14 = this.getCentralAttackPlayerScore(this.players[13]);
+        ceoMultiple = this.getMultipleCeo(this.players[11], this.players[12], this.players[13]);
+        this.caRating += (player12 * ceoMultiple) + (player13 * ceoMultiple) + (player14 * ceoMultiple);
+        player12 = this.getSideAttackPlayerScore(this.players[11]);
+        player13 = this.getSideAttackPlayerScore(this.players[12]);
+        player14 = this.getSideAttackPlayerScore(this.players[13]);
+        ceoMultiple = this.getMultipleCeo(this.players[11], this.players[12], this.players[13]);
+        this.laRating += (player12 * ceoMultiple) + (player13 * ceoMultiple) + (player14 * ceoMultiple);
+        this.raRating += (player12 * ceoMultiple) + (player13 * ceoMultiple) + (player14 * ceoMultiple);
+
+        this.caRating = Math.round(this.caRating * 4) + 3;
+        this.caRating /= 4;
+        this.raRating = Math.round(this.raRating * 4) + 3;
+        this.raRating /= 4;
+        this.laRating = Math.round(this.laRating * 4) + 3;
+        this.laRating /= 4;
+    }
+
+    getCentralAttackPlayerScore(pl: Player) {
+        if (pl.visibility) {            
+            return pl.ceoCentralScoring * (pl.scoring + this.getLoyaltyCeo(pl.loyalty, pl.motherClub));
+        }
+        return 0;
+    }
+
+    getSideAttackPlayerScore(pl: Player) {
+        if (pl.visibility) {
+            return pl.ceoSideScoring * (pl.scoring + this.getLoyaltyCeo(pl.loyalty, pl.motherClub));
+        }
+        return 0;
+    }
+
     getCentralDefencePlayerScore(pl: Player) {
         if (pl.visibility) {
             return pl.ceoCentralDefence * (pl.defending + this.getLoyaltyCeo(pl.loyalty, pl.motherClub));
@@ -233,6 +279,7 @@ export class CustomRatingComponent implements OnInit {
     changeSpirit() {
         this.calculateMidfieldRating();
         this.calculateDefenceRating();
+        this.calculateAttackRating();
     }
 
 }

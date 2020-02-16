@@ -36,13 +36,21 @@ export class PositionDetailComponent implements OnInit {
         if (player.goalkeeping > 20) player.goalkeeping = 20;
         if (player.playMaking > 20) player.playMaking = 20;
         if (player.loyalty > 20) player.loyalty = 20;
+        if (player.scoring > 20) player.scoring = 20;
         if (player.defending < 0) player.playMaking = 0;
         if (player.goalkeeping < 0) player.goalkeeping = 0;
         if (player.playMaking < 0) player.playMaking = 0;
         if (player.loyalty < 0) player.loyalty = 0;
+        if (player.scoring < 0) player.scoring = 0;
     }
 
     cancelBtn() {
         this.location.back();
+    }
+
+    checkAttackPlayer() {
+        if (this.index == 0 || this.index == 1 || this.index == 2 || this.index == 3
+            || this.index == 4 || this.index == 5 || this.index == 6 || this.index == 10) return false;
+        return true;
     }
 }
