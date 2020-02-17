@@ -37,11 +37,14 @@ export class PositionDetailComponent implements OnInit {
         if (player.playMaking > 20) player.playMaking = 20;
         if (player.loyalty > 20) player.loyalty = 20;
         if (player.scoring > 20) player.scoring = 20;
+        if (player.passing > 20) player.passing = 20;
+
         if (player.defending < 0) player.playMaking = 0;
         if (player.goalkeeping < 0) player.goalkeeping = 0;
         if (player.playMaking < 0) player.playMaking = 0;
         if (player.loyalty < 0) player.loyalty = 0;
         if (player.scoring < 0) player.scoring = 0;
+        if (player.passing < 0) player.passing = 0;
     }
 
     cancelBtn() {

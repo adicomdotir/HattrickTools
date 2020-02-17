@@ -16,4 +16,7 @@ export class Player {
     scoring = 0;
     ceoCentralScoring = 0;
     ceoSideScoring = 0;
+    passing = 0;
+    ceoCentralPassing = 0;
+    ceoSidePassing = 0;
 }

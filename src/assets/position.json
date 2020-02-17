@@ -1,5 +1,5 @@
 {
-    "version": 2,
+    "version": 4,
     "positions": [{
             "id": 1,
             "form": 7,
@@ -95,7 +95,10 @@
             "motherClub": false,
             "defending": 0,
             "ceoCentralDefence": 0.037,
-            "ceoSideDefence": 0.104
+            "ceoSideDefence": 0.104,
+            "passing": 0,
+            "ceoCentralPassing": 0,
+            "ceoSidePassing": 0.219
         },
         {
             "id": 8,
@@ -110,7 +113,10 @@
             "ceoCentralDefence": 0.070,
             "ceoSideDefence": 0.028,
             "scoring": 0,
-            "ceoCentralScoring": 0.038
+            "ceoCentralScoring": 0.038,
+            "passing": 0,
+            "ceoCentralPassing": 0.038,
+            "ceoSidePassing": 0.028
         },
         {
             "id": 9,
@@ -125,7 +131,10 @@
             "ceoCentralDefence": 0.070,
             "ceoSideDefence": 0.028,
             "scoring": 0,
-            "ceoCentralScoring": 0.038
+            "ceoCentralScoring": 0.038,
+            "passing": 0,
+            "ceoCentralPassing": 0.038,
+            "ceoSidePassing": 0.028
         },
         {
             "id": 10,
@@ -140,7 +149,10 @@
             "ceoCentralDefence": 0.070,
             "ceoSideDefence": 0.028,
             "scoring": 0,
-            "ceoCentralScoring": 0.038
+            "ceoCentralScoring": 0.038,
+            "passing": 0,
+            "ceoCentralPassing": 0.038,
+            "ceoSidePassing": 0.028
         },
         {
             "id": 11,
@@ -153,7 +165,10 @@
             "motherClub": false,
             "defending": 0,
             "ceoCentralDefence": 0.037,
-            "ceoSideDefence": 0.104
+            "ceoSideDefence": 0.104,
+            "passing": 0,
+            "ceoCentralPassing": 0,
+            "ceoSidePassing": 0.219
         },
         {
             "id": 12,
@@ -169,7 +184,10 @@
             "ceoSideDefence": 0,
             "scoring": 0,
             "ceoCentralScoring": 0.066,
-            "ceoSideScoring": 0.058
+            "ceoSideScoring": 0.058,
+            "passing": 0,
+            "ceoCentralPassing": 0.178,
+            "ceoSidePassing": 0.048
         },
         {
             "id": 13,
@@ -185,7 +203,10 @@
             "ceoSideDefence": 0,
             "scoring": 0,
             "ceoCentralScoring": 0.066,
-            "ceoSideScoring": 0.058
+            "ceoSideScoring": 0.058,
+            "passing": 0,
+            "ceoCentralPassing": 0.178,
+            "ceoSidePassing": 0.048
         },
         {
             "id": 14,
@@ -201,7 +222,10 @@
             "ceoSideDefence": 0,
             "scoring": 0,
             "ceoCentralScoring": 0.066,
-            "ceoSideScoring": 0.058
+            "ceoSideScoring": 0.058,
+            "passing": 0,
+            "ceoCentralPassing": 0.178,
+            "ceoSidePassing": 0.048
         }
     ]
 }
