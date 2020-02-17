@@ -19,4 +19,6 @@ export class Player {
     passing = 0;
     ceoCentralPassing = 0;
     ceoSidePassing = 0;
+    winger: 0;
+    ceoSideWinger: 0;
 }

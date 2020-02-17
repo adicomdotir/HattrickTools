@@ -42,6 +42,7 @@ export class CustomRatingComponent implements OnInit {
                         this.calculateDefenceRating();
                         this.calculateScoringRating();
                         this.calculatePassingRating();
+                        this.calculateWingerRating();
                     } else {
                         localStorage.setItem('POSITION', JSON.stringify(next['positions']));
                         localStorage.setItem('VERSION', JSON.stringify(next['version']));
@@ -50,6 +51,7 @@ export class CustomRatingComponent implements OnInit {
                         this.calculateDefenceRating();
                         this.calculateScoringRating();
                         this.calculatePassingRating();
+                        this.calculateWingerRating();
                     }
                 } else {
                     localStorage.setItem('POSITION', JSON.stringify(next['positions']));
@@ -59,6 +61,7 @@ export class CustomRatingComponent implements OnInit {
                     this.calculateDefenceRating();
                     this.calculateScoringRating();
                     this.calculatePassingRating();
+                    this.calculateWingerRating();
                 }
             },
             error: (err) => {
@@ -236,7 +239,53 @@ export class CustomRatingComponent implements OnInit {
             laRating /= 4;
             this.laRating += laRating;
         }
+    }
 
+    calculateWingerRating() {
+        let caRating = 0;
+        let laRating = 0;
+        let raRating = 0;
+
+        let player2 = this.getSideWingerPlayerScore(this.players[1]);
+        raRating += player2;
+        let player6 = this.getSideWingerPlayerScore(this.players[5]);
+        laRating += player6;
+        let player7 = this.getSideWingerPlayerScore(this.players[6]);
+        raRating += player7;
+        let player11 = this.getSideWingerPlayerScore(this.players[10]);
+        laRating += player11;
+
+        let player12 = this.getSideWingerPlayerScore(this.players[11]);
+        let player13 = this.getSideWingerPlayerScore(this.players[12]);
+        let player14 = this.getSideWingerPlayerScore(this.players[13]);
+        let ceoMultiple = this.getMultipleCeo(this.players[11], this.players[12], this.players[13]);
+        laRating += (player12 * ceoMultiple) + (player13 * ceoMultiple) + (player14 * ceoMultiple);
+        raRating += (player12 * ceoMultiple) + (player13 * ceoMultiple) + (player14 * ceoMultiple);
+
+        if (caRating > 0) {
+            caRating = Math.round(caRating * 4) + 3;
+            caRating /= 4;
+            this.caRating += caRating;
+        }
+
+        if (raRating > 0) {
+            raRating = Math.round(raRating * 4) + 3;
+            raRating /= 4;
+            this.raRating += raRating;
+        }
+
+        if (laRating > 0) {
+            laRating = Math.round(laRating * 4) + 3;
+            laRating /= 4;
+            this.laRating += laRating;
+        }
+    }
+
+    getSideWingerPlayerScore(pl: Player) {
+        if (pl.visibility) {
+            return pl.ceoSideWinger * (pl.winger + this.getLoyaltyCeo(pl.loyalty, pl.motherClub));
+        }
+        return 0;
     }
 
     getCentralScoringPlayerScore(pl: Player) {
