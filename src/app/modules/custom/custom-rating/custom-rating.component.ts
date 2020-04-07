@@ -33,7 +33,7 @@ export class CustomRatingComponent implements OnInit {
         this.raRating = 0;
         this.caRating = 0;
         this.laRating = 0;
-        this.httpClient.get<Player[]>("./assets/position.json").subscribe({
+        this.httpClient.get<Player[]>('./assets/position.json').subscribe({
             next: (next) => {
                 if (localStorage.getItem('POSITION') && localStorage.getItem('VERSION')) {
                     if (localStorage.getItem('VERSION') == next['version']) {
@@ -73,30 +73,30 @@ export class CustomRatingComponent implements OnInit {
 
     calculateMidfieldRating() {
         this.midfieldRating = 0;
-        let player1 = this.getMidfieldPlayerScore(this.players[0]);
-        let player2 = this.getMidfieldPlayerScore(this.players[1]);
+        const player1 = this.getMidfieldPlayerScore(this.players[0]);
+        const player2 = this.getMidfieldPlayerScore(this.players[1]);
         this.midfieldRating = player1 + player2;
-        let player3 = this.getMidfieldPlayerScore(this.players[2]);
-        let player4 = this.getMidfieldPlayerScore(this.players[3]);
-        let player5 = this.getMidfieldPlayerScore(this.players[4]);
+        const player3 = this.getMidfieldPlayerScore(this.players[2]);
+        const player4 = this.getMidfieldPlayerScore(this.players[3]);
+        const player5 = this.getMidfieldPlayerScore(this.players[4]);
         let ceoMultiple = this.getMultipleCeo(this.players[2], this.players[3], this.players[4]);
         this.midfieldRating += (player3 * ceoMultiple) + (player4 * ceoMultiple) + (player5 * ceoMultiple);
-        let player6 = this.getMidfieldPlayerScore(this.players[5]);
-        let player7 = this.getMidfieldPlayerScore(this.players[6]);
+        const player6 = this.getMidfieldPlayerScore(this.players[5]);
+        const player7 = this.getMidfieldPlayerScore(this.players[6]);
         this.midfieldRating += player6 + player7;
-        let player8 = this.getMidfieldPlayerScore(this.players[7]);
-        let player9 = this.getMidfieldPlayerScore(this.players[8]);
-        let player10 = this.getMidfieldPlayerScore(this.players[9]);
+        const player8 = this.getMidfieldPlayerScore(this.players[7]);
+        const player9 = this.getMidfieldPlayerScore(this.players[8]);
+        const player10 = this.getMidfieldPlayerScore(this.players[9]);
         ceoMultiple = this.getMultipleCeo(this.players[7], this.players[8], this.players[9]);
         this.midfieldRating += (player8 * ceoMultiple) + (player9 * ceoMultiple) + (player10 * ceoMultiple);
-        let player11 = this.getMidfieldPlayerScore(this.players[10]);
+        const player11 = this.getMidfieldPlayerScore(this.players[10]);
         this.midfieldRating += player11;
-        let player12 = this.getMidfieldPlayerScore(this.players[11]);
-        let player13 = this.getMidfieldPlayerScore(this.players[12]);
-        let player14 = this.getMidfieldPlayerScore(this.players[13]);
+        const player12 = this.getMidfieldPlayerScore(this.players[11]);
+        const player13 = this.getMidfieldPlayerScore(this.players[12]);
+        const player14 = this.getMidfieldPlayerScore(this.players[13]);
         ceoMultiple = this.getMultipleCeo(this.players[11], this.players[12], this.players[13]);
         this.midfieldRating += (player12 * ceoMultiple) + (player13 * ceoMultiple) + (player14 * ceoMultiple);
-        this.midfieldRating = Math.round(this.midfieldRating * 4 * this.spiritItems[this.teamSpirit]) + 3;
+        this.midfieldRating = Math.round(this.midfieldRating * this.spiritItems[this.teamSpirit]) + 3;
         this.midfieldRating /= 4;
     }
 
@@ -151,11 +151,11 @@ export class CustomRatingComponent implements OnInit {
         player11 = this.getSideDefencePlayerScore(this.players[10]);
         this.ldRating += player11;
 
-        this.cdRating = Math.round(this.cdRating * 4) + 3;
+        this.cdRating = Math.round(this.cdRating + 3);
         this.cdRating /= 4;
-        this.rdRating = Math.round(this.rdRating * 4) + 3;
+        this.rdRating = Math.round(this.rdRating + 3);
         this.rdRating /= 4;
-        this.ldRating = Math.round(this.ldRating * 4) + 3;
+        this.ldRating = Math.round(this.ldRating + 3);
         this.ldRating /= 4;
     }
 
@@ -163,9 +163,9 @@ export class CustomRatingComponent implements OnInit {
         this.raRating = 0;
         this.caRating = 0;
         this.laRating = 0;
-        let player8 = this.getCentralScoringPlayerScore(this.players[7]);
-        let player9 = this.getCentralScoringPlayerScore(this.players[8]);
-        let player10 = this.getCentralScoringPlayerScore(this.players[9]);
+        const player8 = this.getCentralScoringPlayerScore(this.players[7]);
+        const player9 = this.getCentralScoringPlayerScore(this.players[8]);
+        const player10 = this.getCentralScoringPlayerScore(this.players[9]);
         let ceoMultiple = this.getMultipleCeo(this.players[7], this.players[8], this.players[9]);
         this.caRating += (player8 * ceoMultiple) + (player9 * ceoMultiple) + (player10 * ceoMultiple);
         let player12 = this.getCentralScoringPlayerScore(this.players[11]);
@@ -180,11 +180,11 @@ export class CustomRatingComponent implements OnInit {
         this.laRating += (player12 * ceoMultiple) + (player13 * ceoMultiple) + (player14 * ceoMultiple);
         this.raRating += (player12 * ceoMultiple) + (player13 * ceoMultiple) + (player14 * ceoMultiple);
 
-        this.caRating = Math.round(this.caRating * 4) + 3;
+        this.caRating = Math.round(this.caRating) + 3;
         this.caRating /= 4;
-        this.raRating = Math.round(this.raRating * 4) + 3;
+        this.raRating = Math.round(this.raRating) + 3;
         this.raRating /= 4;
-        this.laRating = Math.round(this.laRating * 4) + 3;
+        this.laRating = Math.round(this.laRating) + 3;
         this.laRating /= 4;
     }
 
@@ -205,8 +205,8 @@ export class CustomRatingComponent implements OnInit {
         laRating += (player8 * ceoMultiple) + (player9 * ceoMultiple) + (player10 * ceoMultiple);
         raRating += (player8 * ceoMultiple) + (player9 * ceoMultiple) + (player10 * ceoMultiple);
 
-        let player7 = this.getSidePassingPlayerScore(this.players[6]);
-        let player11 = this.getSidePassingPlayerScore(this.players[10]);
+        const player7 = this.getSidePassingPlayerScore(this.players[6]);
+        const player11 = this.getSidePassingPlayerScore(this.players[10]);
         laRating += player11;
         raRating += player7;
 
@@ -246,19 +246,19 @@ export class CustomRatingComponent implements OnInit {
         let laRating = 0;
         let raRating = 0;
 
-        let player2 = this.getSideWingerPlayerScore(this.players[1]);
+        const player2 = this.getSideWingerPlayerScore(this.players[1]);
         raRating += player2;
-        let player6 = this.getSideWingerPlayerScore(this.players[5]);
+        const player6 = this.getSideWingerPlayerScore(this.players[5]);
         laRating += player6;
-        let player7 = this.getSideWingerPlayerScore(this.players[6]);
+        const player7 = this.getSideWingerPlayerScore(this.players[6]);
         raRating += player7;
-        let player11 = this.getSideWingerPlayerScore(this.players[10]);
+        const player11 = this.getSideWingerPlayerScore(this.players[10]);
         laRating += player11;
 
-        let player12 = this.getSideWingerPlayerScore(this.players[11]);
-        let player13 = this.getSideWingerPlayerScore(this.players[12]);
-        let player14 = this.getSideWingerPlayerScore(this.players[13]);
-        let ceoMultiple = this.getMultipleCeo(this.players[11], this.players[12], this.players[13]);
+        const player12 = this.getSideWingerPlayerScore(this.players[11]);
+        const player13 = this.getSideWingerPlayerScore(this.players[12]);
+        const player14 = this.getSideWingerPlayerScore(this.players[13]);
+        const ceoMultiple = this.getMultipleCeo(this.players[11], this.players[12], this.players[13]);
         laRating += (player12 * ceoMultiple) + (player13 * ceoMultiple) + (player14 * ceoMultiple);
         raRating += (player12 * ceoMultiple) + (player13 * ceoMultiple) + (player14 * ceoMultiple);
 
@@ -283,76 +283,76 @@ export class CustomRatingComponent implements OnInit {
 
     getSideWingerPlayerScore(pl: Player) {
         if (pl.visibility) {
-            return pl.ceoSideWinger * (pl.winger + this.getLoyaltyCeo(pl.loyalty, pl.motherClub));
+            return pl.ceoSideWinger * (pl.winger + this.getLoyaltyCeo(pl) + this.getExperience(pl.experience));
         }
         return 0;
     }
 
     getCentralScoringPlayerScore(pl: Player) {
         if (pl.visibility) {
-            return pl.ceoCentralScoring * (pl.scoring + this.getLoyaltyCeo(pl.loyalty, pl.motherClub));
+            return pl.ceoCentralScoring * (pl.scoring + this.getLoyaltyCeo(pl) + this.getExperience(pl.experience));
         }
         return 0;
     }
 
     getSideScoringPlayerScore(pl: Player) {
         if (pl.visibility) {
-            return pl.ceoSideScoring * (pl.scoring + this.getLoyaltyCeo(pl.loyalty, pl.motherClub));
+            return pl.ceoSideScoring * (pl.scoring + this.getLoyaltyCeo(pl) + this.getExperience(pl.experience));
         }
         return 0;
     }
 
     getCentralPassingPlayerScore(pl: Player) {
         if (pl.visibility) {
-            return pl.ceoCentralPassing * (pl.passing + this.getLoyaltyCeo(pl.loyalty, pl.motherClub));
+            return pl.ceoCentralPassing * (pl.passing + this.getLoyaltyCeo(pl) + this.getExperience(pl.experience));
         }
         return 0;
     }
 
     getSidePassingPlayerScore(pl: Player) {
         if (pl.visibility) {
-            return pl.ceoSidePassing * (pl.passing + this.getLoyaltyCeo(pl.loyalty, pl.motherClub));
+            return pl.ceoSidePassing * (pl.passing + this.getLoyaltyCeo(pl) + this.getExperience(pl.experience));
         }
         return 0;
     }
 
     getCentralDefencePlayerScore(pl: Player) {
         if (pl.visibility) {
-            return pl.ceoCentralDefence * (pl.defending + this.getLoyaltyCeo(pl.loyalty, pl.motherClub));
+            return pl.ceoCentralDefence * (pl.defending + this.getLoyaltyCeo(pl) + this.getExperience(pl.experience));
         }
         return 0;
     }
 
     getSideDefencePlayerScore(pl: Player) {
         if (pl.visibility) {
-            return pl.ceoSideDefence * (pl.defending + this.getLoyaltyCeo(pl.loyalty, pl.motherClub));
+            return pl.ceoSideDefence * (pl.defending + this.getLoyaltyCeo(pl) + this.getExperience(pl.experience));
         }
         return 0;
     }
 
     getCentralGkPlayerScore(pl: Player) {
         if (pl.visibility) {
-            return pl.ceoCentralGk * (pl.goalkeeping + this.getLoyaltyCeo(pl.loyalty, pl.motherClub));
+            return pl.ceoCentralGk * (pl.goalkeeping + this.getLoyaltyCeo(pl) + this.getExperience(pl.experience));
         }
         return 0;
     }
 
     getSideGkPlayerScore(pl: Player) {
         if (pl.visibility) {
-            return pl.ceoSideGk * (pl.goalkeeping + this.getLoyaltyCeo(pl.loyalty, pl.motherClub));
+            return pl.ceoSideGk * (pl.goalkeeping + this.getLoyaltyCeo(pl) + this.getExperience(pl.experience));
         }
         return 0;
     }
 
     getMidfieldPlayerScore(pl: Player) {
         if (pl.visibility) {
-            return pl.coeMidfield * (pl.playMaking + this.getLoyaltyCeo(pl.loyalty, pl.motherClub));
+            return pl.coeMidfield * (pl.playMaking + this.getLoyaltyCeo(pl) + this.getExperience(pl.experience));
         }
         return 0;
     }
 
-    getLoyaltyCeo(loyalty, motherClub) {
-        if (motherClub) {
+    getLoyaltyCeo(pl: Player) {
+        if (pl.motherClub) {
             return 1.5;
         }
         const loyalties = [
@@ -377,7 +377,33 @@ export class CustomRatingComponent implements OnInit {
             0.9474,
             1.0000
         ];
-        return loyalties[loyalty - 1];
+        return loyalties[pl.loyalty - 1];
+    }
+
+    getExperience(experience) {
+        const experiences = [
+            0,
+            0.40,
+            0.64,
+            0.80,
+            0.93,
+            1.04,
+            1.13,
+            1.20,
+            1.27,
+            1.33,
+            1.39,
+            1.44,
+            1.49,
+            1.53,
+            1.57,
+            1.61,
+            1.64,
+            1.67,
+            1.71,
+            1.73
+        ];
+        return experiences[experience - 1];
     }
 
     selectPosition(position) {

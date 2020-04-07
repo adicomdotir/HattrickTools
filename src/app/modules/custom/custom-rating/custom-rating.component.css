@@ -22,3 +22,7 @@ select {
     border: 1px solid #1A8C40;
     color: #1A8C40;
 }
+
+.little-table tr td {
+    border: #1A8C40 1px solid;
+}
