@@ -79,7 +79,7 @@ export class CustomRatingComponent implements OnInit {
         const player3 = this.getMidfieldPlayerScore(this.players[2]);
         const player4 = this.getMidfieldPlayerScore(this.players[3]);
         const player5 = this.getMidfieldPlayerScore(this.players[4]);
-        let ceoMultiple = this.getMultipleCeo(this.players[2], this.players[3], this.players[4]);
+        let ceoMultiple = this.getDefenceMultipleCeo(this.players[2], this.players[3], this.players[4]);
         this.midfieldRating += (player3 * ceoMultiple) + (player4 * ceoMultiple) + (player5 * ceoMultiple);
         const player6 = this.getMidfieldPlayerScore(this.players[5]);
         const player7 = this.getMidfieldPlayerScore(this.players[6]);
@@ -87,14 +87,14 @@ export class CustomRatingComponent implements OnInit {
         const player8 = this.getMidfieldPlayerScore(this.players[7]);
         const player9 = this.getMidfieldPlayerScore(this.players[8]);
         const player10 = this.getMidfieldPlayerScore(this.players[9]);
-        ceoMultiple = this.getMultipleCeo(this.players[7], this.players[8], this.players[9]);
+        ceoMultiple = this.getMidfieldMultipleCeo(this.players[7], this.players[8], this.players[9]);
         this.midfieldRating += (player8 * ceoMultiple) + (player9 * ceoMultiple) + (player10 * ceoMultiple);
         const player11 = this.getMidfieldPlayerScore(this.players[10]);
         this.midfieldRating += player11;
         const player12 = this.getMidfieldPlayerScore(this.players[11]);
         const player13 = this.getMidfieldPlayerScore(this.players[12]);
         const player14 = this.getMidfieldPlayerScore(this.players[13]);
-        ceoMultiple = this.getMultipleCeo(this.players[11], this.players[12], this.players[13]);
+        ceoMultiple = this.getAttackMultipleCeo(this.players[11], this.players[12], this.players[13]);
         this.midfieldRating += (player12 * ceoMultiple) + (player13 * ceoMultiple) + (player14 * ceoMultiple);
         this.midfieldRating = Math.round(this.midfieldRating * this.spiritItems[this.teamSpirit]) + 3;
         this.midfieldRating /= 4;
@@ -121,7 +121,7 @@ export class CustomRatingComponent implements OnInit {
         let player3 = this.getCentralDefencePlayerScore(this.players[2]);
         let player4 = this.getCentralDefencePlayerScore(this.players[3]);
         let player5 = this.getCentralDefencePlayerScore(this.players[4]);
-        let ceoMultiple = this.getMultipleCeo(this.players[2], this.players[3], this.players[4]);
+        let ceoMultiple = this.getDefenceMultipleCeo(this.players[2], this.players[3], this.players[4]);
         this.cdRating += (player3 * ceoMultiple) + (player4 * ceoMultiple) + (player5 * ceoMultiple);
         player3 = this.getSideDefencePlayerScore(this.players[2]);
         player4 = this.getSideDefencePlayerScore(this.players[3]);
@@ -139,7 +139,7 @@ export class CustomRatingComponent implements OnInit {
         let player8 = this.getCentralDefencePlayerScore(this.players[7]);
         let player9 = this.getCentralDefencePlayerScore(this.players[8]);
         let player10 = this.getCentralDefencePlayerScore(this.players[9]);
-        ceoMultiple = this.getMultipleCeo(this.players[7], this.players[8], this.players[9]);
+        ceoMultiple = this.getMidfieldMultipleCeo(this.players[7], this.players[8], this.players[9]);
         this.cdRating += (player8 * ceoMultiple) + (player9 * ceoMultiple) + (player10 * ceoMultiple);
         player8 = this.getSideDefencePlayerScore(this.players[7]);
         player9 = this.getSideDefencePlayerScore(this.players[8]);
@@ -166,17 +166,17 @@ export class CustomRatingComponent implements OnInit {
         const player8 = this.getCentralScoringPlayerScore(this.players[7]);
         const player9 = this.getCentralScoringPlayerScore(this.players[8]);
         const player10 = this.getCentralScoringPlayerScore(this.players[9]);
-        let ceoMultiple = this.getMultipleCeo(this.players[7], this.players[8], this.players[9]);
+        let ceoMultiple = this.getMidfieldMultipleCeo(this.players[7], this.players[8], this.players[9]);
         this.caRating += (player8 * ceoMultiple) + (player9 * ceoMultiple) + (player10 * ceoMultiple);
         let player12 = this.getCentralScoringPlayerScore(this.players[11]);
         let player13 = this.getCentralScoringPlayerScore(this.players[12]);
         let player14 = this.getCentralScoringPlayerScore(this.players[13]);
-        ceoMultiple = this.getMultipleCeo(this.players[11], this.players[12], this.players[13]);
+        ceoMultiple = this.getAttackMultipleCeo(this.players[11], this.players[12], this.players[13]);
         this.caRating += (player12 * ceoMultiple) + (player13 * ceoMultiple) + (player14 * ceoMultiple);
         player12 = this.getSideScoringPlayerScore(this.players[11]);
         player13 = this.getSideScoringPlayerScore(this.players[12]);
         player14 = this.getSideScoringPlayerScore(this.players[13]);
-        ceoMultiple = this.getMultipleCeo(this.players[11], this.players[12], this.players[13]);
+        ceoMultiple = this.getAttackMultipleCeo(this.players[11], this.players[12], this.players[13]);
         this.laRating += (player12 * ceoMultiple) + (player13 * ceoMultiple) + (player14 * ceoMultiple);
         this.raRating += (player12 * ceoMultiple) + (player13 * ceoMultiple) + (player14 * ceoMultiple);
 
@@ -196,12 +196,12 @@ export class CustomRatingComponent implements OnInit {
         let player8 = this.getCentralPassingPlayerScore(this.players[7]);
         let player9 = this.getCentralPassingPlayerScore(this.players[8]);
         let player10 = this.getCentralPassingPlayerScore(this.players[9]);
-        let ceoMultiple = this.getMultipleCeo(this.players[7], this.players[8], this.players[9]);
+        let ceoMultiple = this.getMidfieldMultipleCeo(this.players[7], this.players[8], this.players[9]);
         caRating += (player8 * ceoMultiple) + (player9 * ceoMultiple) + (player10 * ceoMultiple);
         player8 = this.getSidePassingPlayerScore(this.players[7]);
         player9 = this.getSidePassingPlayerScore(this.players[8]);
         player10 = this.getSidePassingPlayerScore(this.players[9]);
-        ceoMultiple = this.getMultipleCeo(this.players[7], this.players[8], this.players[9]);
+        ceoMultiple = this.getMidfieldMultipleCeo(this.players[7], this.players[8], this.players[9]);
         laRating += (player8 * ceoMultiple) + (player9 * ceoMultiple) + (player10 * ceoMultiple);
         raRating += (player8 * ceoMultiple) + (player9 * ceoMultiple) + (player10 * ceoMultiple);
 
@@ -213,29 +213,29 @@ export class CustomRatingComponent implements OnInit {
         let player12 = this.getCentralPassingPlayerScore(this.players[11]);
         let player13 = this.getCentralPassingPlayerScore(this.players[12]);
         let player14 = this.getCentralPassingPlayerScore(this.players[13]);
-        ceoMultiple = this.getMultipleCeo(this.players[11], this.players[12], this.players[13]);
+        ceoMultiple = this.getAttackMultipleCeo(this.players[11], this.players[12], this.players[13]);
         caRating += (player12 * ceoMultiple) + (player13 * ceoMultiple) + (player14 * ceoMultiple);
         player12 = this.getSidePassingPlayerScore(this.players[11]);
         player13 = this.getSidePassingPlayerScore(this.players[12]);
         player14 = this.getSidePassingPlayerScore(this.players[13]);
-        ceoMultiple = this.getMultipleCeo(this.players[11], this.players[12], this.players[13]);
+        ceoMultiple = this.getAttackMultipleCeo(this.players[11], this.players[12], this.players[13]);
         laRating += (player12 * ceoMultiple) + (player13 * ceoMultiple) + (player14 * ceoMultiple);
         raRating += (player12 * ceoMultiple) + (player13 * ceoMultiple) + (player14 * ceoMultiple);
 
         if (caRating > 0) {
-            caRating = Math.round(caRating * 4) + 3;
+            caRating = Math.round(caRating) + 3;
             caRating /= 4;
             this.caRating += caRating;
         }
 
         if (raRating > 0) {
-            raRating = Math.round(raRating * 4) + 3;
+            raRating = Math.round(raRating) + 3;
             raRating /= 4;
             this.raRating += raRating;
         }
 
         if (laRating > 0) {
-            laRating = Math.round(laRating * 4) + 3;
+            laRating = Math.round(laRating) + 3;
             laRating /= 4;
             this.laRating += laRating;
         }
@@ -258,24 +258,24 @@ export class CustomRatingComponent implements OnInit {
         const player12 = this.getSideWingerPlayerScore(this.players[11]);
         const player13 = this.getSideWingerPlayerScore(this.players[12]);
         const player14 = this.getSideWingerPlayerScore(this.players[13]);
-        const ceoMultiple = this.getMultipleCeo(this.players[11], this.players[12], this.players[13]);
+        const ceoMultiple = this.getAttackMultipleCeo(this.players[11], this.players[12], this.players[13]);
         laRating += (player12 * ceoMultiple) + (player13 * ceoMultiple) + (player14 * ceoMultiple);
         raRating += (player12 * ceoMultiple) + (player13 * ceoMultiple) + (player14 * ceoMultiple);
 
         if (caRating > 0) {
-            caRating = Math.round(caRating * 4) + 3;
+            caRating = Math.round(caRating) + 3;
             caRating /= 4;
             this.caRating += caRating;
         }
 
         if (raRating > 0) {
-            raRating = Math.round(raRating * 4) + 3;
+            raRating = Math.round(raRating) + 3;
             raRating /= 4;
             this.raRating += raRating;
         }
 
         if (laRating > 0) {
-            laRating = Math.round(laRating * 4) + 3;
+            laRating = Math.round(laRating) + 3;
             laRating /= 4;
             this.laRating += laRating;
         }
@@ -410,7 +410,7 @@ export class CustomRatingComponent implements OnInit {
         this.router.navigateByUrl(`detail/${position}`);
     }
 
-    getMultipleCeo(playerX: Player, playerY: Player, playerZ: Player) {
+    getMidfieldMultipleCeo(playerX: Player, playerY: Player, playerZ: Player) {
         let counter = 0;
         if (playerX.visibility) {
             counter++;
@@ -425,6 +425,44 @@ export class CustomRatingComponent implements OnInit {
             return 0.825;
         } else if (counter === 2) {
             return 0.935;
+        }
+        return 1;
+    }
+
+    getDefenceMultipleCeo(playerX: Player, playerY: Player, playerZ: Player) {
+        let counter = 0;
+        if (playerX.visibility) {
+            counter++;
+        }
+        if (playerY.visibility) {
+            counter++;
+        }
+        if (playerZ.visibility) {
+            counter++;
+        }
+        if (counter === 3) {
+            return 0.9;
+        } else if (counter === 2) {
+            return 0.964;
+        }
+        return 1;
+    }
+
+    getAttackMultipleCeo(playerX: Player, playerY: Player, playerZ: Player) {
+        let counter = 0;
+        if (playerX.visibility) {
+            counter++;
+        }
+        if (playerY.visibility) {
+            counter++;
+        }
+        if (playerZ.visibility) {
+            counter++;
+        }
+        if (counter === 3) {
+            return 0.865;
+        } else if (counter === 2) {
+            return 0.945;
         }
         return 1;
     }
