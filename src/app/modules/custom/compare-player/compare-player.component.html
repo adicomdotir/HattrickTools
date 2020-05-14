@@ -1,0 +1,32 @@
+<div>
+    <button (click)="addNewPlayer()">New Player</button>
+    <div>
+        <select (change)="clearPlayers()" [(ngModel)]="position">
+            <option value="0">GK</option>
+            <option value="1">CD</option>
+            <option value="2">CDtw</option>
+            <option value="3">CDo</option>
+            <option value="4">WBd</option>
+            <option value="5">WB</option>
+            <option value="6">WBtm</option>
+            <option value="7">WBo</option>
+            <option value="8">IMd</option>
+            <option value="9">IM</option>
+            <option value="10">IMtw</option>
+            <option value="11">IMo</option>
+            <option value="12">Wd</option>
+            <option value="13">W</option>
+            <option value="14">Wtm</option>
+            <option value="15">Wo</option>
+            <option value="16">Fd</option>
+            <option value="17">F</option>
+            <option value="18">Ftw</option>
+            <option value="19">TDF</option>
+        </select>
+    </div>
+</div>
+<div style="display: flex; flex-wrap: wrap;">
+    <ng-container *ngFor="let item of players">
+        <app-compare-player-box [position]="position"></app-compare-player-box>
+    </ng-container>
+</div>

@@ -12,6 +12,8 @@ import { TranslateModule } from '@ngx-translate/core';
 import { CustomRatingComponent } from './custom-rating/custom-rating.component';
 import { PositionDetailComponent } from './position-detail/position-detail.component';
 import { PlayerBoxComponent } from './custom-rating/player-box/player-box.component';
+import { ComparePlayerComponent } from './compare-player/compare-player.component';
+import { ComparePlayerBoxComponent } from './compare-player/compare-player-box/compare-player-box.component';
 
 @NgModule({
 	imports: [
@@ -28,7 +30,9 @@ import { PlayerBoxComponent } from './custom-rating/player-box/player-box.compon
 		StadiumComponent,
 		CustomRatingComponent,
 		PositionDetailComponent,
-		PlayerBoxComponent // TODO: move to shared module
+		PlayerBoxComponent,
+		ComparePlayerComponent,
+		ComparePlayerBoxComponent // TODO: move to shared module
 	]
 })
 export class CustomModule { }

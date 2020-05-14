@@ -6,6 +6,7 @@ import { HealingComponent } from './healing/healing.component';
 import { StadiumComponent } from './stadium/stadium.component';
 import { CustomRatingComponent } from './custom-rating/custom-rating.component';
 import { PositionDetailComponent } from './position-detail/position-detail.component';
+import { ComparePlayerComponent } from './compare-player/compare-player.component';
 
 const routes: Routes = [
     {
@@ -25,6 +26,9 @@ const routes: Routes = [
     },
     {
         path: 'custom-rating', component: CustomRatingComponent
+    },
+    {
+        path: 'compare', component: ComparePlayerComponent
     },
     {
         path: 'detail/:id', component: PositionDetailComponent
