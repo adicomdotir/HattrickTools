@@ -85,6 +85,8 @@ export class CustomRatingComponent implements OnInit {
         const player7 = this.getMidfieldPlayerScore(this.players[6]);
         this.midfieldRating += player6 + player7;
         const player8 = this.getMidfieldPlayerScore(this.players[7]);
+        console.log(player8);
+        
         const player9 = this.getMidfieldPlayerScore(this.players[8]);
         const player10 = this.getMidfieldPlayerScore(this.players[9]);
         ceoMultiple = this.getMidfieldMultipleCeo(this.players[7], this.players[8], this.players[9]);
@@ -345,6 +347,11 @@ export class CustomRatingComponent implements OnInit {
     }
 
     getMidfieldPlayerScore(pl: Player) {
+        if (pl.id == 7) {
+            console.log(pl);
+            
+        }
+        
         if (pl.visibility) {
             return pl.coeMidfield * (pl.playMaking + this.getLoyaltyCeo(pl) + this.getExperience(pl.experience));
         }

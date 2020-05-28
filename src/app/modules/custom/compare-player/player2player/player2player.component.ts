@@ -44,12 +44,19 @@ export class Player2playerComponent implements OnInit {
         }
     }
 
-    cal() {
+    calculatorPlayerOne() {
         let total = 0;
-        console.log(this.valuesPlayerOne);
         for (let i = 0; i < this.ratios.length; i++) {
             total += this.valuesPlayerOne[i] * this.ratios[i];
         }
-        return total;
+        return total.toFixed(3);
+    }
+
+    calculatorPlayerTwo() {
+        let total = 0;
+        for (let i = 0; i < this.ratios.length; i++) {
+            total += this.valuesPlayerTwo[i] * this.ratios[i];
+        }
+        return total.toFixed(3);
     }
 }
