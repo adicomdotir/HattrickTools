@@ -7,6 +7,8 @@ import { StadiumComponent } from './stadium/stadium.component';
 import { CustomRatingComponent } from './custom-rating/custom-rating.component';
 import { PositionDetailComponent } from './position-detail/position-detail.component';
 import { ComparePlayerComponent } from './compare-player/compare-player.component';
+import { Player2playerComponent } from './compare-player/player2player/player2player.component';
+import { Player2rangeComponent } from './compare-player/player2range/player2range.component';
 
 const routes: Routes = [
     {
@@ -28,7 +30,12 @@ const routes: Routes = [
         path: 'custom-rating', component: CustomRatingComponent
     },
     {
-        path: 'compare', component: ComparePlayerComponent
+        path: 'compare', component: ComparePlayerComponent,
+        children: [
+            { path: '', component: Player2playerComponent },
+            { path: 'p2p', component: Player2playerComponent },
+            { path: 'range', component: Player2rangeComponent }
+        ]
     },
     {
         path: 'detail/:id', component: PositionDetailComponent

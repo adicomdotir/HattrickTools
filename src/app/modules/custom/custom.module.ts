@@ -13,7 +13,8 @@ import { CustomRatingComponent } from './custom-rating/custom-rating.component';
 import { PositionDetailComponent } from './position-detail/position-detail.component';
 import { PlayerBoxComponent } from './custom-rating/player-box/player-box.component';
 import { ComparePlayerComponent } from './compare-player/compare-player.component';
-import { ComparePlayerBoxComponent } from './compare-player/compare-player-box/compare-player-box.component';
+import { Player2playerComponent } from './compare-player/player2player/player2player.component';
+import { Player2rangeComponent } from './compare-player/player2range/player2range.component';
 
 @NgModule({
 	imports: [
@@ -32,7 +33,8 @@ import { ComparePlayerBoxComponent } from './compare-player/compare-player-box/c
 		PositionDetailComponent,
 		PlayerBoxComponent,
 		ComparePlayerComponent,
-		ComparePlayerBoxComponent // TODO: move to shared module
+		Player2playerComponent,
+		Player2rangeComponent
 	]
 })
 export class CustomModule { }

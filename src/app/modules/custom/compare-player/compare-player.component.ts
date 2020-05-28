@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
     selector: 'app-compare-player',
@@ -7,21 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComparePlayerComponent implements OnInit {
 
-    players: any[] = [];
-    position = -1;
+    @ViewChild('p2p') p2p: ElementRef;
+    @ViewChild('range') range: ElementRef;
 
-    constructor() { }
+    ngOnInit() { }
 
-    ngOnInit() {
+    tabClick(elementId) {
+        if (elementId === 'p2p') {
+            this.p2p.nativeElement.classList.add('active');
+            this.range.nativeElement.classList.remove('active');
+        } else {
+            this.range.nativeElement.classList.add('active');
+            this.p2p.nativeElement.classList.remove('active');
+        }
     }
-
-    addNewPlayer() {
-        const id = Math.round(Math.random() * 8999 + 1000);
-        this.players.push(id);
-    }
-
-    clearPlayers() {
-        this.players = [];
-    }
-
 }

@@ -1,0 +1,53 @@
+<div style="text-align: center; margin-top: 8px;">
+    <select (change)="clearPlayers()" [(ngModel)]="position">
+        <option value="0">Goal Keeping</option>
+        <option value="1">Central Defender</option>
+        <option value="2">Central Defender Toward Wing</option>
+        <option value="3">Central Defender Offensive</option>
+        <option value="4">Wing Back Defensive</option>
+        <option value="5">Wing Back</option>
+        <option value="6">Wing Back Towards Middle</option>
+        <option value="7">Wing Back Offensive</option>
+        <option value="8">Inner Midfielder Defensive</option>
+        <option value="9">Inner Midfielder</option>
+        <option value="10">Inner Midfielder Toward Wing</option>
+        <option value="11">Inner Midfielder Offensive</option>
+        <option value="12">Winger Defensive</option>
+        <option value="13">Winger</option>
+        <option value="14">Winger Towards Middle</option>
+        <option value="15">Winger Offensive</option>
+        <option value="16">Forward Defensive</option>
+        <option value="17">Forward</option>
+        <option value="18">Forward Toward Wing</option>
+        <option value="19">Technical Defensive Forward</option>
+    </select>
+</div>
+
+<div class="row" style="margin-top: 8px; text-align: center;">
+    <div class="col-md-6 form-group row" style="padding: 4px;">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-9">{{cal()}}</div>
+    </div>
+    <div class="col-md-6 form-group row" style="padding: 4px;">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-9">Points</div>
+    </div>
+</div>
+<div class="row" style="text-align: center;">
+    <div class="col-md-6 form-group row" style="padding: 4px;">
+        <ng-container *ngFor="let label of labels; let i = index">
+            <label class="col-sm-3 col-form-label" style="margin-top: 4px;">{{label}}</label>
+            <div class="col-sm-9">
+                <input class="form-control" type="number" min="0" max="20" [(ngModel)]="valuesPlayerOne[i]" />
+            </div>
+        </ng-container>
+    </div>
+    <div class="col-md-6 form-group row" style="padding: 4px;">
+        <ng-container *ngFor="let label of labels; let i = index">
+            <label class="col-sm-3 col-form-label" style="margin-top: 4px;">{{label}}</label>
+            <div class="col-sm-9">
+                <input class="form-control" type="number" min="0" max="20" [(ngModel)]="valuesPlayerTwo[i]" />
+            </div>
+        </ng-container>
+    </div>
+</div>
