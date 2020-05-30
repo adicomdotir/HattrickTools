@@ -1,4 +1,41 @@
+<!-- initially hidden right-click menu -->
+<div class="hide ok" [style.top.px]="top" [style.left.px]="left" #rmenu>
+    <div class="sub-menu" *ngFor="let pr of positionRoles;"><a (click)="subMenuClick(pr)">{{pr}}</a></div>
+</div>
+<div style="text-align: center; margin-top: 8px;">Please select position</div>
 <div style="text-align: center; margin-top: 8px;">
+    <table>
+        <tr>
+            <td (click)="positionSelect()">&nbsp;</td>
+            <td (click)="positionSelect()">&nbsp;</td>
+            <td (click)="positionSelect(1)" [innerHTML]="getPositionIcon(1)"></td>
+            <td (click)="positionSelect()">&nbsp;</td>
+            <td (click)="positionSelect()">&nbsp;</td>
+        </tr>
+        <tr>
+            <td (click)="positionSelect(2)" [innerHTML]="getPositionIcon(2)"></td>
+            <td (click)="positionSelect(3)" [innerHTML]="getPositionIcon(3)"></td>
+            <td (click)="positionSelect(4)" [innerHTML]="getPositionIcon(4)"></td>
+            <td (click)="positionSelect(5)" [innerHTML]="getPositionIcon(5)"></td>
+            <td (click)="positionSelect(6)" [innerHTML]="getPositionIcon(6)"></td>
+        </tr>
+        <tr>
+            <td (click)="positionSelect(7)" [innerHTML]="getPositionIcon(7)"></td>
+            <td (click)="positionSelect(8)" [innerHTML]="getPositionIcon(8)"></td>
+            <td (click)="positionSelect(9)" [innerHTML]="getPositionIcon(9)"></td>
+            <td (click)="positionSelect(10)" [innerHTML]="getPositionIcon(10)"></td>
+            <td (click)="positionSelect(11)" [innerHTML]="getPositionIcon(11)"></td>
+        </tr>
+        <tr>
+            <td (click)="positionSelect()">&nbsp;</td>
+            <td (click)="positionSelect(12)" [innerHTML]="getPositionIcon(12)"></td>
+            <td (click)="positionSelect(13)" [innerHTML]="getPositionIcon(13)"></td>
+            <td (click)="positionSelect(14)" [innerHTML]="getPositionIcon(14)"></td>
+            <td (click)="positionSelect()">&nbsp;</td>
+        </tr>
+    </table>
+</div>
+<!-- <div style="text-align: center; margin-top: 8px;">
     <select (change)="clearPlayers()" [(ngModel)]="position">
         <option value="0">Goal Keeping</option>
         <option value="1">Central Defender</option>
@@ -21,7 +58,7 @@
         <option value="18">Forward Toward Wing</option>
         <option value="19">Technical Defensive Forward</option>
     </select>
-</div>
+</div> -->
 
 <div class="row" style="margin-top: 8px; text-align: center;">
     <div class="col-md-6 form-group row" style="padding: 4px;">

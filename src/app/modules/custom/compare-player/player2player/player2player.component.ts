@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { POSITIONS } from 'src/app/config/position';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import { POSITIONS, POSITION_ROLES } from 'src/app/config/position';
 
 @Component({
     selector: 'app-player2player',
@@ -7,6 +7,7 @@ import { POSITIONS } from 'src/app/config/position';
     styleUrls: ['./player2player.component.css']
 })
 export class Player2playerComponent implements OnInit {
+    @ViewChild('rmenu') rmenu: ElementRef;
     playerOne;
     playerTwo;
     position = -1;
@@ -14,8 +15,12 @@ export class Player2playerComponent implements OnInit {
     valuesPlayerOne = [];
     valuesPlayerTwo = [];
     ratios = [];
+    top = 0;
+    left = 0;
+    positionRoles = [];
+    positionIcon: string[] = ['-1', '-1', '-1', '-1', '-1', '-1', '-1', '-1', '-1', '-1', '-1', '-1', '-1', '-1'];
 
-    constructor() { }
+    constructor(private renderer: Renderer2) { }
 
     ngOnInit() { }
 
@@ -32,7 +37,8 @@ export class Player2playerComponent implements OnInit {
         this.valuesPlayerOne = [];
         this.valuesPlayerTwo = [];
         this.ratios = [];
-        const currentPosition = POSITIONS[this.position];
+        const currentPosition = POSITIONS[this.position - 1][this.getPositionIcon(this.position)];
+
         for (const key in currentPosition) {
             if (currentPosition.hasOwnProperty(key)) {
                 const ratio = currentPosition[key];
@@ -58,5 +64,38 @@ export class Player2playerComponent implements OnInit {
             total += this.valuesPlayerTwo[i] * this.ratios[i];
         }
         return total.toFixed(3);
+    }
+
+    positionSelect(positionId) {
+        if (positionId !== undefined) {
+            this.position = positionId;
+            this.top = event['y'];
+            this.left = event['x'];
+            this.renderer.removeClass(this.rmenu.nativeElement, 'hide');
+            this.positionRoles = [];
+            POSITION_ROLES[positionId - 1].forEach(x => this.positionRoles.push(x));
+        } else {
+            this.renderer.addClass(this.rmenu.nativeElement, 'hide');
+        }
+    }
+
+    subMenuClick(role) {
+        console.log(role);
+        
+        this.positionIcon = this.positionIcon.map(x => '-1');
+        this.positionIcon[this.position - 1] = role;
+        this.renderer.addClass(this.rmenu.nativeElement, 'hide');
+        this.clearPlayers();
+    }
+
+    getPositionIcon(positionId) {
+        return this.positionIcon[positionId - 1] === '-1' ? '&nbsp;' : this.briefPositionIcon(this.positionIcon[positionId - 1]);
+    }
+
+    briefPositionIcon(role: string) {
+        const str = role.split(' ').reduce((pv, cv, ci, arr) => {
+            return pv + cv.charAt(0);
+        }, '');
+        return str;
     }
 }
