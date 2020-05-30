@@ -67,7 +67,7 @@ export class Player2playerComponent implements OnInit {
     }
 
     positionSelect(positionId) {
-        if (positionId !== undefined) {
+        if (positionId !== undefined && positionId !== -1) {
             this.position = positionId;
             this.top = event['y'];
             this.left = event['x'];
@@ -80,8 +80,6 @@ export class Player2playerComponent implements OnInit {
     }
 
     subMenuClick(role) {
-        console.log(role);
-        
         this.positionIcon = this.positionIcon.map(x => '-1');
         this.positionIcon[this.position - 1] = role;
         this.renderer.addClass(this.rmenu.nativeElement, 'hide');
