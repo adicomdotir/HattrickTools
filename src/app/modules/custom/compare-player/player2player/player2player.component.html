@@ -6,11 +6,11 @@
 <div style="text-align: center; margin-top: 8px;">
     <table>
         <tr>
-            <td (click)="positionSelect(-1)">&nbsp;</td>
-            <td (click)="positionSelect(-1)">&nbsp;</td>
+            <td class="hide-td" (click)="positionSelect(-1)">&nbsp;</td>
+            <td class="hide-td" (click)="positionSelect(-1)">&nbsp;</td>
             <td (click)="positionSelect(1)" [innerHTML]="getPositionIcon(1)"></td>
-            <td (click)="positionSelect(-1)">&nbsp;</td>
-            <td (click)="positionSelect(-1)">&nbsp;</td>
+            <td class="hide-td" (click)="positionSelect(-1)">&nbsp;</td>
+            <td class="hide-td" (click)="positionSelect(-1)">&nbsp;</td>
         </tr>
         <tr>
             <td (click)="positionSelect(2)" [innerHTML]="getPositionIcon(2)"></td>
@@ -27,11 +27,11 @@
             <td (click)="positionSelect(11)" [innerHTML]="getPositionIcon(11)"></td>
         </tr>
         <tr>
-            <td (click)="positionSelect(-1)">&nbsp;</td>
+            <td class="hide-td" (click)="positionSelect(-1)">&nbsp;</td>
             <td (click)="positionSelect(12)" [innerHTML]="getPositionIcon(12)"></td>
             <td (click)="positionSelect(13)" [innerHTML]="getPositionIcon(13)"></td>
             <td (click)="positionSelect(14)" [innerHTML]="getPositionIcon(14)"></td>
-            <td (click)="positionSelect(-1)">&nbsp;</td>
+            <td class="hide-td" (click)="positionSelect(-1)">&nbsp;</td>
         </tr>
     </table>
 </div>
@@ -62,12 +62,32 @@
 
 <div class="row" style="margin-top: 8px; text-align: center;">
     <div class="col-md-6 form-group row" style="padding: 4px;">
-        <div class="col-sm-3"></div>
-        <div class="col-sm-9">Impact on the rate = {{calculatorPlayerOne()}}</div>
+        <div class="col-md-12 form-group row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-9">
+                <div>
+                    [Defence {{calculatorDefencePlayerOne()}}] + 
+                    [Midfield {{calculatorMidfieldPlayerOne()}}] + 
+                    [Attack {{calculatorAttackPlayerOne()}}]
+                </div>
+                <div>
+                    Impact on the rate = {{calculatorPlayerOne()}}
+                </div>
+            </div>
+        </div>
     </div>
     <div class="col-md-6 form-group row" style="padding: 4px;">
         <div class="col-sm-3"></div>
-        <div class="col-sm-9">Impact on the rate = {{calculatorPlayerTwo()}}</div>
+        <div class="col-sm-9">
+            <div>
+                [Defence {{calculatorDefencePlayerTwo()}}] + 
+                [Midfield {{calculatorMidfieldPlayerTwo()}}] + 
+                [Attack {{calculatorAttackPlayerTwo()}}]
+            </div>
+            <div>
+                Impact on the rate = {{calculatorPlayerTwo()}}
+            </div>
+        </div>
     </div>
 </div>
 <div class="row" style="text-align: center;">

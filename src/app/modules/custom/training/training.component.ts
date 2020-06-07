@@ -49,17 +49,84 @@ export class TrainingComponent implements OnInit {
         "SP",
         "SP 25%"
     ];
-    
+
     skill = 'GK';
     results = [];
 
     constructor() { }
 
-    ngOnInit() { }
+    ngOnInit() {
+        const gain = this.round(-1 / this.calcTraining(5.4824, 17, 0, 7, 100, 10, 1, [5, 5]), 3);
+        console.log(gain);
+
+    }
+
+    round(value, nbDecimals) {
+        const corr = Math.pow(10.0, nbDecimals);
+        return Math.round(value * corr) / corr;
+    }
 
     trainingChange(event) {
         this.skill = event.target.value;
     }
+
+    calcTraining(baseLength, age, assistants, trainerLevel, intensity, stamina, curSkill, staff: any[]) {
+        const ageFactor = Math.pow(1.0404, age - 17) * (1 + 1);
+        let skillFactor = - 1.4595 * Math.pow((curSkill + 1) / 20, 2) + 3.7535 * (curSkill + 1) / 20 - 0.1349;
+        if (skillFactor < 0) {
+            skillFactor = 0;
+        }
+
+
+        const trainerFactor = (1 + (7 - Math.min(trainerLevel, 7.5)) * 0.091) * (1 + 1);
+        // TODO: 
+        const coFactor = this.getAssistantFactor(assistants, staff);
+        console.log(coFactor);
+
+        let tiFactor = Number.MAX_VALUE;
+        if (intensity > 0) {
+            tiFactor = (1 / (intensity / 100)) * (1 + 1);
+        }
+        let staminaFactor = Number.MAX_VALUE;
+        if (stamina < 100) {
+            staminaFactor = 1 / (1 - stamina / 100);
+        }
+
+        // faster training from 2010 up to 9 formidable, then gets linearly smaller
+        let fasterTraining = 0.83746 * Math.log(age) - 1.87426;
+        if (curSkill > 8) {
+            fasterTraining -= (curSkill - 8) * 0.0933;
+        }
+
+        // invert so that you can multiply for trainLength
+        const fasterTrainingFactor = 1. / (1. + fasterTraining);
+
+        let trainLength = baseLength * ageFactor * skillFactor * trainerFactor * coFactor * tiFactor * staminaFactor * fasterTrainingFactor;
+        if (trainLength < 1) {
+            trainLength = 1;
+        }
+        return trainLength;
+    }
+
+
+    getAssistantFactor(assistants, staff: any[]) {
+
+        let factor = 1;
+
+        // Compared to old 0 assistants: 9% increase for all, 3,2% each level of assistants.
+        let assistantLevels = 0;
+
+        for (let i = 0; i < staff.length; i++) {
+            const element = staff[i];
+            assistantLevels += element;
+        }
+        factor = 1 / ((109 + assistantLevels * 3.5) / 143);
+
+        factor *= (1 + 1);
+
+        return factor;
+    }
+
 
     trainingcalc() {
 
@@ -134,7 +201,7 @@ export class TrainingComponent implements OnInit {
                 yyy1 = 2.45426 + Math.pow(level + sublevel - 5, 1.96) * (1 / 4.7371 / 1.96);
             }
 
-            let xxx = (xxx1 - yyy1) / totalK + age0;
+            const xxx = (xxx1 - yyy1) / totalK + age0;
 
             for (var i = 17; i < 35; i++) {
                 if (xxx <= agetable[i - 17]) {

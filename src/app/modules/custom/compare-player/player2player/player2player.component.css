@@ -6,6 +6,13 @@ td {
     color: white;
 }
 
+.hide-td {
+    width: 32px;
+    height: 32px;
+    background: content-box;
+    border: 0px;
+}
+
 table {
     margin: auto;
 }

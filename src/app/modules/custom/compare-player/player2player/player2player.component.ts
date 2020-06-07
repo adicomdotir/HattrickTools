@@ -19,6 +19,7 @@ export class Player2playerComponent implements OnInit {
     left = 0;
     positionRoles = [];
     positionIcon: string[] = ['-1', '-1', '-1', '-1', '-1', '-1', '-1', '-1', '-1', '-1', '-1', '-1', '-1', '-1'];
+    currentPositionNameArray = [];
 
     constructor(private renderer: Renderer2) { }
 
@@ -37,10 +38,12 @@ export class Player2playerComponent implements OnInit {
         this.valuesPlayerOne = [];
         this.valuesPlayerTwo = [];
         this.ratios = [];
+        this.currentPositionNameArray = [];
         const currentPosition = POSITIONS[this.position - 1][this.getPositionIcon(this.position)];
 
         for (const key in currentPosition) {
             if (currentPosition.hasOwnProperty(key)) {
+                this.currentPositionNameArray.push(key);
                 const ratio = currentPosition[key];
                 this.valuesPlayerOne.push(0);
                 this.valuesPlayerTwo.push(0);
@@ -58,10 +61,76 @@ export class Player2playerComponent implements OnInit {
         return total.toFixed(3);
     }
 
+    calculatorAttackPlayerOne() {
+        let total = 0;
+        for (let i = 0; i < this.ratios.length; i++) {
+            if (this.currentPositionNameArray[i] === 'WING' ||
+                this.currentPositionNameArray[i] === 'PASSING' ||
+                this.currentPositionNameArray[i] === 'SCORING') {
+                total += this.valuesPlayerOne[i] * this.ratios[i];
+            }
+        }
+        return total.toFixed(3);
+    }
+
+    calculatorMidfieldPlayerOne() {
+        let total = 0;
+        for (let i = 0; i < this.ratios.length; i++) {
+            if (this.currentPositionNameArray[i] === 'PLAYMAKING') {
+                total += this.valuesPlayerOne[i] * this.ratios[i];
+            }
+        }
+        return total.toFixed(3);
+    }
+
+    calculatorDefencePlayerOne() {
+        let total = 0;
+        for (let i = 0; i < this.ratios.length; i++) {
+            if (this.currentPositionNameArray[i] === 'GOALKEEPER' ||
+                this.currentPositionNameArray[i] === 'DEFENDING') {
+                total += this.valuesPlayerOne[i] * this.ratios[i];
+            }
+        }
+        return total.toFixed(3);
+    }
+
     calculatorPlayerTwo() {
         let total = 0;
         for (let i = 0; i < this.ratios.length; i++) {
             total += this.valuesPlayerTwo[i] * this.ratios[i];
+        }
+        return total.toFixed(3);
+    }
+
+    calculatorAttackPlayerTwo() {
+        let total = 0;
+        for (let i = 0; i < this.ratios.length; i++) {
+            if (this.currentPositionNameArray[i] === 'WING' ||
+                this.currentPositionNameArray[i] === 'PASSING' ||
+                this.currentPositionNameArray[i] === 'SCORING') {
+                total += this.valuesPlayerTwo[i] * this.ratios[i];
+            }
+        }
+        return total.toFixed(3);
+    }
+
+    calculatorMidfieldPlayerTwo() {
+        let total = 0;
+        for (let i = 0; i < this.ratios.length; i++) {
+            if (this.currentPositionNameArray[i] === 'PLAYMAKING') {
+                total += this.valuesPlayerTwo[i] * this.ratios[i];
+            }
+        }
+        return total.toFixed(3);
+    }
+
+    calculatorDefencePlayerTwo() {
+        let total = 0;
+        for (let i = 0; i < this.ratios.length; i++) {
+            if (this.currentPositionNameArray[i] === 'GOALKEEPER' ||
+                this.currentPositionNameArray[i] === 'DEFENDING') {
+                total += this.valuesPlayerTwo[i] * this.ratios[i];
+            }
         }
         return total.toFixed(3);
     }

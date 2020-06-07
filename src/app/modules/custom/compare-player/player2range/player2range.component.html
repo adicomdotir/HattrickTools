@@ -1,3 +1,68 @@
-<p>
-  Under Construction
-</p>
+<!-- initially hidden right-click menu -->
+<div class="hide ok" [style.top.px]="top" [style.left.px]="left" #rmenu>
+    <div class="sub-menu" *ngFor="let pr of positionRoles;"><a (click)="subMenuClick(pr)">{{pr}}</a></div>
+</div>
+<div style="text-align: center; margin-top: 8px;">Please select position</div>
+<div style="text-align: center; margin-top: 8px;">
+    <table>
+        <tr>
+            <td class="hide-td" (click)="positionSelect(-1)">&nbsp;</td>
+            <td class="hide-td" (click)="positionSelect(-1)">&nbsp;</td>
+            <td (click)="positionSelect(1)" [innerHTML]="getPositionIcon(1)"></td>
+            <td class="hide-td" (click)="positionSelect(-1)">&nbsp;</td>
+            <td class="hide-td" (click)="positionSelect(-1)">&nbsp;</td>
+        </tr>
+        <tr>
+            <td (click)="positionSelect(2)" [innerHTML]="getPositionIcon(2)"></td>
+            <td (click)="positionSelect(3)" [innerHTML]="getPositionIcon(3)"></td>
+            <td (click)="positionSelect(4)" [innerHTML]="getPositionIcon(4)"></td>
+            <td (click)="positionSelect(5)" [innerHTML]="getPositionIcon(5)"></td>
+            <td (click)="positionSelect(6)" [innerHTML]="getPositionIcon(6)"></td>
+        </tr>
+        <tr>
+            <td (click)="positionSelect(7)" [innerHTML]="getPositionIcon(7)"></td>
+            <td (click)="positionSelect(8)" [innerHTML]="getPositionIcon(8)"></td>
+            <td (click)="positionSelect(9)" [innerHTML]="getPositionIcon(9)"></td>
+            <td (click)="positionSelect(10)" [innerHTML]="getPositionIcon(10)"></td>
+            <td (click)="positionSelect(11)" [innerHTML]="getPositionIcon(11)"></td>
+        </tr>
+        <tr>
+            <td class="hide-td" (click)="positionSelect(-1)">&nbsp;</td>
+            <td (click)="positionSelect(12)" [innerHTML]="getPositionIcon(12)"></td>
+            <td (click)="positionSelect(13)" [innerHTML]="getPositionIcon(13)"></td>
+            <td (click)="positionSelect(14)" [innerHTML]="getPositionIcon(14)"></td>
+            <td class="hide-td" (click)="positionSelect(-1)">&nbsp;</td>
+        </tr>
+    </table>
+</div>
+<div class="row" style="margin-top: 8px; text-align: center;">
+    <div class="col-md-6 form-group row" style="padding: 4px;">
+
+    </div>
+    <div class="col-md-6 form-group row" style="padding: 4px;">
+    </div>
+</div>
+<div class="row" style="text-align: center;">
+    <div class="col-md-4 form-group row" style="padding: 4px;">
+        <ng-container *ngFor="let label of labels; let i = index">
+            <label class="col-sm-6 col-form-label" style="margin-top: 4px;">{{label}}</label>
+            <div class="col-sm-6">
+                <input class="form-control" type="number" min="0" max="20" [(ngModel)]="valuesPlayer[i]" />
+            </div>
+        </ng-container>
+        <ng-container *ngIf="labels.length > 0">
+            <label class="col-sm-6 col-form-label" style="margin-top: 4px;"></label>
+            <div class="col-sm-6 row" style="padding: 4px; text-align: center;">
+                <button style="margin-top: 8px;" class="btn btn-outline-success" (click)="findPlayers()">Submit</button>
+            </div>
+        </ng-container>
+    </div>
+    <div class="col-md-8 form-group row" style="padding: 4px;">
+        <!-- <ng-container *ngFor="let label of labels; let i = index">
+          <label class="col-sm-3 col-form-label" style="margin-top: 4px;">{{label}}</label>
+          <div class="col-sm-9">
+              <input class="form-control" type="number" min="0" max="20" [(ngModel)]="valuesPlayerTwo[i]" />
+          </div>
+      </ng-container> -->
+    </div>
+</div>
