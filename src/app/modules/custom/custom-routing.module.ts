@@ -9,6 +9,7 @@ import { PositionDetailComponent } from './position-detail/position-detail.compo
 import { ComparePlayerComponent } from './compare-player/compare-player.component';
 import { Player2playerComponent } from './compare-player/player2player/player2player.component';
 import { Player2rangeComponent } from './compare-player/player2range/player2range.component';
+import { DonateComponent } from './donate/donate.component';
 
 const routes: Routes = [
     {
@@ -39,6 +40,9 @@ const routes: Routes = [
     },
     {
         path: 'detail/:id', component: PositionDetailComponent
+    },
+    {
+        path: 'donate', component: DonateComponent
     }
 ];
 

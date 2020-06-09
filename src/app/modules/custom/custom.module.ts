@@ -15,6 +15,7 @@ import { PlayerBoxComponent } from './custom-rating/player-box/player-box.compon
 import { ComparePlayerComponent } from './compare-player/compare-player.component';
 import { Player2playerComponent } from './compare-player/player2player/player2player.component';
 import { Player2rangeComponent } from './compare-player/player2range/player2range.component';
+import { DonateComponent } from './donate/donate.component';
 
 @NgModule({
 	imports: [
@@ -34,7 +35,8 @@ import { Player2rangeComponent } from './compare-player/player2range/player2rang
 		PlayerBoxComponent,
 		ComparePlayerComponent,
 		Player2playerComponent,
-		Player2rangeComponent
+		Player2rangeComponent,
+		DonateComponent
 	]
 })
 export class CustomModule { }

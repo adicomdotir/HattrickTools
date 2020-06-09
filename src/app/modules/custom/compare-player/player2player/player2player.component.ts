@@ -56,7 +56,11 @@ export class Player2playerComponent implements OnInit {
     calculatorPlayerOne() {
         let total = 0;
         for (let i = 0; i < this.ratios.length; i++) {
-            total += this.valuesPlayerOne[i] * this.ratios[i];
+            if (this.currentPositionNameArray[i] === 'PLAYMAKING') {
+                total += (this.valuesPlayerOne[i] * this.ratios[i]) * 3;
+            } else {
+                total += this.valuesPlayerOne[i] * this.ratios[i];
+            }
         }
         return total.toFixed(3);
     }
@@ -80,6 +84,7 @@ export class Player2playerComponent implements OnInit {
                 total += this.valuesPlayerOne[i] * this.ratios[i];
             }
         }
+        total *= 3;
         return total.toFixed(3);
     }
 
@@ -121,6 +126,7 @@ export class Player2playerComponent implements OnInit {
                 total += this.valuesPlayerTwo[i] * this.ratios[i];
             }
         }
+        total *= 3;
         return total.toFixed(3);
     }
 
