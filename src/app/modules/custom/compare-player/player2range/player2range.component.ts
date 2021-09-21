@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 import { POSITIONS, POSITION_ROLES } from 'src/app/config/position';
+import { parse } from 'querystring';
 
 @Component({
     selector: 'app-player2range',
@@ -17,6 +18,8 @@ export class Player2rangeComponent implements OnInit {
     valuesPlayer = [];
     currentPositionNameArray = [];
     ratios = [];
+    similarPlayerString: string[] = [];
+    similarPlayer: string[] = [];
 
     constructor(private renderer: Renderer2) { }
 
@@ -84,39 +87,33 @@ export class Player2rangeComponent implements OnInit {
         for (let i = 0; i < this.valuesPlayer.length; i++) {
             total += this.valuesPlayer[i] * this.ratios[i];
         }
-        this.myArr = [];
-        this.ssss(0, 0, total, '');
-        console.log(total);
-        console.log(this.myArr);
-        
+
+        this.similarPlayer = [];
+        this.similarPlayerString = [];
+        this.recursiveAlgorithm(0, '');
+        this.similarPlayerString.forEach(x => {
+            const values = x.split(',');
+            let result = 0;
+            for (let i = 0; i < this.valuesPlayer.length; i++) {
+                result += this.ratios[i] * parseInt(values[i], 10);
+            }
+            if (Math.round(result) === Math.round(total)) {
+                console.log(x, result);
+                this.similarPlayer.push(x);
+            }
+        });
+
     }
 
-    myArr = [];
-
-    ssss(index, value, total, expr) {
-        const newValue = value;
-        // if (total < newValue) {
-        //     return;
-        // }
-
-        if (Math.round(total) === Math.round(newValue)) {
-            this.myArr.push(newValue);
-            console.log(expr);
-            
-        }
-        if (index === this.valuesPlayer.length) {
-            return;
-        }
-        if (index === 0) {
+    recursiveAlgorithm(index, value: string) {
+        // console.log(index, value);
+        if (index < this.valuesPlayer.length) {
             for (let i = 1; i <= 20; i++) {
-                expr += '+' + i;
-                this.ssss(index + 1, newValue + i * this.ratios[index], total, expr);
+                const newValue = `${value},${i}`;
+                this.recursiveAlgorithm(index + 1, newValue);
             }
         } else {
-            for (let i = 0.1; i <= 20; i += 0.1) {
-                expr += '+' + i;
-                this.ssss(index + 1,  newValue + i * this.ratios[index], total, expr);
-            }
+            this.similarPlayerString.push(`${value.substring(1)}`);
         }
     }
 }

@@ -1,6 +1,5 @@
-<p style="color: red;">Under Construction</p>
 <!-- initially hidden right-click menu -->
-<!-- <div class="hide ok" [style.top.px]="top" [style.left.px]="left" #rmenu>
+<div class="hide ok" [style.top.px]="top" [style.left.px]="left" #rmenu>
     <div class="sub-menu" *ngFor="let pr of positionRoles;"><a (click)="subMenuClick(pr)">{{pr}}</a></div>
 </div>
 <div style="text-align: center; margin-top: 8px;">Please select position</div>
@@ -59,5 +58,6 @@
         </ng-container>
     </div>
     <div class="col-md-8 form-group row" style="padding: 4px;">
+        <div *ngFor="let item of similarPlayer">{{item}}</div>
     </div>
-</div> -->
+</div>
